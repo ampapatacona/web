@@ -14,7 +14,7 @@ collections:
     sort: "date:desc"
     fields:
       - label: "Idioma"
-        name: "language",
+        name: "language"
         widget: "select"
         required: true
         options:
