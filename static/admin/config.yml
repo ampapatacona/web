@@ -22,7 +22,7 @@ collections:
           - { label: "Castellao", value: "es" }
         default: ["es"]
       - label: "Etiquetas"
-        name: "type"
+        name: "tags"
         widget: "list"
         required: false
       - label: "Title"
