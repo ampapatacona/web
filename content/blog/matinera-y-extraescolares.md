@@ -1,4 +1,7 @@
 ---
+language: Castellano
+tags:
+  - Extraescolares
 title: Matinera y extraescolares
 summary: Muchas sois las familias que nos estáis preguntando por las
   extraescolares y, con especial interés, por la matinera. Estamos trabajando en
