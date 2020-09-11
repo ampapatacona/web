@@ -1,6 +1,10 @@
 <template>
   <article class="article-card" :class="[size, language]">
     <nuxt-link :to="`/blog/${articleInfo.link}`">
+      <div class="img-container">
+        <div class="overlay"></div>
+        <img class="thumbnail" :src="articleInfo.attributes.thumbnail" alt="" />
+      </div>
       <div class="card-inner">
         <p class="type">
           <font-awesome-icon :icon="['fab', icon]" />
@@ -58,7 +62,7 @@ export default {
         this.icon = 'yarn'
         break
       default:
-        this.icon = 'nodeJs'
+        this.icon = 'js'
     }
   },
   methods: {
@@ -155,5 +159,23 @@ export default {
       margin-bottom: 0.25rem;
     }
   }
+}
+.img-container {
+  overflow: hidden;
+  height: 240px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  position: relative;
+}
+.overlay {
+  height: 240px;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
 }
 </style>

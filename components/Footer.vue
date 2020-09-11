@@ -1,6 +1,8 @@
 <template>
   <footer class="footer">
-    <Container flex>&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</Container>
+    <Container flex
+      >&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</Container
+    >
   </footer>
 </template>
 

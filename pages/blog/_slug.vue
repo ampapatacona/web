@@ -3,16 +3,21 @@
     <Container class="meta-section">
       <h1>{{ title }}</h1>
       <p v-if="published === updated" class="post-meta">
-        Posted on {{ published }} by
-        <a v-if="authorlink" :href="authorlink">{{ author }}</a>
+        Publicado el {{ published }}
+        <span v-if="authorlink">
+          por <a :href="authorlink">{{ author }}</a></span
+        >
       </p>
       <p v-else class="post-meta">
-        Updated on {{ updated }} by
-        <a v-if="authorlink" :href="authorlink">{{ author }}</a>
+        Publicado el {{ updated }}
+        <span v-if="authorlink">
+          por <a :href="authorlink">{{ author }}</a></span
+        >
       </p>
     </Container>
     <Container narrow>
       <img v-lazy="thumbnail" class="thumbnail" :alt="title" />
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div id="shareable" class="post-content" v-html="html"></div>
     </Container>
   </section>
@@ -30,6 +35,59 @@ import Container from '~/components/Container'
 export default {
   components: {
     Container,
+  },
+  async asyncData({ params }) {
+    const post = await import(`~/content/blog/${params.slug}.md`)
+    const attr = post.attributes
+    const slug = params.slug
+
+    const {
+      author,
+      authorlink,
+      date,
+      summary,
+      thumbnail,
+      title,
+      tags,
+      update,
+    } = attr
+
+    const dateOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }
+
+    const publishedDate = new Date(date)
+    const updatedDate = new Date(update)
+    const published = publishedDate.toLocaleDateString('es-ES', dateOptions)
+    const updated = updatedDate.toLocaleDateString('es-ES', dateOptions)
+
+    return {
+      title,
+      author,
+      authorlink,
+      date,
+      update,
+      published,
+      updated,
+      tags,
+      thumbnail,
+      summary,
+      slug,
+      html: post.html,
+    }
+  },
+  mounted() {
+    Prism.highlightAll()
+
+    const selectionShare = shareThis({
+      selector: '#shareable',
+      sharers: [twitterSharer, facebookSharer, redditSharer],
+    })
+
+    selectionShare.init()
   },
   head() {
     return {
@@ -117,59 +175,6 @@ export default {
         },
       ],
     }
-  },
-  async asyncData({ params }) {
-    const post = await import(`~/content/blog/${params.slug}.md`)
-    const attr = post.attributes
-    const slug = params.slug
-
-    const {
-      author,
-      authorlink,
-      date,
-      summary,
-      thumbnail,
-      title,
-      type,
-      update,
-    } = attr
-
-    const dateOptions = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    }
-
-    const publishedDate = new Date(date)
-    const updatedDate = new Date(update)
-    const published = publishedDate.toLocaleDateString('en-GB', dateOptions)
-    const updated = updatedDate.toLocaleDateString('en-GB', dateOptions)
-
-    return {
-      title,
-      author,
-      authorlink,
-      date,
-      update,
-      published,
-      updated,
-      type,
-      thumbnail,
-      summary,
-      slug,
-      html: post.html,
-    }
-  },
-  mounted() {
-    Prism.highlightAll()
-
-    const selectionShare = shareThis({
-      selector: '#shareable',
-      sharers: [twitterSharer, facebookSharer, redditSharer],
-    })
-
-    selectionShare.init()
   },
 }
 </script>
