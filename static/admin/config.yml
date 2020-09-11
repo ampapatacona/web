@@ -20,7 +20,7 @@ collections:
         options:
           - { label: "Valencià", value: "ca" }
           - { label: "Castellano", value: "es" }
-        default: [{ label: "Castellano", value: "es" }]
+        default: ["Valencià"]
       - label: "Etiquetas"
         name: "tags"
         widget: "list"
