@@ -7,7 +7,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: '<Blog Name>',
+    title: 'AMPA CEIP la Patacona',
     meta: [
       {
         charset: 'utf-8'
@@ -19,37 +19,37 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: `https://example.com`
+        content: 'https://ceiplapatacona.netlify.app/'
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: '<Blog Name>'
+        content: 'AMPA CEIP la Patacona'
       },
       {
         hid: 'description',
         name: 'description',
-        content: '<Blog name> and description'
+        content: 'Blog oficial del AMPA del CEIP La Patacona'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: '<Blog name> and description'
+        content: 'Blog oficial del AMPA del CEIP La PAtacona'
       },
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
-        content: '<Blog Name>'
+        content: 'AMPA CEIP La Patacona'
       },
       {
         hid: 'og:article:author',
         property: 'og:article:author',
-        content: 'https://github.com/code-tribe'
+        content: 'https://github.com/jvmonjo'
       },
       {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: '<Blog Name>'
+        content: 'AMPA CEIP La Patacona'
       },
       {
         hid: 'og:type',
@@ -64,12 +64,12 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: '<Blog Name>'
+        content: 'AMPA CEIP La Patacona'
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: '<Blog name> and description'
+        content: 'AMPA CEIP La Patacona'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -89,7 +89,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-PV76V8S' }],
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-5NRDZTZ' }],
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
@@ -133,8 +133,8 @@ export default {
    * Manifest
    */
   manifest: {
-    name: '<Blog Name>',
-    short_name: '<Blog Name>',
+    name: 'AMPA CEIP La Patacona',
+    short_name: 'AMPA',
     lang: 'en'
   },
 
@@ -142,7 +142,7 @@ export default {
    * sitemap
    */
   sitemap: {
-    hostname: 'https://example.com',
+    hostname: 'https://ceiplapatacona.netlify.app',
     gzip: true,
     exclude: ['/admin/']
   },
