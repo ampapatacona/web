@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <Container flex>&copy; Blog Name {{ new Date().getFullYear() }}</Container>
+    <Container flex>&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</Container>
   </footer>
 </template>
 
