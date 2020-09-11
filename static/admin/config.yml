@@ -19,8 +19,8 @@ collections:
         required: true
         options:
           - { label: "Valencià", value: "ca" }
-          - { label: "Castellao", value: "es" }
-        default: ["es"]
+          - { label: "Castellano", value: "es" }
+        default: [{ label: "Castellano", value: "es" }]
       - label: "Etiquetas"
         name: "tags"
         widget: "list"
