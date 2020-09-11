@@ -7,7 +7,9 @@
       </div>
       <div class="card-inner">
         <p class="type">
+          <span> </span>
           <font-awesome-icon :icon="['fab', icon]" />
+          <span>{{ articleInfo.attributes.tags.join(', ') }}</span>
           {{ capitalize(articleInfo.attributes.type) }}
         </p>
         <h4>{{ articleInfo.attributes.title }}</h4>
@@ -32,7 +34,7 @@ export default {
     return {
       size: 'two-thirds',
       language: this.articleInfo.attributes.language,
-      icon: 'js',
+      icon: this.articleInfo.attributes.tags[0],
     }
   },
   mounted() {
@@ -45,11 +47,11 @@ export default {
     if (articleNo % 10 === 0) this.size = 'two-thirds'
 
     // Switch for font awesome icon
-    switch (this.language) {
-      case 'vuejs':
+    switch (this.icon) {
+      case 'Matinera':
         this.icon = 'vuejs'
         break
-      case 'react':
+      case 'Extraescolars':
         this.icon = 'react'
         break
       case 'js':
