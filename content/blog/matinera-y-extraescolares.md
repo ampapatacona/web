@@ -9,6 +9,8 @@ update: 2020-09-11T11:01:51.161Z
 author: Josep
 thumbnail: /images/uploads/matinera.jpg
 ---
+Muchas sois las familias que nos estáis preguntando por las extraescolares y, con especial interés, por la matinera. Estamos trabajando en ello desde vuestra AMPA, manteniendo contactos con el Colegio, empresas y Ayuntamiento..
+
 Pero todos hemos de entender que la situación actual nos hace ser muy cautos con los protocolos sanitarios, prestando especial atención a las medidas adoptadas en nuestro Colegio, y más concretamente al aislamiento en grupos de convivencia en las aulas para evitar la extensión de la pandemia COVID-19. Nos preocupa especialmente evitar el denominado “*contacto estrecho*” fuera del aula, que podría implicar la obligatoriedad de cuarentena durante catorce días en casos confirmados, y que aparece en el protocolo de gestión de casos enviado a los colegios este mismo mes de septiembre.
 
 Entendemos la preocupación y la urgencia por conciliar la vida laboral con la escolar, pero no debemos precipitarnos, pues un error de cálculo nos podría llevar a que nos obligaran las autoridades sanitarias a una cuarentena indiscriminada en gran parte del colegio, perjudicando a muchas más familias, con consecuencias aún peores que el problema que intentamos resolver.
