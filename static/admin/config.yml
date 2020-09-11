@@ -13,7 +13,14 @@ collections:
     slug: "{{slug}}"
     sort: "date:desc"
     fields:
-      - {label: "Idioma", name: "language", widget: "select", required: true, options: [{ label: "Valencià", value: "ca" },{ label: "Castellao", value: "es" }], default: [{ label: "Castellao", value: "es" }] 
+      - label: "Idioma"
+        name: "language",
+        widget: "select"
+        required: true
+          options:
+          - { label: "Valencià", value: "ca" }
+          - { label: "Castellao", value: "es" }
+          default: { label: "Castellao", value: "es" }
       - {label: "Etiquetas", name: "type", widget: "list", required: false}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: Summary 164-220, name: summary, widget: text, required: true, pattern: ['.{164,220}', "Must be within 164 and 220 characters"]}
