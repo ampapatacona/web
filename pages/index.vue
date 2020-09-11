@@ -2,7 +2,7 @@
   <section>
     <Container>
       <div class="intro">
-        <h1>Welcome to Blog Name</h1>
+        <h1>AMPA CEIP La Patacona</h1>
       </div>
     </Container>
     <Container flex>
