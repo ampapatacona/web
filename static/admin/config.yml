@@ -17,10 +17,10 @@ collections:
         name: "language",
         widget: "select"
         required: true
-          options:
-            - { label: "Valencià", value: "ca" }
-            - { label: "Castellao", value: "es" }
-          default: ["es"]
+        options:
+          - { label: "Valencià", value: "ca" }
+          - { label: "Castellao", value: "es" }
+        default: ["es"]
       - label: "Etiquetas"
         name: "type"
         widget: "list"
