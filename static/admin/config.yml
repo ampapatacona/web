@@ -18,44 +18,44 @@ collections:
         widget: "select"
         required: true
         options:
-          - { label: "Valencià", value: "ca" }
-          - { label: "Castellano", value: "es" }
+          - "Valencià"
+          - "Castellano"
         default:
-          - { label: "Valencià", value: "ca" }
+          - "Valencià"
       - label: "Etiquetas"
         name: "tags"
         widget: "list"
         required: false
-      - label: "Title"
+      - label: "Título"
         name: "title"
         widget: "string"
         required: true
-      - label: Summary 164-220
+      - label: Resumen 164-220
         name: summary
         widget: text
         required: true
         pattern: ['.{164,220}', "Must be within 164 and 220 characters"]
-      - label: "Publish Date"
+      - label: "Fecha de publicación"
         name: "date"
         widget: "date"
         required: true
-      - label: "Updated Date"
+      - label: "Fecha de actualización"
         name: "update"
         widget: "date"
         required: false
-      - label: "Author"
+      - label: "Autor"
         name: "author"
         widget: "string"
         required: true
-      - label: "Author Link"
+      - label: "Web del autor"
         name: "authorlink"
         widget: "string"
         required: false
-      - label: "Featured Image"
+      - label: "Imagen portada"
         name: "thumbnail"
         widget: "image"
         required: true
-      - label: "Body"
+      - label: "Contenido"
         name: "body"
         widget: "markdown"
         required: true
