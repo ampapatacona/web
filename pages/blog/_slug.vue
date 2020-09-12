@@ -1,5 +1,5 @@
 <template>
-  <section class="post">
+  <section id="shareable" class="post">
     <Container class="meta-section">
       <h1>{{ title }}</h1>
       <p v-if="published === updated" class="post-meta">
@@ -17,8 +17,26 @@
     </Container>
     <Container narrow>
       <img v-lazy="thumbnail" class="thumbnail" :alt="title" />
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div id="shareable" class="post-content" v-html="html"></div>
+      <!-- eslint-disable vue/no-v-html -->
+      <div
+        class="post-content has-background-white has-shadow p-4"
+        v-html="html"
+      ></div>
+      <div class="share-network-list">
+        <ShareNetwork
+          v-for="network in networks"
+          :key="network.network"
+          :network="network.network"
+          :style="{ backgroundColor: network.color }"
+          :url="$config.baseURL + $route.fullPath"
+          :title="title"
+          :description="summary"
+          hashtags="ampa,patacona"
+        >
+          <i :class="network.icon"></i>
+          <span>{{ network.name }}</span>
+        </ShareNetwork>
+      </div>
     </Container>
   </section>
 </template>
@@ -36,7 +54,16 @@ export default {
   components: {
     Container,
   },
-  async asyncData({ params }) {
+  metaInfo() {
+    return {
+      meta: {
+        hid: 'og:image',
+        property: 'og:image',
+        content: this.thumbnail,
+      },
+    }
+  },
+  async asyncData({ params, $config: { baseURL } }) {
     const post = await import(`~/content/blog/${params.slug}.md`)
     const attr = post.attributes
     const slug = params.slug
@@ -77,6 +104,39 @@ export default {
       summary,
       slug,
       html: post.html,
+      networks: [
+        {
+          network: 'email',
+          name: 'Email',
+          icon: 'far fah fa-lg fa-envelope',
+          color: '#333333',
+        },
+        {
+          network: 'facebook',
+          name: 'Facebook',
+          icon: 'fab fah fa-lg fa-facebook-f',
+          color: '#1877f2',
+        },
+
+        {
+          network: 'telegram',
+          name: 'Telegram',
+          icon: 'fab fah fa-lg fa-telegram-plane',
+          color: '#0088cc',
+        },
+        {
+          network: 'twitter',
+          name: 'Twitter',
+          icon: 'fab fah fa-lg fa-twitter',
+          color: '#1da1f2',
+        },
+        {
+          network: 'whatsapp',
+          name: 'Whatsapp',
+          icon: 'fab fah fa-lg fa-whatsapp',
+          color: '#25d366',
+        },
+      ],
     }
   },
   mounted() {
@@ -88,6 +148,16 @@ export default {
     })
 
     selectionShare.init()
+  },
+  methods: {
+    share() {
+      const selectionShare = shareThis({
+        selector: '#shareable',
+        sharers: [twitterSharer, facebookSharer, redditSharer],
+      })
+
+      return selectionShare.init()
+    },
   },
   head() {
     return {
@@ -180,6 +250,9 @@ export default {
 </script>
 
 <style lang="scss">
+.post-content {
+  padding: 1.5rem;
+}
 .share-this-popover {
   animation: share-this 360ms forwards linear;
 
@@ -295,5 +368,10 @@ export default {
     -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
     transform: matrix(1, 0, 0, 1, 0, 0);
   }
+}
+.share-network-list * {
+  margin-right: 1rem;
+  color: white;
+  font-size: 0.8rem;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <article class="article-card" :class="[size, language]">
+  <article class="article-card has-shadow" :class="[size, language]">
     <nuxt-link :to="`/blog/${articleInfo.link}`">
       <div class="img-container">
         <div class="overlay"></div>
@@ -170,6 +170,9 @@ export default {
   flex-flow: column;
   justify-content: center;
   position: relative;
+  img {
+    height: 100%;
+  }
 }
 .overlay {
   height: 240px;

@@ -102,18 +102,6 @@ p {
   line-height: 1.6;
 }
 
-a {
-  color: #252525;
-  text-decoration: none;
-  box-shadow: inset 0 -1px 0 currentColor;
-  transition: color 80ms ease-in, box-shadow 130ms ease-in-out,
-    -webkit-box-shadow 130ms ease-in-out;
-
-  &:hover {
-    box-shadow: inset 0 0 0 currentcolor, 0 3px 0 currentcolor;
-  }
-}
-
 ul {
   padding-left: 1rem;
   font-size: 1rem;
@@ -131,6 +119,7 @@ ul {
 
 main {
   padding: 80px 0;
+  background-color: #fafafa;
 
   @media (max-width: 567px) {
     padding: 64px 0;

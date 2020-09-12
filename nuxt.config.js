@@ -2,6 +2,9 @@ import blogs from './content/blogs.json'
 
 export default {
   mode: 'universal',
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL,
+  },
 
   /*
    ** Headers of the page
@@ -10,69 +13,69 @@ export default {
     title: 'AMPA CEIP la Patacona',
     meta: [
       {
-        charset: 'utf-8'
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://ceiplapatacona.netlify.app/'
+        content: process.env.BASE_URL,
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'AMPA CEIP la Patacona'
+        content: 'AMPA CEIP la Patacona',
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'Blog oficial del AMPA del CEIP La Patacona'
+        content: 'Blog oficial del AMPA del CEIP La Patacona',
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Blog oficial del AMPA del CEIP La PAtacona'
+        content: 'Blog oficial del AMPA del CEIP La PAtacona',
       },
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
-        content: 'AMPA CEIP La Patacona'
+        content: 'AMPA CEIP La Patacona',
       },
       {
         hid: 'og:article:author',
         property: 'og:article:author',
-        content: 'https://github.com/jvmonjo'
+        content: 'https://github.com/jvmonjo',
       },
       {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: 'AMPA CEIP La Patacona'
+        content: 'AMPA CEIP La Patacona',
       },
       {
         hid: 'og:type',
         property: 'og:type',
-        content: 'website'
+        content: 'website',
       },
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'summary_large_image'
+        content: 'summary_large_image',
       },
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'AMPA CEIP La Patacona'
+        content: 'AMPA CEIP La Patacona',
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'AMPA CEIP La Patacona'
-      }
+        content: 'AMPA CEIP La Patacona',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   /*
@@ -94,16 +97,34 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     'nuxt-fontawesome',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    'nuxt-i18n',
+    '@nuxtjs/bulma',
+    'vue-social-sharing/nuxt',
   ],
+  i18n: {
+    locales: [
+      {
+        code: 'es',
+        file: 'es.js',
+      },
+      {
+        code: 'ca',
+        file: 'ca.js',
+      },
+    ],
+    lazy: true,
+    langDir: 'lang/',
+    defaultLocale: 'ca',
+  },
 
   /**
    * Google fonts
    */
   webfontloader: {
     google: {
-      families: ['Rubik:400,700', 'Karla:400,700,400i,700i'] // Loads Lato font with weights 400 and 700
-    }
+      families: ['Rubik:400,700', 'Karla:400,700,400i,700i'], // Loads Lato font with weights 400 and 700
+    },
   },
 
   /**
@@ -123,10 +144,11 @@ export default {
           'faDocker',
           'faWordpress',
           'faNodeJs',
-          'faYarn'
-        ]
-      }
-    ]
+          'faYarn',
+          'faFacebook',
+        ],
+      },
+    ],
   },
 
   /**
@@ -135,7 +157,7 @@ export default {
   manifest: {
     name: 'AMPA CEIP La Patacona',
     short_name: 'AMPA',
-    lang: 'en'
+    lang: 'en',
   },
 
   /**
@@ -144,7 +166,7 @@ export default {
   sitemap: {
     hostname: 'https://ceiplapatacona.netlify.app',
     gzip: true,
-    exclude: ['/admin/']
+    exclude: ['/admin/'],
   },
 
   /**
@@ -152,14 +174,14 @@ export default {
    */
   robots: {
     UserAgent: '*',
-    Disallow: '/admin'
+    Disallow: '/admin',
   },
 
   /**
    * Generate config
    */
   generate: {
-    routes: [].concat(blogs.map(blog => `/blog/${blog.slug}`))
+    routes: [].concat(blogs.map((blog) => `/blog/${blog.slug}`)),
   },
 
   /**
@@ -167,7 +189,7 @@ export default {
    */
   transition: {
     name: 'fade',
-    mode: 'out-in'
+    mode: 'out-in',
   },
 
   /*
@@ -177,6 +199,13 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    postcss: {
+      preset: {
+        features: {
+          customProperties: false,
+        },
+      },
+    },
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
@@ -184,7 +213,7 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
 
@@ -192,9 +221,9 @@ export default {
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
         options: {
-          vue: true
-        }
+          vue: true,
+        },
       })
-    }
-  }
+    },
+  },
 }
