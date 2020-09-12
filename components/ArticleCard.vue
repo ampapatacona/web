@@ -8,8 +8,9 @@
       <div class="card-inner">
         <p class="type">
           <span> </span>
-          <font-awesome-icon :icon="['fab', icon]" />
-          <span>{{ articleInfo.attributes.tags.join(', ') }}</span>
+          <span>{{
+            new Date(articleInfo.attributes.date).toLocaleDateString('es-ES')
+          }}</span>
           {{ capitalize(articleInfo.attributes.type) }}
         </p>
         <h4>{{ articleInfo.attributes.title }}</h4>
