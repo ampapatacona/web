@@ -1,22 +1,24 @@
 <template>
   <section id="shareable" class="post">
     <Container class="meta-section">
-      <h1>{{ title }}</h1>
+      <h1>{{ post.title }}</h1>
+      <!-- {{ post['article-ca'] }} -->
       <p v-if="published === updated" class="post-meta">
-        Publicado el {{ published }}
-        <span v-if="authorlink">
-          por <a :href="authorlink">{{ author }}</a></span
+        {{ $t('blog.publicat', { date: published }) }}
+        <span v-if="post.authorlink">
+          {{ $t('blog.per') }}
+          <a :href="post.authorlink">{{ post.author }}</a></span
         >
       </p>
       <p v-else class="post-meta">
-        Publicado el {{ updated }}
-        <span v-if="authorlink">
-          por <a :href="authorlink">{{ author }}</a></span
+        {{ $t('blog.actualitzat', { date: updated }) }}
+        <span v-if="post.authorlink">
+          {{ $t('blog.per') }} <a :href="post.authorlink">{{ author }}</a></span
         >
       </p>
     </Container>
     <Container narrow>
-      <img v-lazy="thumbnail" class="thumbnail" :alt="title" />
+      <img v-lazy="post.thumbnail" class="thumbnail" :alt="post.title" />
       <!-- eslint-disable vue/no-v-html -->
       <div class="post-content has-background-white has-shadow p-4">
         <nuxt-content :document="post" />
@@ -28,8 +30,8 @@
           :network="network.network"
           :style="{ backgroundColor: network.color }"
           :url="$config.baseURL + $route.fullPath"
-          :title="title"
-          :description="summary"
+          :title="post.title"
+          :description="post.summary"
           hashtags="ampa,patacona"
         >
           <i :class="network.icon"></i>
@@ -50,6 +52,7 @@ import * as redditSharer from 'share-this/dist/sharers/reddit'
 import Container from '~/components/Container'
 
 export default {
+  name: 'Blog',
   components: {
     Container,
   },
@@ -58,7 +61,7 @@ export default {
       meta: {
         hid: 'og:image',
         property: 'og:image',
-        content: this.thumbnail,
+        content: this.post.thumbnail,
       },
     }
   },
@@ -69,18 +72,6 @@ export default {
     const defaultLocale = app.i18n.locale
     const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
 
-    const {
-      author,
-      authorlink,
-      date,
-      summary,
-      thumbnail,
-      title,
-      tags,
-      update,
-      html,
-    } = post
-
     const dateOptions = {
       weekday: 'long',
       year: 'numeric',
@@ -88,8 +79,8 @@ export default {
       day: 'numeric',
     }
 
-    const publishedDate = new Date(date)
-    const updatedDate = new Date(update)
+    const publishedDate = new Date(post.date)
+    const updatedDate = new Date(post.update)
     const published = publishedDate.toLocaleDateString(
       `${defaultLocale}-ES`,
       dateOptions
@@ -100,18 +91,8 @@ export default {
     )
 
     return {
-      title,
-      author,
-      authorlink,
-      date,
-      update,
       published,
       updated,
-      tags,
-      thumbnail,
-      summary,
-      slug,
-      html,
       post,
       networks: [
         {
@@ -170,7 +151,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.title} | <Blog Name>`,
+      title: `${this.post.title} | <Blog Name>`,
       meta: [
         {
           hid: 'article:published_time',

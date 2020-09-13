@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar has-shadow close-on-click"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
       <nuxt-link :to="localePath('/')" class="navbar-item">AMPA</nuxt-link>
 
@@ -28,14 +32,16 @@
           <a class="navbar-link"> {{ $t('menu.nosaltres') }} </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item"> {{ $t('menu.quiSom') }} </a>
+            <nuxt-link :to="localePath('/quisom')" class="navbar-item">{{
+              $t('menu.quiSom')
+            }}</nuxt-link>
             <a class="navbar-item"> Jobs </a>
             <a class="navbar-item"> Contact </a>
             <hr class="navbar-divider" />
             <a class="navbar-item"> Report an issue </a>
           </div>
         </div>
-        <nuxt-link to="/contacte" class="navbar-item">{{
+        <nuxt-link :to="localePath('/contacte')" class="navbar-item">{{
           $t('menu.contacte')
         }}</nuxt-link>
       </div>
@@ -43,7 +49,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <nuxt-link to="/alta" class="button is-primary">{{
+            <nuxt-link :to="localePath('/alta')" class="button is-primary">{{
               $t('menu.alta')
             }}</nuxt-link>
           </div>
@@ -78,6 +84,11 @@ export default {
       isActive: false,
     }
   },
+  watch: {
+    $route() {
+      this.isActive = false
+    },
+  },
   methods: {
     toogleIsActive() {
       this.isActive = !this.isActive
@@ -86,52 +97,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-// .navbar {
-//   width: 100%;
-//   font-family: 'Rubik', sans-serif;
-
-//   .navbar-inner {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     align-items: center;
-
-//     .brand {
-//       display: block;
-//       font-weight: 700;
-//       text-align: left;
-
-//       img {
-//         height: 24px;
-//         display: block;
-//       }
-
-//       a {
-//         padding: 1rem;
-//         display: block;
-//         box-shadow: none;
-//       }
-//     }
-
-//     .menu-items {
-//       padding: 0;
-//       margin: 0;
-//       list-style-type: none;
-//       line-height: 1;
-
-//       li {
-//         display: inline;
-
-//         a {
-//           display: inline-block;
-//           padding: 1.1rem 1rem 1rem 1rem;
-//           box-shadow: none;
-//         }
-//       }
-//     }
-//   }
-// }
-</style>
+<style lang="scss" scoped></style>

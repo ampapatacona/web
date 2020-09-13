@@ -21,7 +21,12 @@
           </a>
         </li>
       </ul>
-      <ul class="language-switcher">
+      <ul
+        v-if="
+          $route.name !== 'blog-slug___es' && $route.name !== 'blog-slug___ca'
+        "
+        class="language-switcher"
+      >
         <li><nuxt-link :to="switchLocalePath('es')">Castellano</nuxt-link></li>
         <li><nuxt-link :to="switchLocalePath('ca')">Valencià</nuxt-link></li>
       </ul>

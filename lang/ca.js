@@ -5,4 +5,9 @@ export default {
     nosaltres: 'Sobre nosaltres',
     quiSom: 'Qui som',
   },
+  blog: {
+    publicat: 'Publicat el {date}',
+    actualitzat: 'Actualitzat el {date}',
+    per: 'per',
+  },
 }

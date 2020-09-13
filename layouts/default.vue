@@ -64,7 +64,6 @@ h6 {
 
 h1 {
   font-size: 2.4rem;
-  margin-top: 6rem;
 
   & + p {
     margin-top: 1.2rem;
@@ -72,7 +71,6 @@ h1 {
 }
 h2 {
   font-size: 1.8rem;
-  margin-top: 2rem;
 
   & + p {
     margin-top: 1rem;
@@ -80,7 +78,6 @@ h2 {
 }
 h3 {
   font-size: 1.5rem;
-  margin-top: 1.8rem;
 
   & + p {
     margin-top: 1rem;
@@ -88,7 +85,6 @@ h3 {
 }
 h4 {
   font-size: 1.2rem;
-  margin-top: 1.6rem;
 
   & + p {
     margin-top: 0.8rem;
