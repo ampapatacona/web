@@ -7,7 +7,7 @@
     </Container>
     <Container flex>
       <ArticleCard
-        v-for="(blog, index) in blogList"
+        v-for="(blog, index) in posts"
         :key="index"
         :index="index"
         :article-info="blog"
@@ -20,33 +20,43 @@
 import ArticleCard from '~/components/ArticleCard'
 import Container from '~/components/Container'
 
-import blogs from '~/content/blogs.json'
+// import blogs from '~/content/blogs.json'
 
 export default {
   components: {
     ArticleCard,
     Container,
   },
-
-  async asyncData({ app }) {
-    async function awaitImport(blog) {
-      const wholeMD = await import(`~/content/blog/${blog.slug}.md`)
-      return {
-        attributes: wholeMD.attributes,
-        link: blog.slug,
-      }
+  async asyncData(context) {
+    const { $content, app } = context
+    const defaultLocale = app.i18n.locale
+    const posts = await $content(`${defaultLocale}/blog`).fetch()
+    return {
+      posts: posts.map((post) => ({
+        ...post,
+        path: post.path.replace(`/${defaultLocale}`, ''),
+      })),
     }
-
-    const blogList = await Promise.all(
-      blogs.map((blog) => awaitImport(blog))
-    ).then((res) => {
-      return {
-        blogList: res,
-      }
-    })
-
-    return blogList
   },
+  // async asyncData({ app }) {
+  //   async function awaitImport(blog) {
+  //     const wholeMD = await import(`~/content/blog/${blog.slug}.md`)
+  //     return {
+  //       attributes: wholeMD.attributes,
+  //       link: blog.slug,
+  //     }
+  //   }
+
+  //   const blogList = await Promise.all(
+  //     blogs.map((blog) => awaitImport(blog))
+  //   ).then((res) => {
+  //     return {
+  //       blogList: res,
+  //     }
+  //   })
+
+  //   return blogList
+  // },
 }
 </script>
 

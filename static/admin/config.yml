@@ -6,21 +6,69 @@ media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 locale: 'es'
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "blog-ca"
+    label: "Blog valencià"
+    folder: "content/ca/blog"
     create: true
     slug: "{{slug}}"
     sort: "date:desc"
     fields:
-      - label: "Idioma"
-        name: "language"
-        widget: "select"
+      - label: "Article en castellà"
+        name: "article-es"
+        widget: "relation"
+        collection: "blog-es"
+        search_fields: ["title", "body"]
+        value_field: "title"
+      - label: "Etiquetas"
+        name: "tags"
+        widget: "list"
+        required: false
+      - label: "Título"
+        name: "title"
+        widget: "string"
         required: true
-        options:
-          - "Valencià"
-          - "Castellano"
-        default: "Valencià"
+      - label: Resumen 164-220
+        name: summary
+        widget: text
+        required: true
+        pattern: ['.{164,220}', "Must be within 164 and 220 characters"]
+      - label: "Fecha de publicación"
+        name: "date"
+        widget: "date"
+        required: true
+      - label: "Fecha de actualización"
+        name: "update"
+        widget: "date"
+        required: false
+      - label: "Autor"
+        name: "author"
+        widget: "string"
+        required: true
+      - label: "Web del autor"
+        name: "authorlink"
+        widget: "string"
+        required: false
+      - label: "Imagen portada"
+        name: "thumbnail"
+        widget: "image"
+        required: true
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+        required: true
+  - name: "blog-es"
+    label: "Blog castellano"
+    folder: "content/es/blog"
+    create: true
+    slug: "{{slug}}"
+    sort: "date:desc"
+    fields:
+      - label: "Artículo en valenciano"
+        name: "article-ca"
+        widget: "relation"
+        collection: "blog-ca"
+        search_fields: ["title", "body"]
+        value_field: "title"
       - label: "Etiquetas"
         name: "tags"
         widget: "list"

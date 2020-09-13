@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <nuxt-link to="/" class="navbar-item">AMPA</nuxt-link>
+      <nuxt-link :to="localePath('/')" class="navbar-item">AMPA</nuxt-link>
 
       <a
         role="button"

@@ -1,19 +1,19 @@
 <template>
   <article class="article-card has-shadow" :class="[size, language]">
-    <nuxt-link :to="`/blog/${articleInfo.link}`">
+    <nuxt-link :to="`${language}${articleInfo.path}`">
       <div class="img-container">
         <div class="overlay"></div>
-        <img class="thumbnail" :src="articleInfo.attributes.thumbnail" alt="" />
+        <img class="thumbnail" :src="articleInfo.thumbnail" alt="" />
       </div>
       <div class="card-inner">
         <p class="type">
           <span> </span>
           <span>{{
-            new Date(articleInfo.attributes.date).toLocaleDateString('es-ES')
+            new Date(articleInfo.date).toLocaleDateString('es-ES')
           }}</span>
-          {{ capitalize(articleInfo.attributes.type) }}
+          {{ capitalize(articleInfo.type) }}
         </p>
-        <h4>{{ articleInfo.attributes.title }}</h4>
+        <h4>{{ articleInfo.title }}</h4>
       </div>
     </nuxt-link>
   </article>
@@ -34,13 +34,13 @@ export default {
   data() {
     return {
       size: 'two-thirds',
-      language: this.articleInfo.attributes.language,
-      icon: this.articleInfo.attributes.tags[0],
+      language: '',
+      icon: '',
     }
   },
   mounted() {
     const articleNo = this.index + 1
-
+    this.language = this.$i18n.locale === 'es' ? this.$i18n.locale : ''
     this.size = 'one-third'
 
     // If is first or multiple of 10

@@ -18,10 +18,9 @@
     <Container narrow>
       <img v-lazy="thumbnail" class="thumbnail" :alt="title" />
       <!-- eslint-disable vue/no-v-html -->
-      <div
-        class="post-content has-background-white has-shadow p-4"
-        v-html="html"
-      ></div>
+      <div class="post-content has-background-white has-shadow p-4">
+        <nuxt-content :document="post" />
+      </div>
       <div class="share-network-list">
         <ShareNetwork
           v-for="network in networks"
@@ -63,10 +62,12 @@ export default {
       },
     }
   },
-  async asyncData({ params, $config: { baseURL } }) {
-    const post = await import(`~/content/blog/${params.slug}.md`)
-    const attr = post.attributes
+  async asyncData({ $content, app, params, $config: { baseURL } }) {
+    // const post = await import(`~/content/blog/${params.slug}.md`)
+    // const attr = post.attributes
     const slug = params.slug
+    const defaultLocale = app.i18n.locale
+    const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
 
     const {
       author,
@@ -77,7 +78,8 @@ export default {
       title,
       tags,
       update,
-    } = attr
+      html,
+    } = post
 
     const dateOptions = {
       weekday: 'long',
@@ -88,8 +90,14 @@ export default {
 
     const publishedDate = new Date(date)
     const updatedDate = new Date(update)
-    const published = publishedDate.toLocaleDateString('es-ES', dateOptions)
-    const updated = updatedDate.toLocaleDateString('es-ES', dateOptions)
+    const published = publishedDate.toLocaleDateString(
+      `${defaultLocale}-ES`,
+      dateOptions
+    )
+    const updated = updatedDate.toLocaleDateString(
+      `${defaultLocale}-ES`,
+      dateOptions
+    )
 
     return {
       title,
@@ -103,7 +111,8 @@ export default {
       thumbnail,
       summary,
       slug,
-      html: post.html,
+      html,
+      post,
       networks: [
         {
           network: 'email',
