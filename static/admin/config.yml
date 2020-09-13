@@ -6,6 +6,38 @@ media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 locale: 'es'
 collections:
+  - name: "pages-ca"
+    label: "Pàgines valencià"
+    folder: "content/ca/pages"
+    create: true
+    slug: "{{slug}}"
+    sort: "date:desc"
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+        required: true
+    
+  - name: "pages-es"
+    label: "Páginas castellano"
+    folder: "content/ca/pages"
+    create: true
+    slug: "{{slug}}"
+    sort: "date:desc"
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Contenido"
+        name: "body"
+        widget: "markdown"
+        required: true
+
   - name: "blog-ca"
     label: "Blog valencià"
     folder: "content/ca/blog"
