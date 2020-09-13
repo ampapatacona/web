@@ -1,5 +1,5 @@
 ---
-language: Valencià
+article-es: Matinera y extraescolares
 tags:
   - Extraescolars
 title: Matinera i extraescolars
@@ -11,6 +11,7 @@ date: 2020-09-11T11:01:51.071Z
 update: 2020-09-11T11:01:51.161Z
 author: Josep
 thumbnail: /images/uploads/matinera.jpg
+language: Valencià
 ---
 En valencià. Muchas sois las familias que nos estáis preguntando por las extraescolares y, con especial interés, por la matinera. Estamos trabajando en ello desde vuestra AMPA, manteniendo contactos con el Colegio, empresas y Ayuntamiento..
 
