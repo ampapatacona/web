@@ -24,7 +24,7 @@ collections:
     
   - name: "pages-es"
     label: "Páginas castellano"
-    folder: "content/ca/pages"
+    folder: "content/es/pages"
     create: true
     slug: "{{slug}}"
     sort: "date:desc"
