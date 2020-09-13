@@ -101,6 +101,7 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/bulma',
     'vue-social-sharing/nuxt',
+    '@nuxt/content',
   ],
   i18n: {
     locales: [
