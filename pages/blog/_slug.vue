@@ -80,7 +80,6 @@ export default {
     const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
 
     const dateOptions = {
-      weekday: 'long',
       year: 'numeric',
       month: 'short',
       day: 'numeric',

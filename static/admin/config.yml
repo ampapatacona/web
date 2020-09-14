@@ -48,6 +48,7 @@ collections:
       - label: "Article en castellà"
         name: "article-es"
         widget: "relation"
+        required: false
         collection: "blog-es"
         search_fields: ["title", "body"]
         display_fields: ["title"]
@@ -99,6 +100,7 @@ collections:
       - label: "Artículo en valenciano"
         name: "article-ca"
         widget: "relation"
+        required: false
         collection: "blog-ca"
         search_fields: ["title", "body"]
         display_fields: ["title"]
