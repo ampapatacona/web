@@ -1,6 +1,5 @@
-import blogs from './content/blogs.json'
-
 export default {
+  target: 'static',
   mode: 'universal',
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
@@ -179,16 +178,9 @@ export default {
   },
 
   /**
-   * Generate config
-   */
-  generate: {
-    routes: [].concat(blogs.map((blog) => `/blog/${blog.slug}`)),
-  },
-
-  /**
    * Transition
    */
-  transition: {
+  pageTransition: {
     name: 'fade',
     mode: 'out-in',
   },
