@@ -30,7 +30,9 @@ export default {
   async asyncData(context) {
     const { $content, app } = context
     const defaultLocale = app.i18n.locale
-    const posts = await $content(`${defaultLocale}/blog`).sortBy('date').fetch()
+    const posts = await $content(`${defaultLocale}/blog`)
+      .sortBy('date', 'desc')
+      .fetch()
     return {
       posts: posts.map((post) => ({
         ...post,
@@ -38,25 +40,6 @@ export default {
       })),
     }
   },
-  // async asyncData({ app }) {
-  //   async function awaitImport(blog) {
-  //     const wholeMD = await import(`~/content/blog/${blog.slug}.md`)
-  //     return {
-  //       attributes: wholeMD.attributes,
-  //       link: blog.slug,
-  //     }
-  //   }
-
-  //   const blogList = await Promise.all(
-  //     blogs.map((blog) => awaitImport(blog))
-  //   ).then((res) => {
-  //     return {
-  //       blogList: res,
-  //     }
-  //   })
-
-  //   return blogList
-  // },
 }
 </script>
 

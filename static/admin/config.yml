@@ -68,12 +68,16 @@ collections:
         pattern: ['.{164,220}', "Must be within 164 and 220 characters"]
       - label: "Fecha de publicación"
         name: "date"
-        widget: "date"
+        widget: "datetime"
         required: true
+        date_format: "DD.MM.YYYY"
+        time_format: "HH:mm"
       - label: "Fecha de actualización"
         name: "update"
-        widget: "date"
+        widget: "datetime"
         required: false
+        date_format: "DD.MM.YYYY"
+        time_format: "HH:mm"
       - label: "Autor"
         name: "author"
         widget: "string"
@@ -120,12 +124,16 @@ collections:
         pattern: ['.{164,220}', "Must be within 164 and 220 characters"]
       - label: "Fecha de publicación"
         name: "date"
-        widget: "date"
+        widget: "datetime"
         required: true
+        date_format: "DD.MM.YYYY"
+        time_format: "HH:mm"
       - label: "Fecha de actualización"
         name: "update"
-        widget: "date"
+        widget: "datetime"
         required: false
+        date_format: "DD.MM.YYYY"
+        time_format: "HH:mm"
       - label: "Autor"
         name: "author"
         widget: "string"
