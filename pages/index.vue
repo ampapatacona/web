@@ -30,7 +30,7 @@ export default {
   async asyncData(context) {
     const { $content, app } = context
     const defaultLocale = app.i18n.locale
-    const posts = await $content(`${defaultLocale}/blog`).fetch()
+    const posts = await $content(`${defaultLocale}/blog`).sortBy('date').fetch()
     return {
       posts: posts.map((post) => ({
         ...post,
