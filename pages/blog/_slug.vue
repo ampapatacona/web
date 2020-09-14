@@ -17,11 +17,11 @@
       </p>
       <p v-if="post['article-ca']" style="font-size: 0.8rem" class="post-meta">
         Article també disponible en
-        <nuxt-link :to="`/blog/${post['article-ca']}/ `">valencià</nuxt-link>
+        <nuxt-link :to="`/blog/${post['article-ca']}/`">valencià</nuxt-link>
       </p>
       <p v-if="post['article-es']" style="font-size: 0.8rem" class="post-meta">
         Artículo también disponible en
-        <nuxt-link :to="`/es/blog/${post['article-es']}/ `"
+        <nuxt-link :to="`/es/blog/${post['article-es']}/`"
           >castellano</nuxt-link
         >
       </p>
@@ -88,14 +88,10 @@ export default {
 
     const publishedDate = new Date(post.date)
     const updatedDate = new Date(post.update)
-    const published = publishedDate.toLocaleDateString(
-      `${defaultLocale}-ES`,
-      dateOptions
-    )
-    const updated = updatedDate.toLocaleDateString(
-      `${defaultLocale}-ES`,
-      dateOptions
-    )
+    const locale = defaultLocale === 'ca' ? 'ca' : 'es-ES'
+
+    const published = publishedDate.toLocaleDateString(locale, dateOptions)
+    const updated = updatedDate.toLocaleDateString(locale, dateOptions)
 
     return {
       published,

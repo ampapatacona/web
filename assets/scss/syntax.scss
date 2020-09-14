@@ -1,9 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Mono);
 
 @charset "utf-8";
-@import "~bulma/bulma";
+
 
 $primary: #ce9c00;
+$link: $primary;
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -124,6 +125,8 @@ pre > code.highlight {
   outline-offset: .4em;
 }
 
+
+@import "~bulma/bulma";
 // Import only what you need from Bulma
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/base/_all.sass";
