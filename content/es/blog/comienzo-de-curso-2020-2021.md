@@ -1,4 +1,5 @@
 ---
+article-ca: començament-de-curs-2020-2021
 title: Comienzo de curso 2020-2021
 summary: "Os informamos del **calendario escolar** oficial aprobado para el
   curso 2020 - 2021, tanto en la Resolución 2020/3919 de 29/05/2020 (\\*) como
