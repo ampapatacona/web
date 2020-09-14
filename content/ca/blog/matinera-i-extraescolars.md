@@ -1,38 +1,37 @@
 ---
-article-es: Matinera y extraescolares
+article-es: matinera-y-extraescolares
 tags:
   - Extraescolars
 title: Matinera i extraescolars
-summary: Muchas sois las familias que nos estáis preguntando por las
-  extraescolares y, con especial interés, por la matinera. Estamos trabajando en
-  ello desde vuestra AMPA, manteniendo contactos con el Colegio, empresas y
-  Ayuntamiento.
+summary: Moltes sou les famílies que ens esteu preguntant per les extraescolars
+  i, amb especial interès, per la matinera. Estem treballant en això des de la
+  vostra AMPA, mantenint contactes amb el Col·legi, empreses i Ajuntament.
 date: 2020-09-11T11:01:51.071Z
 update: 2020-09-11T11:01:51.161Z
 author: Josep
 thumbnail: /images/uploads/matinera.jpg
 language: Valencià
 ---
-En valencià. Muchas sois las familias que nos estáis preguntando por las extraescolares y, con especial interés, por la matinera. Estamos trabajando en ello desde vuestra AMPA, manteniendo contactos con el Colegio, empresas y Ayuntamiento..
+Moltes sou les famílies que ens esteu preguntant per les extraescolars i, amb especial interès, per la matinera. Estem treballant en això des de la vostra AMPA, mantenint contactes amb el Col·legi, empreses i Ajuntament.
 
-Pero todos hemos de entender que la situación actual nos hace ser muy cautos con los protocolos sanitarios, prestando especial atención a las medidas adoptadas en nuestro Colegio, y más concretamente al aislamiento en grupos de convivencia en las aulas para evitar la extensión de la pandemia COVID-19. Nos preocupa especialmente evitar el denominado “*contacto estrecho*” fuera del aula, que podría implicar la obligatoriedad de cuarentena durante catorce días en casos confirmados, y que aparece en el protocolo de gestión de casos enviado a los colegios este mismo mes de septiembre.
+Però tots hem d'entendre que la situació actual ens fa ser molt cauts amb els protocols sanitaris, prestant especial atenció a les mesures adoptades en el nostre Col·legi, i més concretament a l'aïllament en grups de convivència a les aules per evitar l'extensió de la pandèmia COVID -19. Ens preocupa especialment evitar el denominat " *contacte estret* " fora de l'aula, que podria implicar l'obligatorietat de quarantena durant catorze dies en casos confirmats, i que apareix en el protocol de gestió de casos enviat als col·legis aquest mateix mes de setembre.
 
-Entendemos la preocupación y la urgencia por conciliar la vida laboral con la escolar, pero no debemos precipitarnos, pues un error de cálculo nos podría llevar a que nos obligaran las autoridades sanitarias a una cuarentena indiscriminada en gran parte del colegio, perjudicando a muchas más familias, con consecuencias aún peores que el problema que intentamos resolver.
+Entenem la preocupació i la urgència per conciliar la vida laboral amb l'escolar, però no hem de precipitar, ja que un error de càlcul ens podria portar a que ens obliguessin les autoritats sanitàries a una quarantena indiscriminada en gran part de l'escola, perjudicant a moltes més famílies , amb conseqüències encara pitjors que el problema que intentem resoldre.
 
-No dejamos de ser una asociación de voluntarias y voluntarios que dedicamos parte de nuestro tiempo a todas las familias de esta comunidad educativa, y no contamos con más recursos que el apoyo desinteresado de unas pocas madres y padres, con las limitaciones que esto conlleva. Es decir, que no tenemos mecanismos de supervisión ni de control como para vigilar que se cumplan estrictamente las exigentes medidas requeridas en cuanto a limpieza, distanciamiento o desinfección, por ejemplo.
+No deixem de ser una associació de voluntàries i voluntaris que dediquem part del nostre temps a totes les famílies d'aquesta comunitat educativa, i no comptem amb més recursos que el suport desinteressat d'unes poques mares i pares, amb les limitacions que això comporta. És a dir, que no tenim mecanismes de supervisió ni de control com per vigilar que es compleixin estrictament les exigents mesures requerides pel que fa a neteja, distanciament o desinfecció, per exemple.
 
-Por otra parte, también hemos de tener en cuenta que la solicitud de extraescolares se tendría que haber hecho al Ayuntamiento a primeros de julio si estuviéramos en un estado de normalidad; sin embargo en aquellos momentos aún no estábamos en condiciones de prever las medidas de seguridad y sanitarias necesarias, ya que las primeras instrucciones para la organización del curso escolar se publicaron el 22 de julio en una Resolución de Consellería (2020/5929), y no fue hasta el 31 de julio cuando, en una [circular](http://ceiplapatacona.edu.gva.es/inicio-de-curso/) enviada a las familias, el Colegio propuso -basándose en dicha resolución- las medidas de organización para el curso. Y estas medidas no se han concretado hasta septiembre, cuando el Colegio nos ha remitido en la “[información sobre el inicio de curso](http://ceiplapatacona.edu.gva.es/informacion-general-inicio-curso-20-21/)” (3 septiembre) las medidas a tomar y los protocolos a seguir, basadas también en instrucciones específicas de Consellería.
+D'altra banda, també hem de tenir en compte que la sol·licitud d'extraescolars s'hauria d'haver fet a l'Ajuntament a primers de juliol si estiguéssim en un estat de normalitat; però en aquells moments encara no estàvem en condicions de preveure les mesures de seguretat i sanitàries necessàries, ja que les primeres instruccions per a l'organització de el curs escolar es van publicar el 22 de juliol en una Resolució de Conselleria (2020/5929), i no va ser fins el 31 de juliol quan, en una [circular](http://ceiplapatacona.edu.gva.es/inicio-de-curso/) enviada a les famílies, el Col·legi va proposar -basant-se en aquesta resolució- les mesures de organització per al curs. I aquestes mesures no s'han concretat fins al setembre, quan el Col·legi ens ha remès a la "\[informació sobre l'inici de curs] (http://ceiplapatacona.edu.gva.es/informacion-general-inicio-curso-20- 21 /) "(3 setembre) les mesures a prendre i els protocols a seguir, basades també en instruccions específiques de Conselleria.
 
-Como podéis constatar, hemos tenido un margen de maniobra muy limitado, teniendo en cuenta que en agosto cerraron los colegios, y que a pesar de ello llevamos trabajando desde entonces. Nuestra única compensación es el reconocimiento de nuestro esfuerzo por parte de las familias socias, que agradecemos, y la comprensión de que nuestra labor siempre va en la dirección de dar la máxima cobertura a este colectivo de padres, madres y alumnado del CEIP La Patacona.
+Com podeu constatar, hem tingut un marge de maniobra molt limitat, tenint en compte que a l'agost van tancar els col·legis, i que tot i això portem treballant des de llavors. La nostra única compensació és el reconeixement del nostre esforç per part de les famílies sòcies, que agraïm, i la comprensió que la nostra tasca sempre va en la direcció de donar la màxima cobertura a aquest col·lectiu de pares, mares i alumnat de CEIP La Patacona.
 
-Antes de iniciar alguna actividad extraescolar, elaboraremos unos protocolos basados en las medidas contempladas en la organización del Colegio; a estos protocolos consideramos que deben adaptarse cualquier actividad que organicemos. Pero no tomaremos ninguna decisión por nuestra cuenta, entendemos que el tema es de gran calado y que no nos compete a la Junta decidir en nombre de todas las sensibilidades que constituimos esta AMPA, por lo que llevaremos nuestras propuestas a la Asamblea General de socios que realizaremos (probablemente de forma virtual dada la situación) en los últimos días de septiembre, para que así todas las familias asociadas tengamos la oportunidad de opinar y decidir si seguimos adelante con una propuesta de actividades extraescolares que se adecúe al interés general y pueda satisfacer las necesidades de las familias.
+Abans d'iniciar alguna activitat extraescolar, elaborarem uns protocols basats en les mesures contemplades en l'organització de el Col·legi; a aquests protocols considerem que s'han d'adaptar qualsevol activitat que organitzem. Però no prendrem cap decisió pel nostre compte, entenem que el tema és de gran calat i que no ens competeix a la Junta decidir en nom de totes les sensibilitats que constituïm aquesta AMPA, de manera que portarem les nostres propostes a l'Assemblea General de socis que realitzarem (probablement de forma virtual donada la situació) en els últims dies de setembre, perquè així totes les famílies associades tinguem l'oportunitat d'opinar i decidir si seguim endavant amb una proposta d'activitats extraescolars que s'adeqüi a l'interès general i pugui satisfer les necessitats de les famílies.
 
-En cualquier caso, todo esto sería revisado si la situación sanitaria cambiara y volviéramos a la normalidad durante el curso, reiniciándose en ese caso las actividades en línea con las que hemos venido realizando cursos anteriores.
+En qualsevol cas, tot això seria revisat si la situació sanitària canviés i tornéssim a la normalitat durant el curs, reiniciant en aquest cas les activitats en línia amb les que hem realitzat cursos anteriors.
 
-Agradecemos vuestra paciencia, y esperamos dar cuanto antes la mejor respuesta que atienda, de forma colectiva, a las mejores opciones dentro de las que razonablemente podamos movernos y asumir. Pero, obviamente, os adelantamos que va a ser muy complicado organizar actividades como la matinera, donde concurre alumnado de todo el centro de forma simultánea, aunque no dudéis de que si lo pudiéramos hacer lo vamos a hacer con la debida seguridad, si bien no podríamos hacerlo antes de octubre.
+Agraïm la vostra paciència, i esperem donar com més aviat la millor resposta que atengui, de forma col·lectiva, a les millors opcions dins de les que raonablement puguem moure'ns i assumir. Però, òbviament, us avancem que serà molt complicat organitzar activitats com la matinera, on concorre alumnat de tot el centre de forma simultània, encara que no dubteu que si ho poguéssim fer el farem amb la deguda seguretat, si bé no podríem fer-ho abans d'octubre.
 
-De todo esto seguiremos puntualmente informando.
+De tot això seguirem puntualment informant.
 
-Bienvenidas/os al nuevo curso, y mucha salud a vuestras familias.
+Benvingudes / us a el nou curs, i molta salut a les vostres famílies.
 
-Presidencia de AMPA.
+Presidència d'AMPA.
