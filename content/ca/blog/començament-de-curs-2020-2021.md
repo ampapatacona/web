@@ -4,8 +4,8 @@ title: Començament de curs 2020/2021
 summary: "Us informem del **calendari escolar**  oficial aprovat per al curs
   2020 - 2021, tant en la Resolució 2020/3919 de 2020.05.29 (\\ *) com en el
   Consell Escolar Municipal de 16 de juliol de al 2020 (\\*  *):"
-date: 2020-09-14T18:11:02.063Z
-update: 2020-09-14T18:11:02.082Z
+date: 2020-07-22T18:11:02.063Z
+update: 2020-07-22T18:11:02.082Z
 author: Josep
 thumbnail: /images/uploads/curso202021.png
 ---
