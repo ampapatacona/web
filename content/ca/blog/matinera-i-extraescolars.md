@@ -1,5 +1,5 @@
 ---
-article-es: Matinera y extraescolares
+article-es: matinera-y-extraescolares
 tags:
   - Extraescolars
 title: Matinera i extraescolars
