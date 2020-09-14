@@ -6,8 +6,8 @@ title: Matinera i extraescolars
 summary: Moltes sou les famílies que ens esteu preguntant per les extraescolars
   i, amb especial interès, per la matinera. Estem treballant en això des de la
   vostra AMPA, mantenint contactes amb el Col·legi, empreses i Ajuntament.
-date: 2020-09-11T11:01:51.071Z
-update: 2020-09-11T11:01:51.161Z
+date: 2020-09-06T11:01:51.071Z
+update: 2020-09-06T11:01:51.161Z
 author: Josep
 thumbnail: /images/uploads/llapissos.jpg
 language: Valencià
