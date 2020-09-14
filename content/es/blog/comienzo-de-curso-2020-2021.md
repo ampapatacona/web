@@ -24,8 +24,6 @@ Os informamos del **calendario escolar** oficial aprobado para el curso 2020 - 2
 
 \- Festivos municipales\*\*: 7 de diciembre de 2020, 17 y 18 de marzo de 2021.
 
-<!--StartFragment-->
-
 Por otra parte, el pasado día 22 de julio se publicó la RESOLUCIÓN 2020/5929 por
 
 la que se aprueban las ***instrucciones para la organización y el funcionamiento de los centros*** que imparten Educación Infantil de segundo ciclo y Educación Primaria durante el curso 2020-2021. El Colegio está trabajando en la adaptación de las aulas, grupos, infraestructuras y servicios complementarios a las normas y protocolos necesarios para que se pueda iniciar con normalidad el curso de forma presencial, y en la fecha prevista. Os mantendremos informados de cualquier novedad al respecto.
