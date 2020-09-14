@@ -170,9 +170,6 @@ export default {
   flex-flow: column;
   justify-content: center;
   position: relative;
-  img {
-    height: 100%;
-  }
 }
 .overlay {
   height: 240px;

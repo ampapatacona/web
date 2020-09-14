@@ -2,7 +2,6 @@
   <section id="shareable" class="post">
     <Container class="meta-section">
       <h1>{{ post.title }}</h1>
-      <!-- {{ post['article-ca'] }} -->
       <p v-if="published === updated" class="post-meta">
         {{ $t('blog.publicat', { date: published }) }}
         <span v-if="post.authorlink">
@@ -14,6 +13,16 @@
         {{ $t('blog.actualitzat', { date: updated }) }}
         <span v-if="post.authorlink">
           {{ $t('blog.per') }} <a :href="post.authorlink">{{ author }}</a></span
+        >
+      </p>
+      <p v-if="post['article-ca']" style="font-size: 0.8rem" class="post-meta">
+        Article també disponible en
+        <nuxt-link :to="`/blog/${post['article-ca']} `">valencià</nuxt-link>
+      </p>
+      <p v-if="post['article-es']" style="font-size: 0.8rem" class="post-meta">
+        Artículo también disponible en
+        <nuxt-link :to="`/es/blog/${post['article-es']} `"
+          >castellano</nuxt-link
         >
       </p>
     </Container>
