@@ -9,7 +9,7 @@ summary: Moltes sou les famílies que ens esteu preguntant per les extraescolars
 date: 2020-09-11T11:01:51.071Z
 update: 2020-09-11T11:01:51.161Z
 author: Josep
-thumbnail: /images/uploads/matinera.jpg
+thumbnail: /images/uploads/llapissos.jpg
 language: Valencià
 ---
 Moltes sou les famílies que ens esteu preguntant per les extraescolars i, amb especial interès, per la matinera. Estem treballant en això des de la vostra AMPA, mantenint contactes amb el Col·legi, empreses i Ajuntament.
