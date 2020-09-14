@@ -50,7 +50,7 @@ collections:
         widget: "relation"
         collection: "blog-es"
         search_fields: ["title", "body"]
-        value_field: "slug"
+        value_field: "{{slug}}"
       - label: "Etiquetas"
         name: "tags"
         widget: "list"
@@ -100,7 +100,7 @@ collections:
         widget: "relation"
         collection: "blog-ca"
         search_fields: ["title", "body"]
-        value_field: "slug"
+        value_field: "{{slug}}"
       - label: "Etiquetas"
         name: "tags"
         widget: "list"
