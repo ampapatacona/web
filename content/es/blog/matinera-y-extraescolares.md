@@ -1,5 +1,5 @@
 ---
-article-ca: Matinera i extraescolars
+article-ca: matinera-i-extraescolars
 tags:
   - Extraescolars
   - ""
