@@ -1,6 +1,6 @@
 <template>
   <article class="article-card has-shadow" :class="[size, language]">
-    <nuxt-link :to="`/${language}${articleInfo.path}`">
+    <nuxt-link :to="`${language}${articleInfo.path}`">
       <div class="img-container">
         <div class="overlay"></div>
         <img class="thumbnail" :src="articleInfo.thumbnail" alt="" />
@@ -40,7 +40,7 @@ export default {
   },
   mounted() {
     const articleNo = this.index + 1
-    this.language = this.$i18n.locale === 'es' ? this.$i18n.locale : ''
+    this.language = this.$i18n.locale === 'es' ? '/es' : ''
     this.size = 'one-third'
 
     // If is first or multiple of 10
