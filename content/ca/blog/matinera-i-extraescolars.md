@@ -32,6 +32,6 @@ Agraïm la vostra paciència, i esperem donar com més aviat la millor resposta 
 
 De tot això seguirem puntualment informant.
 
-Benvingudes / us a el nou curs, i molta salut a les vostres famílies.
+Benvingudes i benvinguts al nou curs, i molta salut a les vostres famílies.
 
 Presidència d'AMPA.
