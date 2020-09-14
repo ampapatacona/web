@@ -1,6 +1,6 @@
 <template>
   <article class="article-card has-shadow" :class="[size, language]">
-    <nuxt-link :to="`${language}${articleInfo.path}`">
+    <nuxt-link :to="`${language}${articleInfo.path}/`">
       <div class="img-container">
         <div class="overlay"></div>
         <img class="thumbnail" :src="articleInfo.thumbnail" alt="" />

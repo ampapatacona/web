@@ -1,11 +1,11 @@
 {
   "name": "nuxt-netlify-cms-starter",
   "version": "1.0.0",
-  "description": "<Blog Name> Blog",
+  "description": "AMPA Patacona",
   "author": "Code Tribe",
   "private": true,
   "scripts": {
-    "dev": "node content/index.js && nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

@@ -75,7 +75,6 @@ export default {
     }
   },
   async asyncData({ $content, app, params, $config: { baseURL } }) {
-    console.log('hi')
     const slug = params.slug
     const defaultLocale = app.i18n.locale
     const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()

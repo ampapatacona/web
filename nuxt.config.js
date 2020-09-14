@@ -4,9 +4,6 @@ export default {
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
   },
-  router: {
-    trailingSlash: true,
-  },
 
   /*
    ** Headers of the page
@@ -170,7 +167,6 @@ export default {
     hostname: 'https://ceiplapatacona.netlify.app',
     gzip: true,
     exclude: ['/admin/'],
-    trailingSlash: true,
   },
 
   /**
