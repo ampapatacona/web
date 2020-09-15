@@ -61,7 +61,7 @@ collections:
         name: "title"
         widget: "string"
         required: true
-      - label: Resumen (opcional)
+      - label: Resumen
         name: summary
         widget: text
         required: false
@@ -116,7 +116,7 @@ collections:
         name: "title"
         widget: "string"
         required: true
-      - label: Resumen (opcional)
+      - label: Resumen
         name: summary
         widget: text
         required: false
