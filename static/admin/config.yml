@@ -61,11 +61,10 @@ collections:
         name: "title"
         widget: "string"
         required: true
-      - label: Resumen 164-220
+      - label: Resumen (opcional)
         name: summary
         widget: text
-        required: true
-        pattern: ['.{164,220}', "Must be within 164 and 220 characters"]
+        required: false
       - label: "Fecha de publicación"
         name: "date"
         widget: "datetime"
@@ -117,11 +116,10 @@ collections:
         name: "title"
         widget: "string"
         required: true
-      - label: Resumen 164-220
+      - label: Resumen (opcional)
         name: summary
         widget: text
-        required: true
-        pattern: ['.{164,220}', "Must be within 164 and 220 characters"]
+        required: false
       - label: "Fecha de publicación"
         name: "date"
         widget: "datetime"
