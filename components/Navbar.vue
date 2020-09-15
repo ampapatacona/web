@@ -1,9 +1,5 @@
 <template>
-  <nav
-    class="navbar has-shadow close-on-click"
-    role="navigation"
-    aria-label="main navigation"
-  >
+  <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <nuxt-link :to="localePath('/')" class="navbar-item">AMPA</nuxt-link>
 
@@ -31,7 +27,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link"> {{ $t('menu.nosaltres') }} </a>
 
-          <div class="navbar-dropdown">
+          <div class="navbar-dropdown" :class="{ 'is-active': isActive }">
             <nuxt-link :to="localePath('/quisom')" class="navbar-item">{{
               $t('menu.quiSom')
             }}</nuxt-link>
@@ -39,7 +35,7 @@
               $t('menu.queFem')
             }}</nuxt-link>
             <hr class="navbar-divider" />
-            <nuxt-link :to="localePath('/pressuposts')" class="navbar-item">{{
+            <nuxt-link :to="localePath('/pressupostos')" class="navbar-item">{{
               $t('menu.pressupostos')
             }}</nuxt-link>
           </div>
