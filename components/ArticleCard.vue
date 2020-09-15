@@ -3,7 +3,12 @@
     <nuxt-link :to="`${language}${articleInfo.path}/`">
       <div class="img-container">
         <div class="overlay"></div>
-        <img class="thumbnail" :src="articleInfo.thumbnail" alt="" />
+        <img
+          v-if="articleInfo.thumbnail"
+          class="thumbnail"
+          :src="articleInfo.thumbnail"
+          alt=""
+        />
       </div>
       <div class="card-inner">
         <p class="type">

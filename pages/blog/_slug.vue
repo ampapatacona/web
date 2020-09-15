@@ -27,7 +27,12 @@
       </p>
     </Container>
     <Container narrow>
-      <img v-lazy="post.thumbnail" class="thumbnail" :alt="post.title" />
+      <img
+        v-if="post.thumbnail"
+        v-lazy="post.thumbnail"
+        class="thumbnail"
+        :alt="post.title"
+      />
       <!-- eslint-disable vue/no-v-html -->
       <div class="post-content has-background-white has-shadow p-4">
         <nuxt-content :document="post" />
