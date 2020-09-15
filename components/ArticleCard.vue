@@ -85,7 +85,7 @@ export default {
 <style lang="scss">
 .article-card {
   border-radius: 0.5rem;
-  background-color: #d84727;
+  background-color: #ecb500;
   padding: 1rem;
   margin-bottom: 2rem;
   min-height: 240px;
