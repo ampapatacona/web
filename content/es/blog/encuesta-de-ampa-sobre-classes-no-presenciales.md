@@ -5,7 +5,7 @@ title: Encuesta de AMPA sobre classes no presenciales
 date: 2020-05-27T19:28:51.433Z
 update: 2020-05-27T19:28:51.471Z
 author: Josep
-thumbnail: /images/uploads/pdf.jpg
+thumbnail: ""
 ---
 # **¿CÓMO OS ESTÁN YENDO LAS CLASES ONLINE?**
 
