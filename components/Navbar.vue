@@ -35,10 +35,13 @@
             <nuxt-link :to="localePath('/quisom')" class="navbar-item">{{
               $t('menu.quiSom')
             }}</nuxt-link>
-            <a class="navbar-item"> Jobs </a>
-            <a class="navbar-item"> Contact </a>
+            <nuxt-link :to="localePath('/quefem')" class="navbar-item">{{
+              $t('menu.queFem')
+            }}</nuxt-link>
             <hr class="navbar-divider" />
-            <a class="navbar-item"> Report an issue </a>
+            <nuxt-link :to="localePath('/pressuposts')" class="navbar-item">{{
+              $t('menu.pressupostos')
+            }}</nuxt-link>
           </div>
         </div>
         <nuxt-link :to="localePath('/contacte')" class="navbar-item">{{
@@ -52,6 +55,11 @@
             <nuxt-link :to="localePath('/alta')" class="button is-primary">{{
               $t('menu.alta')
             }}</nuxt-link>
+            <nuxt-link
+              :to="localePath('/area-socis')"
+              class="button is-primary is-light"
+              >{{ $t('menu.areaSocis') }}</nuxt-link
+            >
           </div>
         </div>
       </div>

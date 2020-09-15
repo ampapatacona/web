@@ -114,11 +114,11 @@ ul {
 }
 
 main {
-  padding: 80px 0;
+  padding: 20px;
   background-color: #fafafa;
 
   @media (max-width: 567px) {
-    padding: 64px 0;
+    padding: 10px;
   }
 }
 
