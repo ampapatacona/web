@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <Container flex style="align-items: baseline">
+    <div>
       <ul class="social-icons">
         <li class="icon">
           <a
@@ -21,40 +21,36 @@
           </a>
         </li>
       </ul>
-      <ul
-        v-if="
-          $route.name !== 'blog-slug___es' && $route.name !== 'blog-slug___ca'
-        "
-        class="language-switcher"
-      >
-        <li><nuxt-link :to="switchLocalePath('es')">Castellano</nuxt-link></li>
-        <li><nuxt-link :to="switchLocalePath('ca')">Valencià</nuxt-link></li>
-      </ul>
-    </Container>
-    <Container flex>
-      &copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}
-    </Container>
+    </div>
+
+    <div class="columns">
+      <div class="column is-four-fifths">
+        <img src="~assets/img/logoCEIP-sense-lletres.png" alt="" />
+
+        <p>&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</p>
+      </div>
+      <div class="column" style="align-self: flex-end">
+        <ul
+          v-if="
+            $route.name !== 'blog-slug___es' && $route.name !== 'blog-slug___ca'
+          "
+          class="language-switcher"
+        >
+          <li><nuxt-link :to="switchLocalePath('es')">Cas</nuxt-link></li>
+          <li><nuxt-link :to="switchLocalePath('ca')">Val</nuxt-link></li>
+        </ul>
+      </div>
+    </div>
   </footer>
 </template>
 
 <script>
-import Container from '~/components/Container'
-
 export default {
-  components: {
-    Container,
-  },
+  components: {},
 }
 </script>
 
 <style lang="scss">
-.footer {
-  padding: 2rem 0;
-
-  @media (max-width: 567px) {
-    padding: 1.2rem 0;
-  }
-}
 .language-switcher {
   font-size: 0.8rem;
 }
