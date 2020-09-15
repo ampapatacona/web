@@ -1,5 +1,5 @@
 ---
-title: Quienes somos
+title: Quiénes somos
 ---
 La Asociación de Madres y Padres de Alumnos/as del Colegio de Educación Infantil y Primaria de La Patacona, vela por la educación que reciben los alumnos/as de la Escuela y el entorno que les rodea, procurando que ambos estén en las mejores condiciones posibles.
 
