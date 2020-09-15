@@ -147,6 +147,7 @@ export default {
     left: 0;
     width: 100%;
     padding: 0 1rem;
+    z-index: 3;
 
     .type {
       background: rgba(0, 0, 0, 0.1);
@@ -163,6 +164,11 @@ export default {
     }
   }
 }
+.img-container:hover img {
+  transform: scale(1.2);
+  transition: 0.3s transform ease-in-out;
+}
+
 .img-container {
   overflow: hidden;
   height: 240px;
@@ -172,14 +178,17 @@ export default {
   position: relative;
 
   img {
+    z-index: 0;
     height: 240px;
     object-fit: cover;
+    transition: 0.3s transform ease-in-out;
   }
 }
 .overlay {
   height: 240px;
   width: 100%;
   position: absolute;
+  z-index: 1;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0),
