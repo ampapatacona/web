@@ -2,8 +2,8 @@
 tags:
   - Escola d'estiu
 title: No habrá Escola d'Estiu municipal este verano en el Colegio
-date: 2020-09-15T19:21:39.053Z
-update: 2020-09-15T19:21:39.099Z
+date: 2020-06-19T19:21:39.053Z
+update: 2020-06-19T19:21:39.099Z
 author: Josep
 thumbnail: /images/uploads/xiquet-llegint.jpg
 ---
