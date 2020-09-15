@@ -9,7 +9,7 @@ collections:
   - name: "pages-ca"
     label: "Pàgines valencià"
     folder: "content/ca/pages"
-    create: true
+    create: false
     slug: "{{slug}}"
     sort: "date:desc"
     fields:
@@ -25,7 +25,7 @@ collections:
   - name: "pages-es"
     label: "Páginas castellano"
     folder: "content/es/pages"
-    create: true
+    create: false
     slug: "{{slug}}"
     sort: "date:desc"
     fields:
