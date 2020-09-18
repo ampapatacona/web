@@ -6,6 +6,7 @@
       </div>
     </Container>
     <Container flex>
+      <!-- eslint-disable prettier/prettier -->
       <ArticleCard
         v-for="(blog, index) in posts"
         :key="index"
@@ -25,7 +26,7 @@ import Container from '~/components/Container'
 export default {
   components: {
     ArticleCard,
-    Container,
+    Container
   },
   async asyncData(context) {
     const { $content, app } = context
@@ -34,12 +35,12 @@ export default {
       .sortBy('date', 'desc')
       .fetch()
     return {
-      posts: posts.map((post) => ({
+      posts: posts.map(post => ({
         ...post,
-        path: post.path.replace(`/${defaultLocale}`, ''),
-      })),
+        path: post.path.replace(`/${defaultLocale}`, '')
+      }))
     }
-  },
+  }
 }
 </script>
 

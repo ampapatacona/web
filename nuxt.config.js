@@ -2,10 +2,10 @@ export default {
   target: 'static',
   mode: 'universal',
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL
   },
   router: {
-    trailingSlash: true,
+    trailingSlash: true
   },
 
   env: {
@@ -16,7 +16,7 @@ export default {
     FB_PROJECT_ID: process.env.FB_PROJECT_ID,
     FB_STORAGE_BUKET: process.env.FB_STORAGE_BUKET,
     FB_MESSAGING_SENDER_ID: process.env.FB_MESSAGING_SENDER_ID,
-    FB_APP_ID: process.env.FB_APP_ID,
+    FB_APP_ID: process.env.FB_APP_ID
   },
 
   buildModules: ['@nuxtjs/dotenv'],
@@ -27,69 +27,69 @@ export default {
     title: 'AMPA CEIP la Patacona',
     meta: [
       {
-        charset: 'utf-8',
+        charset: 'utf-8'
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        content: 'width=device-width, initial-scale=1'
       },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: process.env.BASE_URL,
+        content: process.env.BASE_URL
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'AMPA CEIP la Patacona',
+        content: 'AMPA CEIP la Patacona'
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'Blog oficial del AMPA del CEIP La Patacona',
+        content: 'Blog oficial del AMPA del CEIP La Patacona'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Blog oficial del AMPA del CEIP La PAtacona',
+        content: 'Blog oficial del AMPA del CEIP La PAtacona'
       },
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
-        content: 'AMPA CEIP La Patacona',
+        content: 'AMPA CEIP La Patacona'
       },
       {
         hid: 'og:article:author',
         property: 'og:article:author',
-        content: 'https://github.com/jvmonjo',
+        content: 'https://github.com/jvmonjo'
       },
       {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: 'AMPA CEIP La Patacona',
+        content: 'AMPA CEIP La Patacona'
       },
       {
         hid: 'og:type',
         property: 'og:type',
-        content: 'website',
+        content: 'website'
       },
       {
         hid: 'twitter:card',
         name: 'twitter:card',
-        content: 'summary_large_image',
+        content: 'summary_large_image'
       },
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: 'AMPA CEIP La Patacona',
+        content: 'AMPA CEIP La Patacona'
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'AMPA CEIP La Patacona',
-      },
+        content: 'AMPA CEIP La Patacona'
+      }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   /*
@@ -115,22 +115,22 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/bulma',
     'vue-social-sharing/nuxt',
-    '@nuxt/content',
+    '@nuxt/content'
   ],
   i18n: {
     locales: [
       {
         code: 'es',
-        file: 'es.js',
+        file: 'es.js'
       },
       {
         code: 'ca',
-        file: 'ca.js',
-      },
+        file: 'ca.js'
+      }
     ],
     lazy: true,
     langDir: 'lang/',
-    defaultLocale: 'ca',
+    defaultLocale: 'ca'
   },
 
   /**
@@ -138,8 +138,8 @@ export default {
    */
   webfontloader: {
     google: {
-      families: ['Rubik:400,700', 'Karla:400,700,400i,700i'], // Loads Lato font with weights 400 and 700
-    },
+      families: ['Rubik:400,700', 'Karla:400,700,400i,700i'] // Loads Lato font with weights 400 and 700
+    }
   },
 
   /**
@@ -163,10 +163,10 @@ export default {
           'faFacebook',
           'faWhatsapp',
           'faTelegramPlane',
-          'faGoogle',
-        ],
-      },
-    ],
+          'faGoogle'
+        ]
+      }
+    ]
   },
 
   /**
@@ -175,7 +175,7 @@ export default {
   manifest: {
     name: 'AMPA CEIP La Patacona',
     short_name: 'AMPA',
-    lang: 'en',
+    lang: 'en'
   },
 
   /**
@@ -185,7 +185,7 @@ export default {
     hostname: 'https://ceiplapatacona.netlify.app',
     gzip: true,
     exclude: ['/admin/'],
-    trailingSlash: true,
+    trailingSlash: true
   },
 
   /**
@@ -193,7 +193,7 @@ export default {
    */
   robots: {
     UserAgent: '*',
-    Disallow: '/admin',
+    Disallow: '/admin'
   },
 
   /**
@@ -201,7 +201,7 @@ export default {
    */
   pageTransition: {
     name: 'fade',
-    mode: 'out-in',
+    mode: 'out-in'
   },
 
   /*
@@ -214,9 +214,9 @@ export default {
     postcss: {
       preset: {
         features: {
-          customProperties: false,
-        },
-      },
+          customProperties: false
+        }
+      }
     },
     extend(config, ctx) {
       // Run ESLint on save
@@ -225,7 +225,7 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/,
+          exclude: /(node_modules)/
         })
       }
 
@@ -233,9 +233,9 @@ export default {
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
         options: {
-          vue: true,
-        },
+          vue: true
+        }
       })
-    },
-  },
+    }
+  }
 }
