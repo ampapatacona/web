@@ -26,9 +26,9 @@ export default {
 
         const config = {
           signInOptions: [authProviders.email, authProviders.Google],
-          signInSuccessUrl: '/',
-          tosUrl: '/tos',
-          privacyPolicyUrl: '/privacy-policy',
+          signInSuccessUrl: '/area-socis/',
+          tosUrl: '/tos/',
+          privacyPolicyUrl: '/privacy-policy/',
           callbacks: {
             signInSuccessWithAuthResult() {
               console.log('signInSuccessWithAuthResult')

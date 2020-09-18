@@ -89,7 +89,7 @@ export default {
   /**
    * Plugins
    */
-  plugins: ['~/plugins/lazyload'],
+  plugins: ['~/plugins/lazyload', '~/plugins/firebase'],
 
   /*
    ** Nuxt.js modules
