@@ -10,7 +10,7 @@ const config = {
   projectId: process.env.FB_PROJECT_ID,
   storageBucket: process.env.FB_STORAGE_BUKET,
   messagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
-  appId: process.env.FB_APP_ID,
+  appId: process.env.FB_APP_ID
 }
 
 if (!firebase.apps.length) {
@@ -19,7 +19,7 @@ if (!firebase.apps.length) {
 
 export const authProviders = {
   Google: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  email: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  email: firebase.auth.EmailAuthProvider.PROVIDER_ID
 }
 export const auth = firebase.auth()
 export const db = firebase.database()

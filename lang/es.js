@@ -6,20 +6,20 @@ export default {
     quiSom: 'Quiénes somos',
     queFem: 'Qué hacemos',
     pressupostos: 'Presupuestos',
-    areaSocis: 'Area de socios',
+    areaSocis: 'Area de socios'
   },
   alta: {
-    title: 'Formulario de alta',
+    title: 'Formulario de alta'
   },
   areaSocis: {
-    title: 'Area de socios',
+    title: 'Area de socios'
   },
   blog: {
     publicat: 'Publicado el {date}',
     actualitzat: 'Actualizado el {date}',
-    per: 'por',
+    per: 'por'
   },
   contacte: {
-    title: 'Formulario de contacto',
-  },
+    title: 'Formulario de contacto'
+  }
 }

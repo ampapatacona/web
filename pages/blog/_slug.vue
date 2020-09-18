@@ -4,16 +4,16 @@
     <Container class="meta-section">
       <h1>{{ post.title }}</h1>
       <p v-if="published === updated" class="post-meta">
-        {{ $t("blog.publicat", { date: published }) }}
+        {{ $t('blog.publicat', { date: published }) }}
         <span v-if="post.authorlink">
-          {{ $t("blog.per") }}
+          {{ $t('blog.per') }}
           <a :href="post.authorlink">{{ post.author }}</a></span
         >
       </p>
       <p v-else class="post-meta">
-        {{ $t("blog.actualitzat", { date: updated }) }}
+        {{ $t('blog.actualitzat', { date: updated }) }}
         <span v-if="post.authorlink">
-          {{ $t("blog.per") }} <a :href="post.authorlink">{{ author }}</a></span
+          {{ $t('blog.per') }} <a :href="post.authorlink">{{ author }}</a></span
         >
       </p>
       <p v-if="post['article-ca']" style="font-size: 0.8rem" class="post-meta">
@@ -61,36 +61,36 @@
 </template>
 
 <script>
-import Prism from "prismjs";
-import shareThis from "share-this";
-import * as twitterSharer from "share-this/dist/sharers/twitter";
-import * as facebookSharer from "share-this/dist/sharers/facebook";
-import * as redditSharer from "share-this/dist/sharers/reddit";
+import Prism from 'prismjs'
+import shareThis from 'share-this'
+import * as twitterSharer from 'share-this/dist/sharers/twitter'
+import * as facebookSharer from 'share-this/dist/sharers/facebook'
+import * as redditSharer from 'share-this/dist/sharers/reddit'
 
-import Container from "~/components/Container";
+import Container from '~/components/Container'
 
 export default {
-  name: "Blog",
+  name: 'Blog',
   components: {
-    Container,
+    Container
   },
   async asyncData({ $content, app, params, $config: { baseURL } }) {
-    const slug = params.slug;
-    const defaultLocale = app.i18n.locale;
-    const post = await $content(`${defaultLocale}/blog/${slug}`).fetch();
+    const slug = params.slug
+    const defaultLocale = app.i18n.locale
+    const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
 
     const dateOptions = {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    };
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }
 
-    const publishedDate = new Date(post.date);
-    const updatedDate = new Date(post.update);
-    const locale = defaultLocale === "ca" ? "ca" : "es-ES";
+    const publishedDate = new Date(post.date)
+    const updatedDate = new Date(post.update)
+    const locale = defaultLocale === 'ca' ? 'ca' : 'es-ES'
 
-    const published = publishedDate.toLocaleDateString(locale, dateOptions);
-    const updated = updatedDate.toLocaleDateString(locale, dateOptions);
+    const published = publishedDate.toLocaleDateString(locale, dateOptions)
+    const updated = updatedDate.toLocaleDateString(locale, dateOptions)
 
     return {
       published,
@@ -98,147 +98,147 @@ export default {
       post,
       networks: [
         {
-          network: "email",
-          name: "Email",
-          icon: "google",
-          color: "#333333",
+          network: 'email',
+          name: 'Email',
+          icon: 'google',
+          color: '#333333'
         },
         {
-          network: "facebook",
-          name: "Facebook",
-          icon: "facebook",
-          color: "#1877f2",
+          network: 'facebook',
+          name: 'Facebook',
+          icon: 'facebook',
+          color: '#1877f2'
         },
 
         {
-          network: "telegram",
-          name: "Telegram",
-          icon: "telegram-plane",
-          color: "#0088cc",
+          network: 'telegram',
+          name: 'Telegram',
+          icon: 'telegram-plane',
+          color: '#0088cc'
         },
         {
-          network: "twitter",
-          name: "Twitter",
-          icon: "twitter",
-          color: "#1da1f2",
+          network: 'twitter',
+          name: 'Twitter',
+          icon: 'twitter',
+          color: '#1da1f2'
         },
         {
-          network: "whatsapp",
-          name: "Whatsapp",
-          icon: "whatsapp",
-          color: "#25d366",
-        },
-      ],
-    };
+          network: 'whatsapp',
+          name: 'Whatsapp',
+          icon: 'whatsapp',
+          color: '#25d366'
+        }
+      ]
+    }
   },
   mounted() {
-    Prism.highlightAll();
+    Prism.highlightAll()
 
     const selectionShare = shareThis({
-      selector: "#shareable",
-      sharers: [twitterSharer, facebookSharer, redditSharer],
-    });
+      selector: '#shareable',
+      sharers: [twitterSharer, facebookSharer, redditSharer]
+    })
 
-    selectionShare.init();
+    selectionShare.init()
   },
   methods: {
     share() {
       const selectionShare = shareThis({
-        selector: "#shareable",
-        sharers: [twitterSharer, facebookSharer, redditSharer],
-      });
+        selector: '#shareable',
+        sharers: [twitterSharer, facebookSharer, redditSharer]
+      })
 
-      return selectionShare.init();
-    },
+      return selectionShare.init()
+    }
   },
   head() {
     return {
       title: `${this.post.title} | AMPA CEIP La Patacona`,
       meta: [
         {
-          hid: "article:published_time",
-          property: "article:published_time",
-          content: this.post.date,
+          hid: 'article:published_time',
+          property: 'article:published_time',
+          content: this.post.date
         },
         {
-          hid: "article:modified_time",
-          property: "article:modified_time",
-          content: this.post.update,
+          hid: 'article:modified_time',
+          property: 'article:modified_time',
+          content: this.post.update
         },
         {
-          hid: "og:updated_time",
-          property: "og:updated_time",
-          content: this.post.update,
+          hid: 'og:updated_time',
+          property: 'og:updated_time',
+          content: this.post.update
         },
         {
-          hid: "og:url",
-          property: "og:url",
-          content: `https://<domain>/blog/${this.post.slug}`,
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://<domain>/blog/${this.post.slug}`
         },
         {
-          hid: "og:title",
-          property: "og:title",
-          content: `${this.post.title} | AMPA CEIP La patacona`,
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.post.title} | AMPA CEIP La patacona`
         },
         {
-          hid: "description",
-          name: "description",
-          content: this.post.summary,
+          hid: 'description',
+          name: 'description',
+          content: this.post.summary
         },
         {
-          hid: "og:description",
-          property: "og:description",
-          content: this.post.summary,
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.post.summary
         },
         {
-          hid: "og:image",
-          property: "og:image",
-          content: `${process.env.BASE_URL}${this.post.thumbnail}`,
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${process.env.BASE_URL}${this.post.thumbnail}`
         },
         {
-          hid: "og:image:alt",
-          property: "og:image:alt",
-          content: this.post.title,
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.post.title
         },
         {
-          hid: "og:type",
-          property: "og:type",
-          content: "article",
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'article'
         },
         {
-          hid: "og:article:author",
-          property: "og:article:author",
-          content: this.post.authorlink,
+          hid: 'og:article:author',
+          property: 'og:article:author',
+          content: this.post.authorlink
         },
         {
-          hid: "twitter:card",
-          name: "twitter:card",
-          content: "summary_large_image",
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
         },
         {
-          hid: "twitter:title",
-          name: "twitter:title",
-          content: this.post.title,
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.post.title
         },
         {
-          hid: "twitter:site",
-          name: "twitter:site",
-          content: "@tribe_code",
+          hid: 'twitter:site',
+          name: 'twitter:site',
+          content: '@tribe_code'
         },
         {
-          hid: "twitter:description",
-          name: "twitter:description",
-          content: this.post.summary,
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.post.summary
         },
         {
-          hid: "twitter:image",
-          name: "twitter:image",
-          content: `${process.env.BASE_URL}${this.post.thumbnail}`,
-        },
-      ],
-    };
-  },
-};
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: `${process.env.BASE_URL}${this.post.thumbnail}`
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -253,7 +253,7 @@ export default {
     border-style: solid;
     border-width: 0.4em 0.4em 0;
     bottom: 100%;
-    content: "";
+    content: '';
     height: 0;
     left: 50%;
     transform: translateX(-50%);

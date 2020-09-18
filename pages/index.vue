@@ -35,7 +35,7 @@ export default {
       .sortBy('date', 'desc')
       .fetch()
     return {
-      posts: posts.map(post => ({
+      posts: posts.map((post) => ({
         ...post,
         path: post.path.replace(`/${defaultLocale}`, '')
       }))

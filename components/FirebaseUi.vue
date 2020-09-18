@@ -35,14 +35,14 @@ export default {
             },
             uiShown() {
               console.log('uiShown')
-            },
-          },
+            }
+          }
         }
 
         ui.start('#firebaseui-auth-container', config)
       })
     }
-  },
+  }
 }
 </script>
 

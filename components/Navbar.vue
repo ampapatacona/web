@@ -70,19 +70,19 @@
 export default {
   data() {
     return {
-      isActive: false,
+      isActive: false
     }
   },
   watch: {
     $route() {
       this.isActive = false
-    },
+    }
   },
   methods: {
     toogleIsActive() {
       this.isActive = !this.isActive
-    },
-  },
+    }
+  }
 }
 </script>
 

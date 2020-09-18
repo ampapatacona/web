@@ -17,9 +17,9 @@ export default {
     const page = await $content(`${defaultLocale}/pages/${title}`).fetch()
 
     return {
-      page,
+      page
     }
-  },
+  }
 }
 </script>
 

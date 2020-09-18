@@ -5,7 +5,8 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    sourceType: 'module'
   },
   extends: [
     '@nuxtjs',
@@ -17,17 +18,6 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
-    'no-console': 'off',
-    'vue/max-attributes-per-line': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-        singleQuote: true,
-        parser: 'flow',
-        trailingComma: 'none',
-        semicolons: false
-      }
-    ]
+    'prettier/prettier': 'error'
   }
-};
+}
