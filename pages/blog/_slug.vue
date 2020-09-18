@@ -44,11 +44,14 @@
           :network="network.network"
           :style="{ backgroundColor: network.color }"
           :url="$config.baseURL + $route.fullPath"
-          :title="post.title"
+          :title="F.title"
           :description="post.summary"
           hashtags="ampa,patacona"
         >
-          <i :class="network.icon"></i>
+          <font-awesome-icon
+            style="margin-right: 0; margin-left: 8px"
+            :icon="['fab', network.icon]"
+          />
           <span>{{ network.name }}</span>
         </ShareNetwork>
       </div>
@@ -69,15 +72,6 @@ export default {
   name: 'Blog',
   components: {
     Container,
-  },
-  metaInfo() {
-    return {
-      meta: {
-        hid: 'og:image',
-        property: 'og:image',
-        content: this.post.thumbnail,
-      },
-    }
   },
   async asyncData({ $content, app, params, $config: { baseURL } }) {
     const slug = params.slug
@@ -105,32 +99,32 @@ export default {
         {
           network: 'email',
           name: 'Email',
-          icon: 'far fah fa-lg fa-envelope',
+          icon: 'google',
           color: '#333333',
         },
         {
           network: 'facebook',
           name: 'Facebook',
-          icon: 'fab fah fa-lg fa-facebook-f',
+          icon: 'facebook',
           color: '#1877f2',
         },
 
         {
           network: 'telegram',
           name: 'Telegram',
-          icon: 'fab fah fa-lg fa-telegram-plane',
+          icon: 'telegram-plane',
           color: '#0088cc',
         },
         {
           network: 'twitter',
           name: 'Twitter',
-          icon: 'fab fah fa-lg fa-twitter',
+          icon: 'twitter',
           color: '#1da1f2',
         },
         {
           network: 'whatsapp',
           name: 'Whatsapp',
-          icon: 'fab fah fa-lg fa-whatsapp',
+          icon: 'whatsapp',
           color: '#25d366',
         },
       ],
@@ -158,52 +152,52 @@ export default {
   },
   head() {
     return {
-      title: `${this.post.title} | <Blog Name>`,
+      title: `${this.post.title} | AMPA CEIP La Patacona`,
       meta: [
         {
           hid: 'article:published_time',
           property: 'article:published_time',
-          content: this.date,
+          content: this.post.date,
         },
         {
           hid: 'article:modified_time',
           property: 'article:modified_time',
-          content: this.update,
+          content: this.post.update,
         },
         {
           hid: 'og:updated_time',
           property: 'og:updated_time',
-          content: this.update,
+          content: this.post.update,
         },
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://<domain>/blog/${this.slug}`,
+          content: `https://<domain>/blog/${this.post.slug}`,
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.title} | Code Tribe`,
+          content: `${this.post.title} | AMPA CEIP La patacona`,
         },
         {
           hid: 'description',
           name: 'description',
-          content: this.summary,
+          content: this.post.summary,
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.summary,
+          content: this.post.summary,
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `https://<domain>${this.thumbnail}`,
+          content: `${process.env.BASE_URL}${this.post.thumbnail}`,
         },
         {
           hid: 'og:image:alt',
           property: 'og:image:alt',
-          content: this.title,
+          content: this.post.title,
         },
         {
           hid: 'og:type',
@@ -213,7 +207,7 @@ export default {
         {
           hid: 'og:article:author',
           property: 'og:article:author',
-          content: this.authorlink,
+          content: this.post.authorlink,
         },
         {
           hid: 'twitter:card',
@@ -223,7 +217,7 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title,
+          content: this.post.title,
         },
         {
           hid: 'twitter:site',
@@ -233,12 +227,12 @@ export default {
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.summary,
+          content: this.post.summary,
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `https://code-tribe.com${this.thumbnail}`,
+          content: `${process.env.BASE_URL}${this.post.thumbnail}`,
         },
       ],
     }

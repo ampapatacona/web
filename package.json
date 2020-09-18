@@ -2,7 +2,7 @@
   "name": "nuxt-netlify-cms-starter",
   "version": "1.0.0",
   "description": "AMPA Patacona",
-  "author": "Code Tribe",
+  "author": "Josep Monjo",
   "private": true,
   "scripts": {
     "dev": "nuxt",
