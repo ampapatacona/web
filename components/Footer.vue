@@ -34,7 +34,9 @@
           <ul
             v-if="
               $route.name !== 'blog-slug___es' &&
-              $route.name !== 'blog-slug___ca'
+              $route.name !== 'blog-slug___ca' &&
+              $route.name !== 'login___es' &&
+              $route.name !== 'login___ca'
             "
             class="language-switcher"
           >
