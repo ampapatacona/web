@@ -226,7 +226,7 @@ export default {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
 
       config.module.rules.push({
@@ -235,7 +235,7 @@ export default {
         options: {
           vue: true
         }
-      })
+      });
     }
   }
-}
+};

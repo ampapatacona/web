@@ -25,8 +25,9 @@ module.exports = {
         endOfLine: 'auto',
         singleQuote: true,
         parser: 'flow',
-        trailingComma: 'none'
+        trailingComma: 'none',
+        semicolons: false
       }
     ]
   }
-}
+};

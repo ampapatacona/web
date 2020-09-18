@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 <template>
   <section id="shareable" class="post">
     <Container class="meta-section">
