@@ -228,14 +228,6 @@ export default {
           exclude: /(node_modules)/
         })
       }
-
-      config.module.rules.push({
-        test: /\.md$/,
-        loader: 'frontmatter-markdown-loader',
-        options: {
-          vue: true
-        }
-      })
     }
   }
 }
