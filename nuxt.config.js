@@ -7,6 +7,8 @@ export default {
   router: {
     trailingSlash: true,
   },
+
+  buildModules: ['@nuxtjs/dotenv'],
   /*
    ** Headers of the page
    */
