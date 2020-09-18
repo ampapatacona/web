@@ -13,7 +13,7 @@ export default {
       const locale = this.$i18n.locale
       if (locale === 'es') {
         firebaseUILoader = import('~/static/js/npm__es')
-      } else if (locale === 'ca') {
+      } else {
         firebaseUILoader = import('~/static/js/npm__ca')
       }
 
@@ -26,7 +26,7 @@ export default {
 
         const config = {
           signInOptions: [authProviders.email, authProviders.Google],
-          signInSuccessUrl: '/area-socis/',
+          signInSuccessUrl: '/',
           tosUrl: '/tos/',
           privacyPolicyUrl: '/privacy-policy/',
           callbacks: {
