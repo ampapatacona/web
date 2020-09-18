@@ -76,10 +76,14 @@ export default {
   components: {
     Container
   },
-  async asyncData({ $content, app, params }) {
+  async asyncData({ $content, app, params, error }) {
     const slug = params.slug
     const defaultLocale = app.i18n.locale
-    const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
+    const post = await $content(`${defaultLocale}/blog/${slug}`)
+      .fetch()
+      .catch((err) => {
+        error({ statusCode: 404, message: err })
+      })
 
     if (post) {
       const dateOptions = {
