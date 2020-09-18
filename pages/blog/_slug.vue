@@ -38,7 +38,7 @@
       <div class="post-content has-background-white has-shadow p-4">
         <nuxt-content :document="post" />
       </div>
-      <div class="share-network-list columns">
+      <div class="share-network-list columns is-multiline">
         <ShareNetwork
           v-for="network in networks"
           :key="network.network"
