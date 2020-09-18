@@ -1,36 +1,30 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <div>
-        <ul class="social-icons">
-          <li class="icon">
-            <a
-              href="https://www.instagram.com/ceiplapatacona/"
-              target="_blank"
-              class="nav-link"
-            >
-              <font-awesome-icon :icon="['fab', 'instagram']" />
-            </a>
-          </li>
-          <li class="icon">
-            <a
-              href="https://www.facebook.com/ceiplapatacona/"
-              target="_blank"
-              class="nav-link"
-            >
-              <font-awesome-icon :icon="['fab', 'facebook']" />
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="columns">
-        <div class="column is-four-fifths">
-          <img src="~assets/img/logoCEIP-sense-lletres.png" alt="" />
-
-          <p>&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</p>
+      <div class="columns is-mobile">
+        <div class="column">
+          <ul class="social-icons">
+            <li class="icon">
+              <a
+                href="https://www.instagram.com/ceiplapatacona/"
+                target="_blank"
+                class="nav-link"
+              >
+                <font-awesome-icon :icon="['fab', 'instagram']" />
+              </a>
+            </li>
+            <li class="icon">
+              <a
+                href="https://www.facebook.com/ceiplapatacona/"
+                target="_blank"
+                class="nav-link"
+              >
+                <font-awesome-icon :icon="['fab', 'facebook']" />
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="column" style="align-self: flex-end">
+        <div class="column has-text-right">
           <ul
             v-if="
               $route.name !== 'blog-slug___es' &&
@@ -43,6 +37,14 @@
             <li><nuxt-link :to="switchLocalePath('es')">Cas</nuxt-link></li>
             <li><nuxt-link :to="switchLocalePath('ca')">Val</nuxt-link></li>
           </ul>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-four-fifths">
+          <img src="~assets/img/logoCEIP-sense-lletres.png" alt />
+
+          <p>&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</p>
         </div>
       </div>
     </div>
