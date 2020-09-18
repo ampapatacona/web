@@ -28,13 +28,13 @@ export default {
 
         const config = {
           signInOptions: [authProviders.email, authProviders.Google],
-          signInSuccessUrl: '/area-socis/',
+          signInSuccessUrl: '/',
           tosUrl: '/tos/',
           privacyPolicyUrl: '/privacy-policy/',
           callbacks: {
             signInSuccessWithAuthResult() {
               // console.log('signInSuccessWithAuthResult')
-              vm.$router.replace(`${localeUrl}/area-socis`)
+              vm.$router.replace(`${localeUrl}/area-socis/`)
             },
             uiShown() {
               // console.log('uiShown')
