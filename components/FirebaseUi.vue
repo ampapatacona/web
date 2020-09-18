@@ -10,7 +10,9 @@ export default {
   mounted() {
     if (process.browser) {
       let firebaseUILoader
+      const vm = this
       const locale = this.$i18n.locale
+      const localeUrl = locale === 'ca' ? '/' : '/es'
       if (locale === 'es') {
         firebaseUILoader = import('~/static/js/npm__es')
       } else {
@@ -31,10 +33,11 @@ export default {
           privacyPolicyUrl: '/privacy-policy/',
           callbacks: {
             signInSuccessWithAuthResult() {
-              console.log('signInSuccessWithAuthResult')
+              // console.log('signInSuccessWithAuthResult')
+              vm.$router.replace(`${localeUrl}/area-socis`)
             },
             uiShown() {
-              console.log('uiShown')
+              // console.log('uiShown')
             }
           }
         }

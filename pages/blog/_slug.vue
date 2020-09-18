@@ -77,58 +77,60 @@ export default {
   async asyncData({ $content, app, params, $config: { baseURL } }) {
     const slug = params.slug
     const defaultLocale = app.i18n.locale
-    const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
+    if ($content(`${defaultLocale}/blog/${slug}`)) {
+      const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
 
-    const dateOptions = {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    }
+      const dateOptions = {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      }
 
-    const publishedDate = new Date(post.date)
-    const updatedDate = new Date(post.update)
-    const locale = defaultLocale === 'ca' ? 'ca' : 'es-ES'
+      const publishedDate = new Date(post.date)
+      const updatedDate = new Date(post.update)
+      const locale = defaultLocale === 'ca' ? 'ca' : 'es-ES'
 
-    const published = publishedDate.toLocaleDateString(locale, dateOptions)
-    const updated = updatedDate.toLocaleDateString(locale, dateOptions)
+      const published = publishedDate.toLocaleDateString(locale, dateOptions)
+      const updated = updatedDate.toLocaleDateString(locale, dateOptions)
 
-    return {
-      published,
-      updated,
-      post,
-      networks: [
-        {
-          network: 'email',
-          name: 'Email',
-          icon: 'google',
-          color: '#333333'
-        },
-        {
-          network: 'facebook',
-          name: 'Facebook',
-          icon: 'facebook',
-          color: '#1877f2'
-        },
+      return {
+        published,
+        updated,
+        post,
+        networks: [
+          {
+            network: 'email',
+            name: 'Email',
+            icon: 'google',
+            color: '#333333'
+          },
+          {
+            network: 'facebook',
+            name: 'Facebook',
+            icon: 'facebook',
+            color: '#1877f2'
+          },
 
-        {
-          network: 'telegram',
-          name: 'Telegram',
-          icon: 'telegram-plane',
-          color: '#0088cc'
-        },
-        {
-          network: 'twitter',
-          name: 'Twitter',
-          icon: 'twitter',
-          color: '#1da1f2'
-        },
-        {
-          network: 'whatsapp',
-          name: 'Whatsapp',
-          icon: 'whatsapp',
-          color: '#25d366'
-        }
-      ]
+          {
+            network: 'telegram',
+            name: 'Telegram',
+            icon: 'telegram-plane',
+            color: '#0088cc'
+          },
+          {
+            network: 'twitter',
+            name: 'Twitter',
+            icon: 'twitter',
+            color: '#1da1f2'
+          },
+          {
+            network: 'whatsapp',
+            name: 'Whatsapp',
+            icon: 'whatsapp',
+            color: '#25d366'
+          }
+        ]
+      }
     }
   },
   mounted() {
