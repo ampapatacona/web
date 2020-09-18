@@ -38,7 +38,7 @@
       <div class="post-content has-background-white has-shadow p-4">
         <nuxt-content :document="post" />
       </div>
-      <div class="share-network-list">
+      <div class="share-network-list columns">
         <ShareNetwork
           v-for="network in networks"
           :key="network.network"
@@ -48,6 +48,8 @@
           :title="post.title"
           :description="post.summary"
           hashtags="ampa,patacona"
+          class="column is-one-quarter button is-vcentered"
+          style="white-space: nowrap; display: inline-block padding: 0; padding-top: 7px"
         >
           <font-awesome-icon
             style="margin-right: 0; margin-left: 8px"
@@ -74,12 +76,12 @@ export default {
   components: {
     Container
   },
-  async asyncData({ $content, app, params, $config: { baseURL } }) {
+  async asyncData({ $content, app, params }) {
     const slug = params.slug
     const defaultLocale = app.i18n.locale
-    if ($content(`${defaultLocale}/blog/${slug}`)) {
-      const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
+    const post = await $content(`${defaultLocale}/blog/${slug}`).fetch()
 
+    if (post) {
       const dateOptions = {
         year: 'numeric',
         month: 'short',
