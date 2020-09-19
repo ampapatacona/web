@@ -1,3 +1,13 @@
+import fs from 'fs'
+import path from 'path'
+
+function getPaths(lang, type) {
+  return fs
+    .readdirSync(path.resolve(__dirname, 'content', `${lang}/${type}`))
+    .filter((filename) => path.extname(filename) === '.md')
+    .map((filename) => `${lang}/${type}/${path.parse(filename).name}/`)
+}
+
 export default {
   target: 'static',
   mode: 'universal',
@@ -237,5 +247,10 @@ export default {
         })
       }
     }
+  },
+  generate: {
+    routes: ['/es', '404']
+      .concat(getPaths('es', 'blog'))
+      .concat(getPaths('ca', 'blog'))
   }
 }
