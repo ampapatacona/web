@@ -1,5 +1,5 @@
 export default {
-  target: 'static',
+  // target: 'static',
   mode: 'universal',
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL
