@@ -12,7 +12,7 @@ export default {
       let firebaseUILoader
       const vm = this
       const locale = this.$i18n.locale
-      const localeUrl = locale === 'ca' ? '/' : '/es'
+
       if (locale === 'es') {
         firebaseUILoader = import('~/static/js/npm__es')
       } else {
@@ -34,7 +34,7 @@ export default {
           callbacks: {
             signInSuccessWithAuthResult() {
               // console.log('signInSuccessWithAuthResult')
-              vm.$router.replace(`${localeUrl}/area-socis/`)
+              vm.$router.replace(`/${locale}/area-socis/`)
             },
             uiShown() {
               // console.log('uiShown')
