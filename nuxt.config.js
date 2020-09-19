@@ -112,18 +112,7 @@ export default {
     '@nuxtjs/robots',
     'nuxt-fontawesome',
     'nuxt-webfontloader',
-    [
-      'nuxt-i18n',
-      {
-        strategy: 'prefix',
-        detectBrowserLanguage: {
-          useCookie: true,
-          cookieKey: 'i18n_redirected',
-          alwaysRedirect: true,
-          onlyOnRoot: true
-        }
-      }
-    ],
+    'nuxt-i18n',
     '@nuxtjs/bulma',
     'vue-social-sharing/nuxt',
     '@nuxt/content'
@@ -141,7 +130,14 @@ export default {
     ],
     lazy: true,
     langDir: 'lang/',
-    defaultLocale: 'es'
+    defaultLocale: 'es',
+    strategy: 'prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: true,
+      onlyOnRoot: true
+    }
   },
 
   /**
