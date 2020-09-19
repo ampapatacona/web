@@ -21,7 +21,9 @@
       </p>
       <p v-if="post['article-es']" style="font-size: 0.8rem" class="post-meta">
         Artículo también disponible en
-        <nuxt-link :to="`/blog/${post['article-es']}/`">castellano</nuxt-link>
+        <nuxt-link :to="`/es/blog/${post['article-es']}/`"
+          >castellano</nuxt-link
+        >
       </p>
     </Container>
     <Container narrow>
@@ -81,6 +83,7 @@ export default {
   async asyncData({ $content, app, params, error }) {
     const slug = params.slug
     const defaultLocale = app.i18n.locale
+    console.log('locale', defaultLocale)
     const post = await $content(`${defaultLocale}/blog/${slug}`)
       .fetch()
       .catch((err) => {

@@ -131,7 +131,7 @@ export default {
     lazy: true,
     langDir: 'lang/',
     defaultLocale: 'es',
-    strategy: 'prefix_except_default',
+    strategy: 'prefix',
     noPrefixDefaultLocale: false,
     detectBrowserLanguage: {
       useCookie: true,
