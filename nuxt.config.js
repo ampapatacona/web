@@ -112,7 +112,17 @@ export default {
     '@nuxtjs/robots',
     'nuxt-fontawesome',
     'nuxt-webfontloader',
-    ['nuxt-i18n', { strategy: 'prefix' }],
+    [
+      'nuxt-i18n',
+      {
+        strategy: 'prefix',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected',
+          onlyOnRoot: true
+        }
+      }
+    ],
     '@nuxtjs/bulma',
     'vue-social-sharing/nuxt',
     '@nuxt/content'
