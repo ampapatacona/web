@@ -83,7 +83,7 @@ export default {
   async asyncData({ $content, app, params, error }) {
     const slug = params.slug
     const defaultLocale = app.i18n.locale
-    console.log('locale', defaultLocale)
+    // console.log('locale', defaultLocale)
     const post = await $content(`${defaultLocale}/blog/${slug}`)
       .fetch()
       .catch((err) => {
