@@ -45,7 +45,7 @@ export default {
   },
   mounted() {
     const articleNo = this.index + 1
-    this.language = this.$i18n.locale === 'es' ? '/es' : '/ca'
+    this.language = this.$i18n.locale === 'es' ? '/' : '/ca'
     this.size = 'one-third'
 
     // If is first or multiple of 10

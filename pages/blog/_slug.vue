@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 <template>
   <section id="shareable" class="post">
     <Container class="meta-section">
@@ -22,9 +21,7 @@
       </p>
       <p v-if="post['article-es']" style="font-size: 0.8rem" class="post-meta">
         Artículo también disponible en
-        <nuxt-link :to="`/es/blog/${post['article-es']}/`"
-          >castellano</nuxt-link
-        >
+        <nuxt-link :to="`/blog/${post['article-es']}/`">castellano</nuxt-link>
       </p>
     </Container>
     <Container narrow>
