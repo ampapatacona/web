@@ -18,7 +18,7 @@
       </p>
       <p v-if="post['article-ca']" style="font-size: 0.8rem" class="post-meta">
         Article també disponible en
-        <nuxt-link :to="`/blog/${post['article-ca']}/`">valencià</nuxt-link>
+        <nuxt-link :to="`/ca/blog/${post['article-ca']}/`">valencià</nuxt-link>
       </p>
       <p v-if="post['article-es']" style="font-size: 0.8rem" class="post-meta">
         Artículo también disponible en
@@ -49,7 +49,12 @@
           :description="post.summary"
           hashtags="ampa,patacona"
           class="column is-one-quarter button is-vcentered"
-          style="white-space: nowrap; display: inline-block padding: 0; padding-top: 7px"
+          style="
+            white-space: nowrap;
+            display: inline-block;
+            padding: 0;
+            padding-top: 7px;
+          "
         >
           <font-awesome-icon
             style="margin-right: 0; margin-left: 8px"

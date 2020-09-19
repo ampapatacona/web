@@ -112,7 +112,7 @@ export default {
     '@nuxtjs/robots',
     'nuxt-fontawesome',
     'nuxt-webfontloader',
-    'nuxt-i18n',
+    ['nuxt-i18n', { strategy: 'prefix' }],
     '@nuxtjs/bulma',
     'vue-social-sharing/nuxt',
     '@nuxt/content'
@@ -130,7 +130,7 @@ export default {
     ],
     lazy: true,
     langDir: 'lang/',
-    defaultLocale: 'ca'
+    defaultLocale: 'es'
   },
 
   /**
