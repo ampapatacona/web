@@ -2,7 +2,7 @@
   <div class="site-wrapper">
     <Navbar />
 
-    <main id="main" class="main" role="main">
+    <main id="main" class="main content" role="main">
       <nuxt />
     </main>
 

@@ -2,6 +2,7 @@
 
 $primary: #ff9800;
 $link: $primary;
+@import '~bulma/bulma';
 
 a.navbar-item.is-active::after, .navbar-link.is-active::after {
   content: '';
@@ -12,8 +13,6 @@ a.navbar-item.is-active::after, .navbar-link.is-active::after {
   bottom: 0;
   transform: 0.5s all ease-in-out;
 }
-
-@import '~bulma/bulma';
 
 body {
   /* These are technically the same, but use both */
