@@ -21,7 +21,29 @@ export default {
     comparteix: 'Comparte:'
   },
   contacte: {
-    title: 'Formulario de contacto'
+    title: 'Contacto',
+    contingut:
+      'Puedes contactar con nosotros a través del correo {correu}, mediante el buzón depositado en el centro, o usando el siguiente formulario de contacto.',
+    formulari: {
+      title: 'Formulario de contacto',
+      fullname: 'Nombre',
+      email: 'Correo electrónico',
+      subject: 'Asunto',
+      message: 'Mensaje',
+      submit: 'Enviar',
+      modal: {
+        error: {
+          title: 'Revisa el formulario',
+          message:
+            'Por favor. Rellena todos los campos obligatorios y vuelve a enviar el formulario.'
+        },
+        success: {
+          title: 'Mensaje enviado',
+          message:
+            'Tu mensaje se ha enviado correctamente. En breve nos pondremos en contacte contigo.'
+        }
+      }
+    }
   },
   error: {
     noTrobat:

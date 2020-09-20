@@ -28,7 +28,8 @@ export default {
     FB_STORAGE_BUKET: process.env.FB_STORAGE_BUKET,
     FB_MESSAGING_SENDER_ID: process.env.FB_MESSAGING_SENDER_ID,
     FB_APP_ID: process.env.FB_APP_ID,
-    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID
+    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID,
+    SERVER_URL: process.env.SERVER_URL
   },
 
   buildModules: ['@nuxtjs/dotenv'],
@@ -133,8 +134,12 @@ export default {
     'nuxt-webfontloader',
     'nuxt-i18n',
     'vue-social-sharing/nuxt',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseURL: process.env.SERVER_URL
+  },
   i18n: {
     locales: [
       {
