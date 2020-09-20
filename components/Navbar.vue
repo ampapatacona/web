@@ -26,9 +26,11 @@
       >
         <div class="navbar-start">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> {{ $t('menu.nosaltres') }} </a>
+            <a class="navbar-link">
+              {{ $t('menu.nosaltres') }}
+            </a>
 
-            <div class="navbar-dropdown" :class="{ 'is-active': isActive }">
+            <div class="navbar-dropdown">
               <nuxt-link :to="localePath('/quisom')" class="navbar-item">{{
                 $t('menu.quiSom')
               }}</nuxt-link>
@@ -43,6 +45,9 @@
               >
             </div>
           </div>
+          <nuxt-link :to="localePath('/infoampa')" class="navbar-item"
+            >infoAMPA</nuxt-link
+          >
           <nuxt-link :to="localePath('/contacte')" class="navbar-item">{{
             $t('menu.contacte')
           }}</nuxt-link>

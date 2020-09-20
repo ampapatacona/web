@@ -2,6 +2,17 @@
 
 $primary: #ff9800;
 $link: $primary;
+
+a.navbar-item.is-active::after, .navbar-link.is-active::after {
+  content: '';
+  height: 5px;
+  width: 80%;
+  background-color: $primary;
+  position: absolute;
+  bottom: 0;
+  transform: 0.5s all ease-in-out;
+}
+
 @import '~bulma/bulma';
 
 body {

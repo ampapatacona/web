@@ -15,7 +15,8 @@ export default {
     baseURL: process.env.BASE_URL
   },
   router: {
-    trailingSlash: true
+    trailingSlash: true,
+    linkExactActiveClass: 'is-active'
   },
 
   env: {
@@ -131,7 +132,6 @@ export default {
     'nuxt-fontawesome',
     'nuxt-webfontloader',
     'nuxt-i18n',
-    '@nuxtjs/bulma',
     'vue-social-sharing/nuxt',
     '@nuxt/content'
   ],
