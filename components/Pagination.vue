@@ -64,7 +64,10 @@ export default {
         return 1
       }
       // When on the last page
-      if (this.currentPage === this.totalPages) {
+      if (
+        this.currentPage === this.totalPages &&
+        this.totalPages > this.maxVisibleButtons
+      ) {
         return this.totalPages - this.maxVisibleButtons
       }
       // When in between
