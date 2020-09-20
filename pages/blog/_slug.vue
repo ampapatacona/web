@@ -208,7 +208,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `${process.env.BASE_URL}/${this.post.thumbnail}`
+          content: `${process.env.BASE_URL}${this.post.thumbnail}`
         },
         {
           hid: 'og:image:alt',
