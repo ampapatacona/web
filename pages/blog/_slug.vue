@@ -38,8 +38,8 @@
       <div class="post-content has-background-white has-shadow p-4">
         <nuxt-content :document="post" />
       </div>
+      <p>{{ $t('blog.comparteix') }}</p>
       <div class="share-network-list columns is-multiline">
-        <p>{{ $t('blog.comparteix') }}</p>
         <ShareNetwork
           v-for="network in networks"
           :key="network.network"
@@ -47,7 +47,7 @@
           :style="{ backgroundColor: network.color }"
           :url="$config.baseURL + $route.fullPath"
           :title="post.title"
-          :description="post.summary"
+          :description="post.summary ? post.summary : ''"
           hashtags="ampa,patacona"
           class="column is-one-quarter button is-vcentered"
           style="
@@ -188,7 +188,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `${process.env.BASE_URL}/blog/${this.post.slug}`
+          content: `${process.env.BASE_URL}/${this.$i18n.locale}/blog/${this.post.slug}`
         },
         {
           hid: 'og:title',
@@ -208,7 +208,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `${process.env.BASE_URL}${this.post.thumbnail}`
+          content: `${process.env.BASE_URL}/${this.post.thumbnail}`
         },
         {
           hid: 'og:image:alt',

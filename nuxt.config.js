@@ -56,12 +56,12 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Blog oficial del AMPA del CEIP La Patacona'
+        content: 'Web del AMPA del CEIP La Patacona'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Blog oficial del AMPA del CEIP La PAtacona'
+        content: 'Web del AMPA del CEIP La Patacona'
       },
       {
         hid: 'og:image:alt',
