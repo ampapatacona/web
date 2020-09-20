@@ -23,5 +23,9 @@ export default {
   contacte: {
     title: 'Formulario de contacto'
   },
+  error: {
+    noTrobat:
+      'Lo que buscabas ya no se encuentra aquí. Prueba a navegar por el menú'
+  },
   loading: 'cargando...'
 }

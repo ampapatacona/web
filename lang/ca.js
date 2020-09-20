@@ -23,5 +23,8 @@ export default {
   contacte: {
     title: 'Formulari de contacte'
   },
+  error: {
+    noTrobat: 'Allò que buscaves ja no està ací. Prova a navegar pel menú.'
+  },
   loading: 'carregant...'
 }
