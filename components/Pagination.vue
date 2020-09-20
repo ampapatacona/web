@@ -1,14 +1,20 @@
 <template>
-  <ul class="pagination">
+  <ul v-if="totalPages > 1" class="pagination">
     <li class="pagination-item">
-      <button type="button" :disabled="isInFirstPage" @click="onClickFirstPage">
+      <button
+        class="button is-small"
+        type="button is-small"
+        :disabled="isInFirstPage"
+        @click="onClickFirstPage"
+      >
         {{ $t('pagination.first') }}
       </button>
     </li>
 
     <li class="pagination-item">
       <button
-        type="button"
+        class="button is-small"
+        type="button is-small"
         :disabled="isInFirstPage"
         @click="onClickPreviousPage"
       >
@@ -18,9 +24,10 @@
 
     <li v-for="(page, index) in pages" :key="index" class="pagination-item">
       <button
-        type="button"
+        class="button is-small"
+        type="button is-small"
         :disabled="page.isDisabled"
-        :class="{ active: isPageActive(page.name) }"
+        :class="{ 'is-primary': isPageActive(page.name) }"
         @click="onClickPage(page.name)"
       >
         {{ page.name }}
@@ -28,13 +35,23 @@
     </li>
 
     <li class="pagination-item">
-      <button type="button" :disabled="isInLastPage" @click="onClickNextPage">
+      <button
+        class="button is-small"
+        type="button is-small"
+        :disabled="isInLastPage"
+        @click="onClickNextPage"
+      >
         {{ $t('pagination.next') }}
       </button>
     </li>
 
     <li class="pagination-item">
-      <button type="button" :disabled="isInLastPage" @click="onClickLastPage">
+      <button
+        class="button is-small"
+        type="button is-small"
+        :disabled="isInLastPage"
+        @click="onClickLastPage"
+      >
         {{ $t('pagination.last') }}
       </button>
     </li>
