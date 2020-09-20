@@ -5,7 +5,7 @@ function getPaths(lang, type) {
   return fs
     .readdirSync(path.resolve(__dirname, 'content', `${lang}/${type}`))
     .filter((filename) => path.extname(filename) === '.md')
-    .map((filename) => `${lang}/${type}/${path.parse(filename).name}/`)
+    .map((filename) => `/${lang}/${type}/${path.parse(filename).name}/`)
 }
 
 export default {
