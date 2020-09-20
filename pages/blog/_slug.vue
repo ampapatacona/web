@@ -40,31 +40,29 @@
       </div>
       <div class="share-network-list columns is-multiline">
         <p>{{ $t('blog.comparteix') }}</p>
-        <client-only :placeholder="$t('loading')">
-          <ShareNetwork
-            v-for="network in networks"
-            :key="network.network"
-            :network="network.network"
-            :style="{ backgroundColor: network.color }"
-            :url="$config.baseURL + $route.fullPath"
-            :title="post.title"
-            :description="post.summary"
-            hashtags="ampa,patacona"
-            class="column is-one-quarter button is-vcentered"
-            style="
-              white-space: nowrap;
-              display: inline-block;
-              padding: 0;
-              padding-top: 7px;
-            "
-          >
-            <font-awesome-icon
-              style="margin-right: 0; margin-left: 8px"
-              :icon="['fab', network.icon]"
-            />
-            <span>{{ network.name }}</span>
-          </ShareNetwork>
-        </client-only>
+        <ShareNetwork
+          v-for="network in networks"
+          :key="network.network"
+          :network="network.network"
+          :style="{ backgroundColor: network.color }"
+          :url="$config.baseURL + $route.fullPath"
+          :title="post.title"
+          :description="post.summary"
+          hashtags="ampa,patacona"
+          class="column is-one-quarter button is-vcentered"
+          style="
+            white-space: nowrap;
+            display: inline-block;
+            padding: 0;
+            padding-top: 7px;
+          "
+        >
+          <font-awesome-icon
+            style="margin-right: 0; margin-left: 8px"
+            :icon="['fab', network.icon]"
+          />
+          <span>{{ network.name }}</span>
+        </ShareNetwork>
       </div>
     </Container>
   </section>
