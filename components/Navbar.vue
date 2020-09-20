@@ -56,11 +56,13 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <nuxt-link :to="localePath('/alta')" class="button is-primary">{{
-                $t('menu.alta')
-              }}</nuxt-link>
               <nuxt-link
-                :to="localePath('/area-socis')"
+                :to="localePath('/app/alta')"
+                class="button is-primary"
+                >{{ $t('menu.alta') }}</nuxt-link
+              >
+              <nuxt-link
+                :to="localePath('/app')"
                 class="button is-primary is-light"
                 >{{ $t('menu.areaSocis') }}</nuxt-link
               >

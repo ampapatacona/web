@@ -41,10 +41,13 @@
       </div>
 
       <div class="columns">
-        <div class="column is-four-fifths">
+        <div class="column is-three-fifths">
           <img src="~assets/img/logoCEIP-sense-lletres.png" alt />
 
           <p>&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</p>
+        </div>
+        <div class="column has-text-right" style="align-self: flex-end">
+          <p class="is-size-7"><em>hola@ampatacona.com</em></p>
         </div>
       </div>
     </div>

@@ -12,13 +12,10 @@
       </div>
       <div class="card-inner">
         <p class="type">
-          <span> </span>
-          <span>{{
-            new Date(articleInfo.date).toLocaleDateString('es-ES')
-          }}</span>
+          <span>{{ formatDate(articleInfo.date) }}</span>
           {{ capitalize(articleInfo.type) }}
         </p>
-        <h4>{{ articleInfo.title }}</h4>
+        <h4 class="has-text-white">{{ articleInfo.title }}</h4>
       </div>
     </nuxt-link>
   </article>
@@ -55,6 +52,17 @@ export default {
     capitalize(s) {
       if (typeof s !== 'string') return ''
       return s.charAt(0).toUpperCase() + s.slice(1)
+    },
+    formatDate(date) {
+      const d = new Date(date)
+      let month = '' + (d.getMonth() + 1)
+      let day = '' + d.getDate()
+      const year = d.getFullYear()
+
+      if (month.length < 2) month = '0' + month
+      if (day.length < 2) day = '0' + day
+
+      return [day, month, year].join('/')
     }
   }
 }
