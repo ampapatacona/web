@@ -39,8 +39,7 @@ export default {
   data() {
     return {
       size: 'two-thirds',
-      language: '',
-      icon: ''
+      language: ''
     }
   },
   mounted() {
@@ -51,27 +50,6 @@ export default {
     // If is first or multiple of 10
     if (articleNo === 1) this.size = 'two-thirds'
     if (articleNo % 10 === 0) this.size = 'two-thirds'
-
-    // Switch for font awesome icon
-    switch (this.icon) {
-      case 'Matinera':
-        this.icon = 'vuejs'
-        break
-      case 'Extraescolars':
-        this.icon = 'react'
-        break
-      case 'js':
-        this.icon = 'js'
-        break
-      case 'wordpress':
-        this.icon = 'wordpress'
-        break
-      case 'yarn':
-        this.icon = 'yarn'
-        break
-      default:
-        this.icon = 'js'
-    }
   },
   methods: {
     capitalize(s) {

@@ -190,10 +190,22 @@ export default {
   /**
    * Manifest
    */
-  manifest: {
-    name: 'AMPA CEIP La Patacona',
-    short_name: 'AMPA',
-    lang: 'en'
+  pwa: {
+    manifest: {
+      name: 'AMPA CEIP La Patacona',
+      short_name: 'AMPA',
+      lang: 'ca'
+    },
+    icon: {
+      /* icon options */
+    },
+    meta: {
+      /* meta options */
+      lang: 'ca'
+    },
+    workbox: {
+      /* workbox options */
+    }
   },
 
   /**
