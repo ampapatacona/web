@@ -34,78 +34,83 @@ export default {
   /*
    ** Headers of the page
    */
-  head: {
-    title: 'AMPA CEIP la Patacona',
-    meta: [
-      {
-        charset: 'utf-8'
+  head() {
+    return {
+      title: 'AMPA CEIP la Patacona',
+      htmlAttrs: {
+        lang: this.$i18n.locale
       },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
-      },
-      {
-        hid: 'og:url',
-        property: 'og:url',
-        content: process.env.BASE_URL
-      },
-      {
-        hid: 'fb:app_id',
-        property: 'fb:app_id',
-        content: process.env.FACEBOOK_APP_ID
-      },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'AMPA CEIP la Patacona'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Web del AMPA del CEIP La Patacona'
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'Web del AMPA del CEIP La Patacona'
-      },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: 'AMPA CEIP La Patacona'
-      },
-      {
-        hid: 'og:article:author',
-        property: 'og:article:author',
-        content: 'https://github.com/jvmonjo'
-      },
-      {
-        hid: 'og:site_name',
-        property: 'og:site_name',
-        content: 'AMPA CEIP La Patacona'
-      },
-      {
-        hid: 'og:type',
-        property: 'og:type',
-        content: 'website'
-      },
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'AMPA CEIP La Patacona'
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content: 'AMPA CEIP La Patacona'
-      }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+      meta: [
+        {
+          charset: 'utf-8'
+        },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: process.env.BASE_URL
+        },
+        {
+          hid: 'fb:app_id',
+          property: 'fb:app_id',
+          content: process.env.FACEBOOK_APP_ID
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'AMPA CEIP la Patacona'
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Web del AMPA del CEIP La Patacona'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Web del AMPA del CEIP La Patacona'
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: 'AMPA CEIP La Patacona'
+        },
+        {
+          hid: 'og:article:author',
+          property: 'og:article:author',
+          content: 'https://github.com/jvmonjo'
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: 'AMPA CEIP La Patacona'
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'AMPA CEIP La Patacona'
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'AMPA CEIP La Patacona'
+        }
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    }
   },
 
   /*
@@ -199,15 +204,10 @@ export default {
   pwa: {
     manifest: {
       name: 'AMPA CEIP La Patacona',
-      short_name: 'AMPA',
-      lang: 'ca'
+      short_name: 'AMPA'
     },
     icon: {
       /* icon options */
-    },
-    meta: {
-      /* meta options */
-      lang: 'ca'
     },
     workbox: {
       /* workbox options */
