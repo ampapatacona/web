@@ -15,7 +15,7 @@ export default {
     baseURL: process.env.BASE_URL
   },
   router: {
-    trailingSlash: false
+    trailingSlash: true
   },
 
   env: {
@@ -215,7 +215,7 @@ export default {
     hostname: process.env.BASE_URL,
     gzip: true,
     exclude: ['/admin/'],
-    trailingSlash: false
+    trailingSlash: true
   },
 
   /**
