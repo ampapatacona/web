@@ -62,7 +62,8 @@ export default {
         this.modal.active = true
         this.loading = false
       } else {
-        return this.formError()
+        this.modal.active = true
+        this.loading = false
       }
     },
     formError() {
