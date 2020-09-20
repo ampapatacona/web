@@ -63,11 +63,15 @@ export default {
     async refetch() {
       const skip = this.articlesPerPage * (this.currentPage - 1)
       const defaultLocale = this.$i18n.locale
-      this.posts = await this.$content(`${defaultLocale}/blog`)
+      const posts = await this.$content(`${defaultLocale}/blog`)
         .sortBy('date', 'desc')
         .limit(this.articlesPerPage)
         .skip(skip)
         .fetch()
+      this.posts = posts.map((post) => ({
+        ...post,
+        path: post.path.replace(`/${defaultLocale}`, '')
+      }))
     },
     pagechanged(page) {
       this.currentPage = page
