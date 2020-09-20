@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <client-only placeholder="Cargando...">
+    <client-only :placeholder="$t('loading')">
       <firebase-ui />
     </client-only>
   </div>

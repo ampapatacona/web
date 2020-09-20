@@ -17,9 +17,11 @@ export default {
   blog: {
     publicat: 'Publicado el {date}',
     actualitzat: 'Actualizado el {date}',
-    per: 'por'
+    per: 'por',
+    comparteix: 'Comparte:'
   },
   contacte: {
     title: 'Formulario de contacto'
-  }
+  },
+  loading: 'cargando...'
 }
