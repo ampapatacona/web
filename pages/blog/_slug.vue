@@ -32,6 +32,7 @@
         v-lazy="post.thumbnail"
         class="thumbnail"
         :alt="post.title"
+        :src="post.thumbnail"
       />
       <!-- eslint-disable vue/no-v-html -->
       <div class="post-content has-background-white has-shadow p-4">
@@ -186,7 +187,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://<domain>/blog/${this.post.slug}`
+          content: `${process.env.BASE_URL}/blog/${this.post.slug}`
         },
         {
           hid: 'og:title',
