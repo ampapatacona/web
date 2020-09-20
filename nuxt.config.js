@@ -26,7 +26,8 @@ export default {
     FB_PROJECT_ID: process.env.FB_PROJECT_ID,
     FB_STORAGE_BUKET: process.env.FB_STORAGE_BUKET,
     FB_MESSAGING_SENDER_ID: process.env.FB_MESSAGING_SENDER_ID,
-    FB_APP_ID: process.env.FB_APP_ID
+    FB_APP_ID: process.env.FB_APP_ID,
+    FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID
   },
 
   buildModules: ['@nuxtjs/dotenv'],
@@ -47,6 +48,11 @@ export default {
         hid: 'og:url',
         property: 'og:url',
         content: process.env.BASE_URL
+      },
+      {
+        hid: 'fb:app_id',
+        property: 'fb:app_id',
+        content: process.env.FACEBOOK_APP_ID
       },
       {
         hid: 'og:title',
