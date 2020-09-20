@@ -92,18 +92,20 @@ export default {
         error({ statusCode: 404, message: err })
       })
 
-    const dateOptions = {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
+    function formatDate(date) {
+      const d = new Date(date)
+      let month = '' + (d.getMonth() + 1)
+      let day = '' + d.getDate()
+      const year = d.getFullYear()
+
+      if (month.length < 2) month = '0' + month
+      if (day.length < 2) day = '0' + day
+
+      return [day, month, year].join('/')
     }
 
-    const publishedDate = new Date(post.date)
-    const updatedDate = new Date(post.update)
-    const locale = defaultLocale === 'ca' ? 'ca' : 'es-ES'
-
-    const published = publishedDate.toLocaleDateString(locale, dateOptions)
-    const updated = updatedDate.toLocaleDateString(locale, dateOptions)
+    const published = formatDate(post.date)
+    const updated = formatDate(post.update)
 
     return {
       published,
