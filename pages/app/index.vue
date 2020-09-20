@@ -2,6 +2,7 @@
   <main>
     <Container>
       <h1>{{ $t('areaSocis.title') }}</h1>
+      <p>{{ $t('construccio') }}</p>
     </Container>
   </main>
 </template>

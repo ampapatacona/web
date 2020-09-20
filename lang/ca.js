@@ -1,7 +1,7 @@
 export default {
   menu: {
     alta: "Dóna't d'alta",
-    contacte: 'Contacta',
+    contacte: 'Contacte',
     nosaltres: 'Sobre nosaltres',
     quiSom: 'Qui som',
     queFem: 'Què fem',
@@ -45,6 +45,7 @@ export default {
       }
     }
   },
+  construccio: 'En construcció',
   error: {
     noTrobat: 'Allò que buscaves ja no està ací. Prova a navegar pel menú.'
   },
