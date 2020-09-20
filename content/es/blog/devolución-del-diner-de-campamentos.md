@@ -1,5 +1,5 @@
 ---
-title: Devolución del diner de campamentos
+title: Devolución del dinero de campamentos
 date: 2020-05-26T10:18:28.083Z
 update: 2020-05-26T10:18:28.150Z
 author: Josep
