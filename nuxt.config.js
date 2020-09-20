@@ -37,9 +37,6 @@ export default {
   head() {
     return {
       title: 'AMPA CEIP la Patacona',
-      htmlAttrs: {
-        lang: this.$i18n.locale
-      },
       meta: [
         {
           charset: 'utf-8'

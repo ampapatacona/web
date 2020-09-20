@@ -18,6 +18,13 @@ export default {
   components: {
     Footer,
     Navbar
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.$i18n.locale
+      }
+    }
   }
 }
 </script>
