@@ -193,7 +193,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.post.title} | AMPA CEIP La patacona`
+          content: `${this.post.title} | AMPA CEIP La Patacona`
         },
         {
           hid: 'description',
