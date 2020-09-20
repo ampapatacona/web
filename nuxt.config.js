@@ -15,7 +15,7 @@ export default {
     baseURL: process.env.BASE_URL
   },
   router: {
-    trailingSlash: true
+    trailingSlash: false
   },
 
   env: {
@@ -212,10 +212,10 @@ export default {
    * sitemap
    */
   sitemap: {
-    hostname: 'https://ceiplapatacona.netlify.app',
+    hostname: process.env.BASE_URL,
     gzip: true,
     exclude: ['/admin/'],
-    trailingSlash: true
+    trailingSlash: false
   },
 
   /**
