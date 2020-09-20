@@ -1,11 +1,19 @@
 <template>
   <main>
-    <h1>{{ $t('contacte.title') }}</h1>
+    <Container>
+      <h1>{{ $t('contacte.title') }}</h1>
+    </Container>
   </main>
 </template>
 
 <script>
-export default {}
+import Container from '~/components/Container'
+
+export default {
+  components: {
+    Container
+  }
+}
 </script>
 
 <style></style>
