@@ -27,5 +27,11 @@ export default {
     noTrobat:
       'Lo que buscabas ya no se encuentra aquí. Prueba a navegar por el menú'
   },
+  pagination: {
+    first: 'Primera',
+    last: 'Última',
+    next: 'Siguiente',
+    previous: 'Anterior'
+  },
   loading: 'cargando...'
 }

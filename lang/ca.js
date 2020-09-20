@@ -26,5 +26,11 @@ export default {
   error: {
     noTrobat: 'Allò que buscaves ja no està ací. Prova a navegar pel menú.'
   },
+  pagination: {
+    first: 'Primera',
+    last: 'Última',
+    next: 'Següent',
+    previous: 'Anterior'
+  },
   loading: 'carregant...'
 }
