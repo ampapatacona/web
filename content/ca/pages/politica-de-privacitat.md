@@ -1,0 +1,12 @@
+---
+title: Política de privacitat
+---
+A l'AMPA CEIP La Patacona tractem les teves dades personals i la informació que ens facilites a l'associar-te amb la finalitat de gestionar la relació entre l'associació i els membres associats i, per tant, proporcionar-te els serveis i la informació oportuns, així com realitzar la corresponent facturació. Això pot incloure la comunicació mitjançant circular, correu postal, correu electrònic, internet i / o telèfon d'informació sobre les activitats i esdeveniments que organitzem, o aquells que estiguin relacionats amb l'activitat de l'associació i considerem que poden ser del teu interès.
+
+El tractament de dades personals s'efectua de conformitat amb el que disposa el Reglament (UE) 2016/679, de el Parlament Europeu i de Consell, de 27 d'abril de 2016 (RGPD). En cas que t'hagis donat d'alta en altres serveis d'informació o comunicació, la base jurídica del tractament és, a més, la mateixa subscripció a aquest servei. Les dades proporcionades es conservaran mentre es mantingui la relació de membre associat o durant els anys necessaris per complir amb les obligacions legals i els terminis de prescripció de les accions derivades d'aquesta relació i, en cas d'altres serveis d'informació i comunicació, mentre no demanis el cessament del servei.
+
+Les teves dades podran ser cedides a entitats bancàries per efectuar el cobrament dels corresponents quotes. Excepte l'anterior excepció i dels casos en què hi hagi una obligació legal, les dades no se cediran a tercers sense previ consentiment i no seran transferits a tercers països.
+
+Finalment, t'informem que tens dret en tot moment a: obtenir confirmació sobre si hem recollit i estem tractant les teves dades personals, accedir a les teves dades personals, sol·licitar la rectificació de les dades inexactes i sol·licitar la seva supressió quan les dades ja no siguin necessaris, acreditant la teva identitat i remetent un correu electrònic amb la paraula BAIXA a la nostra adreça de correu electrònic.
+
+Igualment, podràs exercir els drets d'oposició, limitació en el tractament i portabilitat previstos en el RGPD. Finalment, us informem que tens el dret a presentar una reclamació davant l'AEPD en el cas que consideris que s'infringeixen els teus drets de protecció de dades (Reglament UE 2016/679, de 27 d'abril de 2016).
