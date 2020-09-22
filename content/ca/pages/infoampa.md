@@ -1,9 +1,21 @@
 ---
 title: InfoAMPA
 ---
+
 InfoAMPA és el nostre mitjà de comunicació habitual amb totes les famílies de l'escola.
 
-Funciona de la següent manera:
+A partir del curs 2020-2021 hem creat un **canal de Telegram** des del que podeu seguir els nostres infAMPA.
+
+Es tracta d'un canal obert al que qualsevol pare o mare es pot subscriure:
+
+<a class="button is-info" href="https://t.me/infoampa" target="_blank">
+    <span class="icon">
+      <font-awesome-icon :icon="['fab', 'telegram']"></font-awesome-icon>
+    </span>
+    <span>infoAMPA</span>
+</a>
+
+Tradicionalment el infoAMPA ha funcionat de la següent manera:
 
 Aprofitant que cada classe crea un grup de _Whatsapp_ per comunicar-se entre si sobre assumptes relatius a l'escola, deures, classes, etc., AMPA es posa en contacte amb una família de cada classe, que es presta a col·laborar voluntàriament amb nosaltres en la difusió de els nostres missatges.
 

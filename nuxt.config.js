@@ -128,6 +128,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
+
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-5NRDZTZ' }],
     '@nuxtjs/pwa',
@@ -197,7 +198,8 @@ export default {
           'faFacebook',
           'faWhatsapp',
           'faTelegramPlane',
-          'faGoogle'
+          'faGoogle',
+          'faTelegram'
         ]
       }
     ]
