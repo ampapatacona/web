@@ -40,7 +40,9 @@
               $route.name !== 'blog-slug___es' &&
               $route.name !== 'blog-slug___ca' &&
               $route.name !== 'login___es' &&
-              $route.name !== 'login___ca'
+              $route.name !== 'login___ca' &&
+              $route.name !== 'app-alta___ca' &&
+              $route.name !== 'app-alta___es'
             "
             class="language-switcher"
           >

@@ -12,7 +12,7 @@ export default {
     reglament: 'Reglament de funcionament intern'
   },
   alta: {
-    title: "Formulari de d'alta"
+    title: "Formulari d'alta"
   },
   areaSocis: {
     title: 'Àrea de socis'
