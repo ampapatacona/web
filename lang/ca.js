@@ -7,7 +7,9 @@ export default {
     queFem: 'Què fem',
     pressupostos: 'Pressupostos',
     areaSocis: 'Àrea de socis',
-    logout: 'Eixir'
+    logout: 'Eixir',
+    estatuts: 'Estatuts',
+    reglament: 'Reglament de funcionament intern'
   },
   alta: {
     title: "Formulari de d'alta"

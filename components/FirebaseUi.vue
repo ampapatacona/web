@@ -1,5 +1,10 @@
 <template>
-  <div id="firebaseui-auth-container" />
+  <div>
+    <div id="firebaseui-auth-container" />
+    <div v-if="loading" class="loader-wrapper">
+      <div class="loader is-loading"></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -11,6 +16,11 @@ export default {
     message: {
       type: String,
       default: 'Entra con'
+    }
+  },
+  data() {
+    return {
+      loading: true
     }
   },
   mounted() {
@@ -54,6 +64,7 @@ export default {
             },
             uiShown() {
               // console.log('uiShown')
+              vm.loading = false
             }
           }
         }
@@ -64,5 +75,28 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.loader-wrapper {
+  background: transparent;
+  z-index: -1;
+  transition: opacity 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+
+  .loader {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+  }
+
+  &.is-active {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+</style>
 
 <style src="~/node_modules/firebaseui/dist/firebaseui.css"></style>

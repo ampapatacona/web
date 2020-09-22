@@ -47,6 +47,31 @@
           <p>&copy; AMPA CEIP La Patacona {{ new Date().getFullYear() }}</p>
         </div>
         <div class="column has-text-right" style="align-self: flex-end">
+          <h4>AMPA</h4>
+          <ul class="is-size-7 is-unstyled">
+            <li>
+              <a
+                href="https://drive.google.com/file/d/16kcSBu9FU5vi4sjz_MGy4WEeE0M7RNGK/view"
+                target="_blank"
+                >{{ $t('menu.estatuts') }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1wQocU2pdSq61KOQ3BBitL_YyjeOAavm-/view"
+                target="_blank"
+                >{{ $t('menu.reglament') }}</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1vjA54dc6H5VyqO0s8FVcAD0TTyuSAIli/view"
+                target="_blank"
+                >{{ $t('menu.pressupostos') }}</a
+              >
+            </li>
+          </ul>
+          <br />
           <p class="is-size-7"><em>hola@ampatacona.com</em></p>
         </div>
       </div>
@@ -61,6 +86,9 @@ export default {
 </script>
 
 <style lang="scss">
+footer p {
+  margin: 0;
+}
 .language-switcher {
   font-size: 0.8rem;
 }

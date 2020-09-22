@@ -7,6 +7,11 @@ $link: $primary;
 ul.firebaseui-idp-list {
   list-style: none;
 }
+ul.is-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 a.navbar-item.is-active::after,
 .navbar-link.is-active::after {
   content: '';

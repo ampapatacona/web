@@ -7,7 +7,9 @@ export default {
     queFem: 'Qué hacemos',
     pressupostos: 'Presupuestos',
     areaSocis: 'Area de socios',
-    logout: 'Salir'
+    logout: 'Salir',
+    estatuts: 'Estatutos',
+    reglament: 'Reglamento de funcionamento interno'
   },
   alta: {
     title: 'Formulario de alta'
