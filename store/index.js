@@ -7,31 +7,34 @@ export const state = () => ({
 export const actions = {
   AUTH_CHECK({ commit }) {
     auth.onAuthStateChanged((user) => {
-      const {
-        uid,
-        displayName,
-        email,
-        emailVerified,
-        photoURL,
-        refreshToken
-      } = user
+      if (user) {
+        const {
+          uid,
+          displayName,
+          email,
+          emailVerified,
+          photoURL,
+          refreshToken
+        } = user
 
-      const userObj = {
-        uid,
-        displayName,
-        email,
-        emailVerified,
-        photoURL,
-        refreshToken
+        const userObj = {
+          uid,
+          displayName,
+          email,
+          emailVerified,
+          photoURL,
+          refreshToken
+        }
+
+        commit('SET_USER', userObj)
       }
-
-      commit('SET_USER', userObj)
     })
   },
 
   LOGOUT({ commit }) {
     auth.signOut()
     commit('SET_USER', null)
+    return this.$router.replace(`/`)
   }
 }
 
