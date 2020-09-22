@@ -4,7 +4,11 @@ $primary: #ff9800;
 $link: $primary;
 @import '~bulma/bulma';
 
-a.navbar-item.is-active::after, .navbar-link.is-active::after {
+ul.firebaseui-idp-list {
+  list-style: none;
+}
+a.navbar-item.is-active::after,
+.navbar-link.is-active::after {
   content: '';
   height: 5px;
   width: 80%;

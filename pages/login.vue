@@ -1,8 +1,9 @@
 <template>
   <Container>
     <div class="login">
+      <h1 class="has-text-centered">Login</h1>
       <client-only :placeholder="$t('loading')">
-        <firebase-ui />
+        <firebase-ui :message="$t('login.enter')" />
       </client-only>
     </div>
   </Container>

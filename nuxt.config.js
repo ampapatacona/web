@@ -120,7 +120,10 @@ export default {
   /**
    * Plugins
    */
-  plugins: ['~/plugins/lazyload'],
+  plugins: [
+    '~/plugins/lazyload',
+    { src: '~/plugins/localStorage', mode: 'client' }
+  ],
 
   /*
    ** Nuxt.js modules
