@@ -6,7 +6,8 @@ export default {
     quiSom: 'Quiénes somos',
     queFem: 'Qué hacemos',
     pressupostos: 'Presupuestos',
-    areaSocis: 'Area de socios'
+    areaSocis: 'Area de socios',
+    logout: 'Salir'
   },
   alta: {
     title: 'Formulario de alta'
@@ -56,5 +57,9 @@ export default {
     next: 'Siguiente',
     previous: 'Anterior'
   },
-  loading: 'cargando...'
+  loading: 'cargando...',
+  login: {
+    enter: 'Entra con',
+    register: 'Regístrate con'
+  }
 }

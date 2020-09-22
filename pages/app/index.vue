@@ -10,9 +10,11 @@
 <script>
 import Container from '~/components/Container'
 export default {
+  name: 'AppIndex',
   components: {
     Container
-  }
+  },
+  middleware: 'auth'
 }
 </script>
 

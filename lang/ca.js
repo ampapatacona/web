@@ -6,7 +6,8 @@ export default {
     quiSom: 'Qui som',
     queFem: 'Què fem',
     pressupostos: 'Pressupostos',
-    areaSocis: 'Àrea de socis'
+    areaSocis: 'Àrea de socis',
+    logout: 'Eixir'
   },
   alta: {
     title: "Formulari de d'alta"
@@ -55,5 +56,9 @@ export default {
     next: 'Següent',
     previous: 'Anterior'
   },
-  loading: 'carregant...'
+  loading: 'carregant...',
+  login: {
+    enter: 'Entra amb',
+    register: "Registra't amb"
+  }
 }

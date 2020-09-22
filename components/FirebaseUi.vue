@@ -7,6 +7,12 @@ import { auth, authProviders } from '~/plugins/firebase'
 
 export default {
   name: 'Login',
+  props: {
+    message: {
+      type: String,
+      default: 'Entra con'
+    }
+  },
   mounted() {
     if (process.browser) {
       let firebaseUILoader
@@ -27,14 +33,24 @@ export default {
           new firebaseui.auth.AuthUI(auth)
 
         const config = {
-          signInOptions: [authProviders.email, authProviders.Google],
+          signInOptions: [
+            {
+              provider: authProviders.email,
+              fullLabel: `${vm.message} email`
+            },
+            {
+              provider: authProviders.Google,
+              fullLabel: `${vm.message} Google`
+            }
+          ],
           signInSuccessUrl: '/',
           tosUrl: '/tos/',
           privacyPolicyUrl: '/privacy-policy/',
           callbacks: {
             signInSuccessWithAuthResult() {
               // console.log('signInSuccessWithAuthResult')
-              vm.$router.replace(`/${locale}/area-socis/`)
+              vm.$store.dispatch('AUTH_CHECK')
+              vm.$router.replace(`/${locale}/app/`)
             },
             uiShown() {
               // console.log('uiShown')

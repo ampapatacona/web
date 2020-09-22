@@ -54,13 +54,29 @@
         </div>
 
         <div class="navbar-end">
-          <div class="navbar-item">
+          <div v-if="!$store.state.user" class="navbar-item">
             <div class="buttons">
               <nuxt-link
                 :to="localePath('/app/alta')"
                 class="button is-primary"
                 >{{ $t('menu.alta') }}</nuxt-link
               >
+              <nuxt-link
+                :to="localePath('/app')"
+                class="button is-primary is-light"
+                >{{ $t('menu.areaSocis') }}</nuxt-link
+              >
+            </div>
+          </div>
+
+          <div v-else class="navbar-item">
+            <div class="buttons">
+              <button
+                class="button is-primary"
+                @click="$store.dispatch('LOGOUT')"
+              >
+                {{ $t('menu.logout') }}
+              </button>
               <nuxt-link
                 :to="localePath('/app')"
                 class="button is-primary is-light"
