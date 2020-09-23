@@ -19,7 +19,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@nuxt/content": "^1.8.1",
     "@nuxtjs/axios": "^5.12.2",
-    "@nuxtjs/google-tag-manager": "^2.2.0",
+    "@nuxtjs/gtm": "^2.3.2",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/robots": "^2.2.0",
     "@nuxtjs/sitemap": "^2.4.0",
