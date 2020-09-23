@@ -22,6 +22,16 @@
                 <font-awesome-icon :icon="['fab', 'facebook']" />
               </a>
             </li>
+            <li class="icon">
+              <a class="nav-link" href="https://t.me/infoampa" target="_blank">
+                <span>
+                  <font-awesome-icon
+                    :icon="['fab', 'telegram']"
+                  ></font-awesome-icon>
+                  infoAMPA
+                </span>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="column has-text-right">
@@ -30,7 +40,9 @@
               $route.name !== 'blog-slug___es' &&
               $route.name !== 'blog-slug___ca' &&
               $route.name !== 'login___es' &&
-              $route.name !== 'login___ca'
+              $route.name !== 'login___ca' &&
+              $route.name !== 'app-alta___ca' &&
+              $route.name !== 'app-alta___es'
             "
             class="language-switcher"
           >

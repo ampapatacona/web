@@ -20,7 +20,8 @@ a.navbar-item.is-active::after,
   background-color: $primary;
   position: absolute;
   bottom: 0;
-  transform: 0.5s all ease-in-out;
+  left: 15px;
+  transition: 0.5s all ease-in-out;
 }
 
 body {

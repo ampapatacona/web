@@ -8,9 +8,11 @@
 </template>
 
 <script>
+import TelegramButton from '@/components/TelegramButton'
 import Container from '~/components/Container'
+
 export default {
-  components: { Container },
+  components: { Container, TelegramButton },
   async asyncData({ $content, app }) {
     const defaultLocale = app.i18n.locale
     const title = 'infoampa'
