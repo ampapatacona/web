@@ -130,7 +130,7 @@ export default {
    */
 
   modules: [
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-5NRDZTZ' }],
+    '@nuxtjs/gtm',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
@@ -141,6 +141,9 @@ export default {
     '@nuxt/content',
     '@nuxtjs/axios'
   ],
+  gtm​: ​{​
+    ​id​: ​'GTM-5NRDZTZ'​
+  ​}​,
   axios: {
     baseURL: process.env.SERVER_URL
   },
