@@ -78,7 +78,7 @@ export const actions = {
             })
         } else {
           // user doesn't exist
-          console.log('user does not exist on the database yet')
+          // console.log('user does not exist on the database yet')
         }
       })
   },
