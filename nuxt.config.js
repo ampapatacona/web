@@ -10,7 +10,6 @@ function getPaths(lang, type) {
 
 export default {
   target: 'static',
-  mode: 'universal',
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL
   },
@@ -36,80 +35,78 @@ export default {
   /*
    ** Headers of the page
    */
-  head() {
-    return {
-      title: 'AMPA CEIP la Patacona',
-      meta: [
-        {
-          charset: 'utf-8'
-        },
-        {
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1'
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: process.env.BASE_URL
-        },
-        {
-          hid: 'fb:app_id',
-          property: 'fb:app_id',
-          content: process.env.FACEBOOK_APP_ID
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: 'AMPA CEIP la Patacona'
-        },
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Web del AMPA del CEIP La Patacona'
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: 'Web del AMPA del CEIP La Patacona'
-        },
-        {
-          hid: 'og:image:alt',
-          property: 'og:image:alt',
-          content: 'AMPA CEIP La Patacona'
-        },
-        {
-          hid: 'og:article:author',
-          property: 'og:article:author',
-          content: 'https://github.com/jvmonjo'
-        },
-        {
-          hid: 'og:site_name',
-          property: 'og:site_name',
-          content: 'AMPA CEIP La Patacona'
-        },
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'website'
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: 'AMPA CEIP La Patacona'
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: 'AMPA CEIP La Patacona'
-        }
-      ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-    }
+  head: {
+    title: 'AMPA CEIP la Patacona',
+    meta: [
+      {
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: process.env.BASE_URL
+      },
+      {
+        hid: 'fb:app_id',
+        property: 'fb:app_id',
+        content: process.env.FACEBOOK_APP_ID
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'AMPA CEIP la Patacona'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Web del AMPA del CEIP La Patacona'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Web del AMPA del CEIP La Patacona'
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'AMPA CEIP La Patacona'
+      },
+      {
+        hid: 'og:article:author',
+        property: 'og:article:author',
+        content: 'https://github.com/jvmonjo'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'AMPA CEIP La Patacona'
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'AMPA CEIP La Patacona'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'AMPA CEIP La Patacona'
+      }
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   /*

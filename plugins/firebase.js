@@ -22,5 +22,5 @@ export const authProviders = {
   email: firebase.auth.EmailAuthProvider.PROVIDER_ID
 }
 export const auth = firebase.auth()
-export const db = firebase.database()
-export const store = firebase.firestore()
+/* export const db = firebase.database()
+export const store = firebase.firestore() */
