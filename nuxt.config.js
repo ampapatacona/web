@@ -141,9 +141,9 @@ export default {
     '@nuxt/content',
     '@nuxtjs/axios'
   ],
-  gtm​: ​{​
-    ​id​: ​'GTM-5NRDZTZ'​
-  ​}​,
+  gtm: {
+    id: 'GTM-5NRDZTZ'
+  },
   axios: {
     baseURL: process.env.SERVER_URL
   },
