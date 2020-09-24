@@ -60,7 +60,6 @@ export default {
             signInSuccessWithAuthResult() {
               // console.log('signInSuccessWithAuthResult')
               vm.$store.dispatch('AUTH_CHECK')
-              vm.$router.replace(`/${locale}/app/`)
             },
             uiShown() {
               // console.log('uiShown')

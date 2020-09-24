@@ -1,23 +1,23 @@
 <template>
   <div class="site-wrapper">
-    <Navbar />
+    <custom-navbar />
 
     <main id="main" class="main content" role="main">
       <nuxt />
     </main>
 
-    <Footer />
+    <custom-footer />
   </div>
 </template>
 
 <script>
-import Footer from '~/components/Footer'
-import Navbar from '~/components/Navbar'
+import CustomFooter from '~/components/CustomFooter'
+import CustomNavbar from '~/components/CustomNavbar'
 
 export default {
   components: {
-    Footer,
-    Navbar
+    CustomFooter,
+    CustomNavbar
   },
   head() {
     return {

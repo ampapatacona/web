@@ -1,6 +1,6 @@
 <template>
   <section id="shareable" class="post">
-    <Container class="meta-section">
+    <custom-container class="meta-section">
       <h1>{{ post.title }}</h1>
       <p v-if="published === updated" class="post-meta">
         {{ $t('blog.publicat', { date: published }) }}
@@ -25,8 +25,8 @@
           >castellano</nuxt-link
         >
       </p>
-    </Container>
-    <Container narrow>
+    </custom-container>
+    <custom-container narrow>
       <img
         v-if="post.thumbnail"
         v-lazy="post.thumbnail"
@@ -64,7 +64,7 @@
           <span>{{ network.name }}</span>
         </ShareNetwork>
       </div>
-    </Container>
+    </custom-container>
   </section>
 </template>
 
@@ -75,12 +75,12 @@ import * as twitterSharer from 'share-this/dist/sharers/twitter'
 import * as facebookSharer from 'share-this/dist/sharers/facebook'
 import * as redditSharer from 'share-this/dist/sharers/reddit'
 
-import Container from '~/components/Container'
+import CustomContainer from '~/components/CustomContainer'
 
 export default {
   name: 'Blog',
   components: {
-    Container
+    CustomContainer
   },
   async asyncData({ $content, app, params, error }) {
     const slug = params.slug

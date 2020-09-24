@@ -1,18 +1,18 @@
 <template>
   <main>
-    <Container>
+    <custom-container>
       <h1>{{ $t('areaSocis.title') }}</h1>
       <p>{{ $t('construccio') }}</p>
-    </Container>
+    </custom-container>
   </main>
 </template>
 
 <script>
-import Container from '~/components/Container'
+import CustomContainer from '~/components/CustomContainer'
 export default {
   name: 'AppIndex',
   components: {
-    Container
+    CustomContainer
   },
   middleware: 'auth'
 }

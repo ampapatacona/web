@@ -1,11 +1,11 @@
 <template>
   <section>
-    <Container>
+    <custom-container>
       <div class="intro">
         <h1>AMPA CEIP La Patacona</h1>
       </div>
-    </Container>
-    <Container flex>
+    </custom-container>
+    <custom-container flex>
       <!-- eslint-disable prettier/prettier -->
       <ArticleCard
         v-for="(blog, index) in posts"
@@ -13,22 +13,22 @@
         :index="index"
         :article-info="blog"
       />
-    </Container>
-    <Container flex>
+    </custom-container>
+    <custom-container flex>
       <Pagination :total-pages="totalPages" :current-page="currentPage" @pagechanged="pagechanged" />
-    </Container>
+    </custom-container>
   </section>
 </template>
 
 <script>
 import ArticleCard from '~/components/ArticleCard'
-import Container from '~/components/Container'
+import CustomContainer from '~/components/CustomContainer'
 import Pagination from '~/components/Pagination'
 
 export default {
   components: {
     ArticleCard,
-    Container,
+    CustomContainer,
     Pagination
   },
   async asyncData(context) {

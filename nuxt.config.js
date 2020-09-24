@@ -136,10 +136,25 @@ export default {
     'nuxt-i18n',
     'vue-social-sharing/nuxt',
     '@nuxt/content',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/apollo'
   ],
   gtm: {
     id: 'GTM-5NRDZTZ'
+  },
+  apollo: {
+    // Sets up the apollo client endpoints
+    clientConfigs: {
+      default: '~/plugins/apollo-config.js'
+    },
+    defaultOptions: {
+      // See 'apollo' definition
+      // For example: default query options
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network'
+      }
+    }
   },
   axios: {
     baseURL: process.env.SERVER_URL

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Container>
+    <custom-container>
       <h1>{{ $t('contacte.title') }}</h1>
       <p>{{ $t('contacte.contingut', { correu: 'hola@ampatacona.com' }) }}</p>
       <formulari-contacte
@@ -15,26 +15,26 @@
         @send="send"
         @error="formError"
       />
-      <Modal
+      <custom-modal
         :title="modal.title"
         :message="modal.message"
         :active="modal.active"
         @close="modal.active = false"
       />
-    </Container>
+    </custom-container>
   </main>
 </template>
 
 <script>
-import Container from '~/components/Container'
+import CustomContainer from '~/components/CustomContainer'
 import FormulariContacte from '~/components/FormulariContacte'
-import Modal from '~/components/Modal'
+import CustomModal from '~/components/CustomModal'
 
 export default {
   components: {
-    Container,
+    CustomContainer,
     FormulariContacte,
-    Modal
+    CustomModal
   },
   data() {
     return {
