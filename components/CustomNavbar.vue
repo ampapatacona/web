@@ -54,7 +54,7 @@
         </div>
 
         <div class="navbar-end">
-          <div v-if="!$store.state.user" class="navbar-item">
+          <div v-if="!$store.state.token" class="navbar-item">
             <div class="buttons">
               <nuxt-link
                 :to="localePath('/app/alta')"

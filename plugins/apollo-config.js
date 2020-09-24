@@ -9,7 +9,7 @@ export default ({ store }) => {
      */
     getAuth: () => {
       const token = store.state.token
-      console.log('token en la creació del endpoint', token)
+      // console.log('token en la creació del endpoint', token)
       return `Bearer ${token}`
     }
   }

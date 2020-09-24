@@ -55,6 +55,7 @@ export default {
           ],
           signInSuccessUrl: '/',
           tosUrl: '/tos/',
+          credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO,
           privacyPolicyUrl: '/privacy-policy/',
           callbacks: {
             signInSuccessWithAuthResult() {

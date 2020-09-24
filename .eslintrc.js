@@ -19,6 +19,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'prettier/prettier': 'error',
-    'vue/no-unused-components': 'off'
+    'vue/no-unused-components': 'off',
+    'no-console': ['warn', { allow: ['warn', 'error'] }]
   }
 }

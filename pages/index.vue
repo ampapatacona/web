@@ -7,15 +7,15 @@
     </custom-container>
     <custom-container flex>
       <!-- eslint-disable prettier/prettier -->
-      <ArticleCard
+      <article-card
         v-for="(blog, index) in posts"
         :key="index"
         :index="index"
         :article-info="blog"
-      />
+      ></article-card>
     </custom-container>
     <custom-container flex>
-      <Pagination :total-pages="totalPages" :current-page="currentPage" @pagechanged="pagechanged" />
+      <custom-pagination :total-pages="totalPages" :current-page="currentPage" @pagechanged="pagechanged" ></custom-pagination>
     </custom-container>
   </section>
 </template>
@@ -23,13 +23,13 @@
 <script>
 import ArticleCard from '~/components/ArticleCard'
 import CustomContainer from '~/components/CustomContainer'
-import Pagination from '~/components/Pagination'
+import CustomPagination from '~/components/CustomPagination'
 
 export default {
   components: {
     ArticleCard,
     CustomContainer,
-    Pagination
+    CustomPagination
   },
   async asyncData(context) {
     const { $content, app } = context
