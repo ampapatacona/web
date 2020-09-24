@@ -28,7 +28,9 @@ export default {
     FB_MESSAGING_SENDER_ID: process.env.FB_MESSAGING_SENDER_ID,
     FB_APP_ID: process.env.FB_APP_ID,
     FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID,
-    SERVER_URL: process.env.SERVER_URL
+    SERVER_URL: process.env.SERVER_URL,
+    GRAPH_HTTP_ENDPOINT: process.env.GRAPH_HTTP_ENDPOINT,
+    GRAPH_WS_ENDPOINT: process.env.GRAPH_WS_ENDPOINT
   },
 
   buildModules: ['@nuxtjs/dotenv'],
