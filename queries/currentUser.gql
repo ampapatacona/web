@@ -1,0 +1,19 @@
+query currentUser {
+  members {
+    email
+    firstname
+    family {
+      name
+      id
+      children {
+        birthyear
+        firstname
+        lastname
+        id
+      }
+    }
+    lastname
+    isadmin
+    id
+  }
+}

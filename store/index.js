@@ -1,5 +1,4 @@
 import { auth } from '@/plugins/firebase'
-import gql from 'graphql-tag'
 
 export const state = () => ({
   user: null,
@@ -34,53 +33,16 @@ export const actions = {
           )
           .then((validToken) => {
             // console.log('valid token', validToken)
+            const { uid, email, emailVerified } = firebaseUser
+            const user = { uid, email, emailVerified }
             commit('SET_TOKEN', validToken)
+            commit('SET_USER', user)
             // Store Token / Or create Apollo with your new token!
-            return validToken
+            return this.$router.replace(`/${this.$i18n.locale}/app/`)
           })
-          .then(() => dispatch('GET_USER_DATA', firebaseUser.uid))
           .catch((err) => console.error(err))
       }
     })
-  },
-
-  GET_USER_DATA({ commit }, uid) {
-    this.app.apolloProvider.defaultClient
-      .query({
-        query: gql`
-          query($id: String!) {
-            members_by_pk(id: $id) {
-              created_at
-              email
-              family_id
-              firstname
-              id
-              isadmin
-              lastname
-              updated_at
-            }
-          }
-        `,
-        variables: {
-          id: uid
-        }
-      })
-      .then(({ data }) => {
-        if (data.members_by_pk) {
-          // User exists
-          // console.log('data from endpoint', data)
-          const userData = { ...data.members_by_pk }
-          commit('SET_USER', userData)
-          return this.$router
-            .replace(`/${this.$i18n.locale}/app/`)
-            .catch((error) => {
-              console.error(error.message)
-            })
-        } else {
-          // user doesn't exist
-          // console.log('user does not exist on the database yet')
-        }
-      })
   },
 
   LOGOUT({ commit }) {
