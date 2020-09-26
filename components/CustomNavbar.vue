@@ -56,16 +56,12 @@
         <div class="navbar-end">
           <div v-if="!$store.state.token" class="navbar-item">
             <div class="buttons">
-              <nuxt-link
-                :to="localePath('/app/alta')"
-                class="button is-primary"
-                >{{ $t('menu.alta') }}</nuxt-link
-              >
-              <nuxt-link
-                :to="localePath('/app')"
-                class="button is-primary is-light"
-                >{{ $t('menu.areaSocis') }}</nuxt-link
-              >
+              <nuxt-link disabled to="#" class="button is-primary">{{
+                $t('menu.alta')
+              }}</nuxt-link>
+              <nuxt-link disabled to="#" class="button is-primary is-light">{{
+                $t('menu.areaSocis')
+              }}</nuxt-link>
             </div>
           </div>
 
