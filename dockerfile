@@ -12,7 +12,7 @@ RUN apk add --update npm
 
 RUN npm i
 
-RUN npm generate
+RUN npm run generate
 
 
 # build the project and copy the result to the nginx folder
