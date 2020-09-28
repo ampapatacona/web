@@ -15,7 +15,7 @@
       ></article-card>
     </custom-container>
     <custom-container flex>
-      <custom-pagination :total-pages="totalPages" :current-page="currentPage" @pagechanged="pagechanged" ></custom-pagination>
+      <custom-pagination :total-pages="totalPages" :current-page="currentPage" @pagechanged="pagechanged"></custom-pagination>
     </custom-container>
   </section>
 </template>
@@ -80,14 +80,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.intro {
-  text-align: center;
-  margin-bottom: 2.4rem;
-
-  h1 {
-    margin-top: 0;
-  }
-}
-</style>
