@@ -1,29 +1,20 @@
-FROM node:11.13.0-alpine
+# base nginx image
+FROM nginx:alpine
 
-# create destination directory
-RUN mkdir -p /usr/src/nuxt-app
-WORKDIR /usr/src/nuxt-app
+# an arbitrary directory to build our site in
+WORKDIR /build
 
-# update and install dependency
-RUN apk update && apk upgrade
-RUN apk add git
+# copy the project into the container
+COPY . .
 
-# copy the app, note .dockerignore
-COPY . /usr/src/nuxt-app/
-RUN npm install
+# install npm
+RUN apk add --update npm
 
-# build necessary, even if no static files are needed,
-# since it builds the server as well
-RUN npm run build
-RUN npm run generate
+RUN npm i
 
-# expose 5000 on container
-EXPOSE 5000
+RUN npm generate
 
-# set app serving to permissive / assigned
-ENV NUXT_HOST=0.0.0.0
-# set app port
-ENV NUXT_PORT=5000
 
-# start the app
-CMD [ "npm", "start" ]
+# build the project and copy the result to the nginx folder
+
+RUN cp -fR /dist/* /usr/share/nginx/html
