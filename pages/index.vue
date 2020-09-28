@@ -15,7 +15,7 @@
       ></article-card>
     </custom-container>
     <custom-container flex>
-      <!-- <custom-pagination :total-pages="totalPages" :current-page="currentPage" @pagechanged="pagechanged"></custom-pagination> -->
+      <custom-pagination :total-pages="totalPages" :current-page="currentPage" @pagechanged="pagechanged"></custom-pagination>
     </custom-container>
   </section>
 </template>
