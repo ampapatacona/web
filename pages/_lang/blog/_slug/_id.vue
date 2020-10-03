@@ -1,7 +1,7 @@
 <template>
   <section id="shareable" class="post">
     <custom-container class="meta-section">
-      <h1>{{ title(lang) ? title(lang) : title('es') }}</h1>
+      <h1>{{ title[lang] ? title[lang] : title['es'] }}</h1>
       <p class="post-meta">
         {{ $t('blog.publicat', { date: post.created_at }) }}
         <span v-if="post.author && post.author.firstname">
@@ -44,7 +44,7 @@
       <!-- eslint-disable vue/no-v-html -->
       <div
         class="post-content has-background-white has-shadow p-4"
-        v-html="content(lang) ? content(lang) : content('es')"
+        v-html="content[lang] ? content[lang] : content['es']"
       ></div>
       <p>{{ $t('blog.comparteix') }}</p>
       <div class="share-network-list columns is-multiline">
@@ -54,7 +54,7 @@
           :network="network.network"
           :style="{ backgroundColor: network.color }"
           :url="$config.baseURL + $route.fullPath"
-          :title="title(lang) ? title(lang) : title('es')"
+          :title="title[lang] ? title[lang] : title['es']"
           hashtags="ampa,patacona"
           class="column is-one-quarter button is-vcentered"
           style="
@@ -116,6 +116,24 @@ export default {
         post.updated_at = formatDate(post.updated_at)
         return {
           post,
+          title: {
+            es: post.translations.find((article) => article.language === 'es')
+              .title,
+            ca: post.translations.find((article) => article.language === 'ca')
+              .title
+          },
+          content: {
+            es: post.translations.find((article) => article.language === 'es')
+              .content,
+            ca: post.translations.find((article) => article.language === 'ca')
+              .content
+          },
+          slug: {
+            es: post.translations.find((article) => article.language === 'ca')
+              .slug,
+            ca: post.translations.find((article) => article.language === 'ca')
+              .slug
+          },
           lang: context.app.i18n.locale,
           networks: [
             {
@@ -171,24 +189,6 @@ export default {
       })
 
       return selectionShare.init()
-    },
-    title(lang) {
-      const meta = this.post.translations.find(
-        (article) => article.language === lang
-      )
-      return meta.title
-    },
-    slug(lang) {
-      const meta = this.post.translations.find(
-        (article) => article.language === lang
-      )
-      return meta.slug
-    },
-    content(lang) {
-      const meta = this.post.translations.find(
-        (article) => article.language === lang
-      )
-      return meta.content
     }
   },
   head() {
@@ -213,24 +213,26 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `${process.env.BASE_URL}/${this.$i18n.locale}/blog/${this.post.slug}/${this.post.id}`
+          content: `${process.env.BASE_URL}/${this.lang}/blog/${
+            this.slug[this.lang]
+          }/${this.post.id}`
         },
         {
           hid: 'og:title',
           property: 'og:title',
           content: `${
-            this.title(this.lang) ? this.title(this.lang) : this.title('es')
+            this.title[this.lang] ? this.title[this.lang] : this.title.es
           } | AMPA CEIP La Patacona`
         },
         {
           hid: 'description',
           name: 'description',
-          content: this.post.summary
+          content: this.title[this.lang]
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.post.summary
+          content: this.title[this.lang]
         },
         {
           hid: 'og:image',
@@ -240,9 +242,7 @@ export default {
         {
           hid: 'og:image:alt',
           property: 'og:image:alt',
-          content: this.title(this.lang)
-            ? this.title(this.lang)
-            : this.title('es')
+          content: this.title[this.lang] ? this.title[this.lang] : this.title.es
         },
         {
           hid: 'og:type',
@@ -262,9 +262,7 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title(this.lang)
-            ? this.title(this.lang)
-            : this.title('es')
+          content: this.title[this.lang] ? this.title[this.lang] : this.title.es
         },
         {
           hid: 'twitter:site',
@@ -274,9 +272,7 @@ export default {
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.title(this.lang)
-            ? this.title(this.lang)
-            : this.title('es')
+          content: this.title[this.lang] ? this.title[this.lang] : this.title.es
         },
         {
           hid: 'twitter:image',
