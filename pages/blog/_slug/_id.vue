@@ -3,7 +3,7 @@
     <custom-container class="meta-section">
       <h1>{{ title[lang] ? title[lang] : title['es'] }}</h1>
       <p class="post-meta">
-        {{ $t('blog.publicat', { date: post.created_at }) }}
+        {{ $t('blog.publicat', { date: created }) }}
         <span v-if="post.author && post.author.firstname">
           {{ $t('blog.per') }}
           {{ post.author.firstname }}</span
@@ -37,7 +37,7 @@
     ></div>
     <custom-container narrow>
       <p class="post-meta" style="font-size: 0.8rem">
-        {{ $t('blog.actualitzat', { date: post.updated_at }) }}
+        {{ $t('blog.actualitzat', { date: updated }) }}
       </p>
 
       <!-- eslint-disable vue/no-v-html -->
@@ -111,10 +111,12 @@ export default {
       .then(({ data }) => {
         // console.log(data)
         const post = data.articles_by_pk
-        post.created_at = formatDate(post.created_at)
-        post.updated_at = formatDate(post.updated_at)
+        // post.created_at = formatDate(post.created_at)
+        // post.updated_at = formatDate(post.updated_at)
         return {
           post,
+          created: formatDate(post.created_at),
+          updated: formatDate(post.updated_at),
           title: {
             es: post.translations.find((article) => article.language === 'es')
               .title,
