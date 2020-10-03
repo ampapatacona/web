@@ -1,13 +1,3 @@
-// import fs from 'fs'
-// import path from 'path'
-
-// function getPaths(lang, type) {
-//   return fs
-//     .readdirSync(path.resolve(__dirname, 'content', `${lang}/${type}`))
-//     .filter((filename) => path.extname(filename) === '.md')
-//     .map((filename) => `/${lang}/${type}/${path.parse(filename).name}/`)
-// }
-
 export default {
   target: 'static',
   publicRuntimeConfig: {
@@ -179,7 +169,7 @@ export default {
     noPrefixDefaultLocale: false,
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
+      cookieKey: 'lang_redirected',
       alwaysRedirect: true,
       onlyOnRoot: true
     }
@@ -290,9 +280,4 @@ export default {
       }
     }
   }
-  // generate: {
-  //   routes: ['/es', '404']
-  //     .concat(getPaths('es', 'blog'))
-  //     .concat(getPaths('ca', 'blog'))
-  // }
 }

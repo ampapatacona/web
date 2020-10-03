@@ -10,22 +10,22 @@
         >
       </p>
       <p
-        v-if="title('ca') && lang === 'es'"
+        v-if="title['ca'] && lang === 'es'"
         style="font-size: 0.8rem"
         class="post-meta"
       >
         Article també disponible en
-        <nuxt-link :to="`/ca/blog/${slug('ca')}/${post.id}/`"
+        <nuxt-link :to="`/ca/blog/${slug['ca']}/${post.id}/`"
           >valencià</nuxt-link
         >
       </p>
       <p
-        v-if="title('es') && lang === 'ca'"
+        v-if="title['es'] && lang === 'ca'"
         style="font-size: 0.8rem"
         class="post-meta"
       >
         Artículo también disponible en
-        <nuxt-link :to="`/es/blog/${slug('es')}/${post.id}/`"
+        <nuxt-link :to="`/es/blog/${slug['es']}/${post.id}/`"
           >castellano</nuxt-link
         >
       </p>
@@ -193,7 +193,9 @@ export default {
   },
   head() {
     return {
-      title: `${this.post.title} | AMPA CEIP La Patacona`,
+      title: `${
+        this.title[this.lang] ? this.title[this.lang] : this.title.es
+      } | AMPA CEIP La Patacona`,
       meta: [
         {
           hid: 'article:published_time',
@@ -237,7 +239,7 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `${process.env.BASE_URL}${this.post.image}`
+          content: this.post.image
         },
         {
           hid: 'og:image:alt',
@@ -277,7 +279,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `${process.env.BASE_URL}${this.post.image}`
+          content: this.post.image
         }
       ]
     }
