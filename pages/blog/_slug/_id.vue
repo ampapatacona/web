@@ -1,43 +1,51 @@
 <template>
   <section id="shareable" class="post">
     <custom-container class="meta-section">
-      <h1>{{ post.title }}</h1>
-      <p v-if="published === updated" class="post-meta">
-        {{ $t('blog.publicat', { date: published }) }}
-        <span v-if="post.authorlink">
+      <h1>{{ title(lang) ? title(lang) : title('es') }}</h1>
+      <p class="post-meta">
+        {{ $t('blog.publicat', { date: post.created_at }) }}
+        <span v-if="post.author && post.author.firstname">
           {{ $t('blog.per') }}
-          <a :href="post.authorlink">{{ post.author }}</a></span
+          {{ post.author.firstname }}</span
         >
       </p>
-      <p v-else class="post-meta">
-        {{ $t('blog.actualitzat', { date: updated }) }}
-        <span v-if="post.authorlink">
-          {{ $t('blog.per') }} <a :href="post.authorlink">{{ author }}</a></span
-        >
-      </p>
-      <p v-if="post['article-ca']" style="font-size: 0.8rem" class="post-meta">
+      <p
+        v-if="title('ca') && lang === 'es'"
+        style="font-size: 0.8rem"
+        class="post-meta"
+      >
         Article també disponible en
-        <nuxt-link :to="`/ca/blog/${post['article-ca']}/`">valencià</nuxt-link>
+        <nuxt-link :to="`/ca/blog/${slug('ca')}/${post.id}/`"
+          >valencià</nuxt-link
+        >
       </p>
-      <p v-if="post['article-es']" style="font-size: 0.8rem" class="post-meta">
+      <p
+        v-if="title('es') && lang === 'ca'"
+        style="font-size: 0.8rem"
+        class="post-meta"
+      >
         Artículo también disponible en
-        <nuxt-link :to="`/es/blog/${post['article-es']}/`"
+        <nuxt-link :to="`/es/blog/${slug('es')}/${post.id}/`"
           >castellano</nuxt-link
         >
       </p>
     </custom-container>
     <custom-container narrow>
       <img
-        v-if="post.thumbnail"
-        v-lazy="post.thumbnail"
+        v-if="post.image"
+        v-lazy="post.image"
         class="thumbnail"
         :alt="post.title"
-        :src="post.thumbnail"
+        :src="post.image"
       />
+      <p class="post-meta" style="font-size: 0.8rem">
+        {{ $t('blog.actualitzat', { date: post.updated_at }) }}
+      </p>
       <!-- eslint-disable vue/no-v-html -->
-      <div class="post-content has-background-white has-shadow p-4">
-        <nuxt-content :document="post" />
-      </div>
+      <div
+        class="post-content has-background-white has-shadow p-4"
+        v-html="content(lang) ? content(lang) : content('es')"
+      ></div>
       <p>{{ $t('blog.comparteix') }}</p>
       <div class="share-network-list columns is-multiline">
         <ShareNetwork
@@ -46,8 +54,7 @@
           :network="network.network"
           :style="{ backgroundColor: network.color }"
           :url="$config.baseURL + $route.fullPath"
-          :title="post.title"
-          :description="post.summary ? post.summary : ''"
+          :title="title(lang) ? title(lang) : title('es')"
           hashtags="ampa,patacona"
           class="column is-one-quarter button is-vcentered"
           style="
@@ -75,6 +82,8 @@ import * as twitterSharer from 'share-this/dist/sharers/twitter'
 import * as facebookSharer from 'share-this/dist/sharers/facebook'
 import * as redditSharer from 'share-this/dist/sharers/reddit'
 
+import getArticleById from '@/queries/getArticleById.gql'
+
 import CustomContainer from '~/components/CustomContainer'
 
 export default {
@@ -82,16 +91,7 @@ export default {
   components: {
     CustomContainer
   },
-  async asyncData({ $content, app, params, error }) {
-    const slug = params.slug
-    const defaultLocale = app.i18n.locale
-    // console.log('locale', defaultLocale)
-    const post = await $content(`${defaultLocale}/blog/${slug}`)
-      .fetch()
-      .catch((err) => {
-        error({ statusCode: 404, message: err })
-      })
-
+  asyncData(context) {
     function formatDate(date) {
       const d = new Date(date)
       let month = '' + (d.getMonth() + 1)
@@ -103,48 +103,55 @@ export default {
 
       return [day, month, year].join('/')
     }
-
-    const published = formatDate(post.date)
-    const updated = formatDate(post.update)
-
-    return {
-      published,
-      updated,
-      post,
-      networks: [
-        {
-          network: 'email',
-          name: 'Email',
-          icon: 'google',
-          color: '#333333'
-        },
-        {
-          network: 'facebook',
-          name: 'Facebook',
-          icon: 'facebook',
-          color: '#1877f2'
-        },
-
-        {
-          network: 'telegram',
-          name: 'Telegram',
-          icon: 'telegram-plane',
-          color: '#0088cc'
-        },
-        {
-          network: 'twitter',
-          name: 'Twitter',
-          icon: 'twitter',
-          color: '#1da1f2'
-        },
-        {
-          network: 'whatsapp',
-          name: 'Whatsapp',
-          icon: 'whatsapp',
-          color: '#25d366'
-        }
-      ]
+    const client = context.app.apolloProvider.defaultClient
+    const variables = {
+      id: context.params.id
     }
+    return client
+      .query({ query: getArticleById, variables })
+      .then(({ data }) => {
+        // console.log(data)
+        const post = data.articles_by_pk
+        post.created_at = formatDate(post.created_at)
+        post.updated_at = formatDate(post.updated_at)
+        return {
+          post,
+          lang: context.app.i18n.locale,
+          networks: [
+            {
+              network: 'email',
+              name: 'Email',
+              icon: 'google',
+              color: '#333333'
+            },
+            {
+              network: 'facebook',
+              name: 'Facebook',
+              icon: 'facebook',
+              color: '#1877f2'
+            },
+
+            {
+              network: 'telegram',
+              name: 'Telegram',
+              icon: 'telegram-plane',
+              color: '#0088cc'
+            },
+            {
+              network: 'twitter',
+              name: 'Twitter',
+              icon: 'twitter',
+              color: '#1da1f2'
+            },
+            {
+              network: 'whatsapp',
+              name: 'Whatsapp',
+              icon: 'whatsapp',
+              color: '#25d366'
+            }
+          ]
+        }
+      })
   },
   mounted() {
     Prism.highlightAll()
@@ -164,6 +171,24 @@ export default {
       })
 
       return selectionShare.init()
+    },
+    title(lang) {
+      const meta = this.post.translations.find(
+        (article) => article.language === lang
+      )
+      return meta.title
+    },
+    slug(lang) {
+      const meta = this.post.translations.find(
+        (article) => article.language === lang
+      )
+      return meta.slug
+    },
+    content(lang) {
+      const meta = this.post.translations.find(
+        (article) => article.language === lang
+      )
+      return meta.content
     }
   },
   head() {
@@ -188,12 +213,14 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `${process.env.BASE_URL}/${this.$i18n.locale}/blog/${this.post.slug}`
+          content: `${process.env.BASE_URL}/${this.$i18n.locale}/blog/${this.post.slug}/${this.post.id}`
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.post.title} | AMPA CEIP La Patacona`
+          content: `${
+            this.title(this.lang) ? this.title(this.lang) : this.title('es')
+          } | AMPA CEIP La Patacona`
         },
         {
           hid: 'description',
@@ -208,12 +235,14 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: `${process.env.BASE_URL}${this.post.thumbnail}`
+          content: `${process.env.BASE_URL}${this.post.image}`
         },
         {
           hid: 'og:image:alt',
           property: 'og:image:alt',
-          content: this.post.title
+          content: this.title(this.lang)
+            ? this.title(this.lang)
+            : this.title('es')
         },
         {
           hid: 'og:type',
@@ -223,7 +252,7 @@ export default {
         {
           hid: 'og:article:author',
           property: 'og:article:author',
-          content: this.post.authorlink
+          content: this.post.author.firstname
         },
         {
           hid: 'twitter:card',
@@ -233,7 +262,9 @@ export default {
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.post.title
+          content: this.title(this.lang)
+            ? this.title(this.lang)
+            : this.title('es')
         },
         {
           hid: 'twitter:site',
@@ -243,12 +274,14 @@ export default {
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.post.summary
+          content: this.title(this.lang)
+            ? this.title(this.lang)
+            : this.title('es')
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: `${process.env.BASE_URL}${this.post.thumbnail}`
+          content: `${process.env.BASE_URL}${this.post.image}`
         }
       ]
     }

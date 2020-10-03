@@ -1,21 +1,26 @@
 <template>
   <article class="article-card has-shadow" :class="[size, language]">
-    <nuxt-link :to="`${language}${articleInfo.path}/`">
+    <nuxt-link
+      :to="`/blog/${slug($i18n.locale) ? slug($i18n.locale) : slug('es')}/${
+        articleInfo.id
+      }/`"
+    >
       <div class="img-container">
         <div class="overlay"></div>
         <img
-          v-if="articleInfo.thumbnail"
+          v-if="articleInfo.image"
           class="thumbnail"
-          :src="articleInfo.thumbnail"
+          :src="articleInfo.image"
           alt=""
         />
       </div>
       <div class="card-inner">
         <p class="type">
-          <span>{{ formatDate(articleInfo.date) }}</span>
-          {{ capitalize(articleInfo.type) }}
+          <span>{{ formatDate(articleInfo.created_at) }}</span>
         </p>
-        <h4 class="has-text-white">{{ articleInfo.title }}</h4>
+        <h4 class="has-text-white">
+          {{ title($i18n.locale) ? title($i18n.locale) : title('es') }}
+        </h4>
       </div>
     </nuxt-link>
   </article>
@@ -49,6 +54,18 @@ export default {
     if (articleNo % 10 === 0) this.size = 'two-thirds'
   },
   methods: {
+    title(lang) {
+      const meta = this.articleInfo.translations.find(
+        (article) => article.language === lang
+      )
+      return meta.title
+    },
+    slug(lang) {
+      const meta = this.articleInfo.translations.find(
+        (article) => article.language === lang
+      )
+      return meta.slug
+    },
     capitalize(s) {
       if (typeof s !== 'string') return ''
       return s.charAt(0).toUpperCase() + s.slice(1)

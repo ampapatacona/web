@@ -1,0 +1,18 @@
+query getArticleById($id: Int!) {
+  articles_by_pk(id: $id) {
+    author {
+      firstname
+    }
+    created_at
+    id
+    image
+    status
+    updated_at
+    translations {
+      content
+      language
+      slug
+      title
+    }
+  }
+}

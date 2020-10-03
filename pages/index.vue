@@ -24,6 +24,7 @@
 import ArticleCard from '~/components/ArticleCard'
 import CustomContainer from '~/components/CustomContainer'
 import CustomPagination from '~/components/CustomPagination'
+import getArticles from '~/queries/getArticles.gql'
 
 export default {
   components: {
@@ -31,27 +32,45 @@ export default {
     CustomContainer,
     CustomPagination
   },
-  async asyncData(context) {
-    const { $content, app } = context
-    const defaultLocale = app.i18n.locale
-    const articlesPerPage = 5
-    const totalPosts = await $content(`${defaultLocale}/blog`)
-      .only(['title'])
-      .fetch()
+  // async asyncData(context) {
+  //   const { $content, app } = context
+  //   const defaultLocale = app.i18n.locale
+  //   const articlesPerPage = 5
+  //   const totalPosts = await $content(`${defaultLocale}/blog`)
+  //     .only(['title'])
+  //     .fetch()
 
-    const posts = await $content(`${defaultLocale}/blog`)
-      .sortBy('date', 'desc')
-      .limit(articlesPerPage)
-      .fetch()
-    return {
-      totalPosts: totalPosts.length,
-      articlesPerPage,
-      currentPage: 1,
-      posts: posts.map((post) => ({
-        ...post,
-        path: post.path.replace(`/${defaultLocale}`, '')
-      }))
+  //   const posts = await $content(`${defaultLocale}/blog`)
+  //     .sortBy('date', 'desc')
+  //     .limit(articlesPerPage)
+  //     .fetch()
+  //   return {
+  //     totalPosts: totalPosts.length,
+  //     articlesPerPage,
+  //     currentPage: 1,
+  //     posts: posts.map((post) => ({
+  //       ...post,
+  //       path: post.path.replace(`/${defaultLocale}`, '')
+  //     }))
+  //   }
+  // },
+  asyncData(context) {
+    const client = context.app.apolloProvider.defaultClient
+    const articlesPerPage = 5
+    const variables = {
+      limit: articlesPerPage,
+      offset: 0
     }
+    return client.query({ query: getArticles, variables }).then(({ data }) => {
+      // console.log(data)
+      return {
+        posts: data.articles,
+        totalPosts: data.articles_aggregate.aggregate.count,
+        articlesPerPage,
+        currentPage: 1
+      }
+      // do what you want with data
+    })
   },
   computed: {
     totalPages() {
@@ -60,18 +79,18 @@ export default {
     }
   },
   methods: {
-    async refetch() {
+    refetch() {
       const skip = this.articlesPerPage * (this.currentPage - 1)
-      const defaultLocale = this.$i18n.locale
-      const posts = await this.$content(`${defaultLocale}/blog`)
-        .sortBy('date', 'desc')
-        .limit(this.articlesPerPage)
-        .skip(skip)
-        .fetch()
-      this.posts = posts.map((post) => ({
-        ...post,
-        path: post.path.replace(`/${defaultLocale}`, '')
-      }))
+      const variables = {
+        limit: this.articlesPerPage,
+        offset: skip
+      }
+      return this.$apollo
+        .query({ query: getArticles, variables })
+        .then(({ data }) => {
+          // console.log(data)
+          this.posts = data.articles
+        })
     },
     pagechanged(page) {
       this.currentPage = page
