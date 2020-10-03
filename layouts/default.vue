@@ -121,11 +121,11 @@ ul {
 }
 
 main {
-  padding: 20px;
   background-color: #fafafa;
+  padding-top: 2rem;
 
   @media (max-width: 567px) {
-    padding: 10px;
+    padding-top: 2rem;
   }
 }
 

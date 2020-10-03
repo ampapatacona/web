@@ -14,7 +14,7 @@
         style="font-size: 0.8rem"
         class="post-meta"
       >
-        Article també disponible en
+        Article disponible en
         <nuxt-link :to="`/ca/blog/${slug['ca']}/${post.id}/`"
           >valencià</nuxt-link
         >
@@ -24,23 +24,22 @@
         style="font-size: 0.8rem"
         class="post-meta"
       >
-        Artículo también disponible en
+        Artículo disponible en
         <nuxt-link :to="`/es/blog/${slug['es']}/${post.id}/`"
           >castellano</nuxt-link
         >
       </p>
     </custom-container>
+    <div
+      v-if="post.image"
+      class="cover-image"
+      :style="`background-image: url(${post.image})`"
+    ></div>
     <custom-container narrow>
-      <img
-        v-if="post.image"
-        v-lazy="post.image"
-        class="thumbnail"
-        :alt="post.title"
-        :src="post.image"
-      />
       <p class="post-meta" style="font-size: 0.8rem">
         {{ $t('blog.actualitzat', { date: post.updated_at }) }}
       </p>
+
       <!-- eslint-disable vue/no-v-html -->
       <div
         class="post-content has-background-white has-shadow p-4"
@@ -288,6 +287,14 @@ export default {
 </script>
 
 <style lang="scss">
+.cover-image {
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 2rem;
+}
+
 .post-content {
   padding: 1.5rem;
 }
