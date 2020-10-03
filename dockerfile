@@ -1,20 +1,22 @@
 # base nginx image
-FROM nginx:alpine
+FROM node:12
 
 # an arbitrary directory to build our site in
-WORKDIR /build
+WORKDIR /app
+
+COPY package.json ./
+COPY yarn.lock ./
+
+RUN yarn
 
 # copy the project into the container
 COPY . .
 
-# install npm
-RUN apk add --update npm
+RUN npm run build
 
-RUN npm i
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=5000
 
-RUN npm run generate
+EXPOSE 5000
 
-
-# build the project and copy the result to the nginx folder
-
-RUN cp -fR /dist/* /usr/share/nginx/html
+CMD ["npm", "start"]

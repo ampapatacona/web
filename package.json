@@ -13,7 +13,7 @@
     "lintfix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "precommit": "npm run lint",
     "test": "jest",
-    "deploy": "yarn generate && firebase deploy"
+    "deploy": "npm run generate && firebase deploy"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
