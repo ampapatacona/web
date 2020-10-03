@@ -129,7 +129,7 @@ export default {
               .content
           },
           slug: {
-            es: post.translations.find((article) => article.language === 'ca')
+            es: post.translations.find((article) => article.language === 'es')
               .slug,
             ca: post.translations.find((article) => article.language === 'ca')
               .slug
