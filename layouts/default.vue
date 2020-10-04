@@ -121,7 +121,7 @@ ul {
 }
 
 main {
-  background-color: #fafafa;
+  background-color: white;
   padding-top: 2rem;
 
   @media (max-width: 567px) {
