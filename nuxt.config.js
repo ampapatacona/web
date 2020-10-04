@@ -120,7 +120,6 @@ export default {
 
   modules: [
     '@nuxtjs/gtm',
-    '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     'nuxt-fontawesome',

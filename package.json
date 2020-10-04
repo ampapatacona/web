@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-netlify-cms-starter",
+  "name": "ampa-web",
   "version": "1.0.0",
   "description": "AMPA Patacona",
   "author": "Josep Monjo",
@@ -22,7 +22,6 @@
     "@nuxtjs/apollo": "^4.0.1-rc.3",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/gtm": "^2.3.2",
-    "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/robots": "^2.2.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "bulma": "^0.9.0",
