@@ -231,6 +231,7 @@ export default {
    * sitemap
    */
   sitemap: {
+      hostname: process.env.BASE_URL,
       defaults: {
         changefreq: 'daily',
         priority: 1,
