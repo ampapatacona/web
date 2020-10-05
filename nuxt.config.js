@@ -1,4 +1,3 @@
-import getRoutes from './utils/getRoutes.js'
 export default {
   target: 'static',
   publicRuntimeConfig: {
@@ -232,12 +231,13 @@ export default {
    * sitemap
    */
   sitemap: {
-      routes() {
-        return getRoutes();
+      defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date()
       },
       path: '/sitemap.xml',
-      gzip: true,
-      generate: false,
+      gzip: true
     },
 
   /**
