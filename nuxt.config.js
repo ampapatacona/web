@@ -1,3 +1,4 @@
+import getRoutes from './utils/getRoutes.js'
 export default {
   target: 'static',
   publicRuntimeConfig: {
