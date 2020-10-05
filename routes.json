@@ -1,0 +1,13 @@
+
+
+[
+  "/:lang",
+  "/:lang/contacte",
+  "/:lang/infoampa",
+  "/:lang/presupuestos",
+  "/:lang/quefem",
+  "/:lang/quisom",
+  "/:lang/blog/:slug/:id"
+]
+
+        
