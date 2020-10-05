@@ -231,11 +231,13 @@ export default {
    * sitemap
    */
   sitemap: {
-    hostname: process.env.BASE_URL,
-    gzip: true,
-    exclude: ['/admin/'],
-    trailingSlash: true
-  },
+      routes() {
+        return getRoutes();
+      },
+      path: '/sitemap.xml',
+      gzip: true,
+      generate: false,
+    },
 
   /**
    * Robots
