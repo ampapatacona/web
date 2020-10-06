@@ -15,7 +15,7 @@
         class="post-meta"
       >
         Article disponible en
-        <nuxt-link :to="`/ca/blog/${slug['ca']}/${post.id}/`"
+        <nuxt-link :to="`/ca/blog/${post.id}/${slug['ca']}/`"
           >valencià</nuxt-link
         >
       </p>
@@ -25,7 +25,7 @@
         class="post-meta"
       >
         Artículo disponible en
-        <nuxt-link :to="`/es/blog/${slug['es']}/${post.id}/`"
+        <nuxt-link :to="`/es/blog/${post.id}/${slug['es']}/`"
           >castellano</nuxt-link
         >
       </p>

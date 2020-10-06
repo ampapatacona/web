@@ -1,9 +1,9 @@
 <template>
   <article class="article-card has-shadow" :class="[size, language]">
     <nuxt-link
-      :to="`/${$i18n.locale}/blog/${
+      :to="`/${$i18n.locale}/blog/${articleInfo.id}/${
         slug($i18n.locale) ? slug($i18n.locale) : slug('es')
-      }/${articleInfo.id}/`"
+      }/`"
     >
       <div class="img-container">
         <div class="overlay"></div>
