@@ -216,9 +216,9 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `${process.env.BASE_URL}/${this.lang}/blog/${
+          content: `${process.env.BASE_URL}/${this.lang}/blog/${this.post.id}/${
             this.slug[this.lang]
-          }/${this.post.id}`
+          }/`
         },
         {
           hid: 'og:title',
