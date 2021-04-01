@@ -231,15 +231,15 @@ export default {
    * sitemap
    */
   sitemap: {
-      hostname: process.env.BASE_URL,
-      defaults: {
-        changefreq: 'daily',
-        priority: 1,
-        lastmod: new Date()
-      },
-      path: '/sitemap.xml',
-      gzip: true
+    hostname: process.env.BASE_URL,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
     },
+    path: '/sitemap.xml',
+    gzip: true
+  },
 
   /**
    * Robots
