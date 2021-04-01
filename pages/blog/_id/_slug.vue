@@ -104,7 +104,7 @@ export default {
     }
     const client = context.app.apolloProvider.defaultClient
     const variables = {
-      id: context.params.id
+      id: Number(context.params.id)
     }
     return client
       .query({ query: getArticleById, variables })
