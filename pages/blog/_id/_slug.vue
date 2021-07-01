@@ -1,7 +1,7 @@
 <template>
   <section id="shareable" class="post">
     <custom-container class="meta-section">
-      <h1>{{ title[lang] ? title[lang] : title['es'] }}</h1>
+      <h1>{{ fallbackContent(post, 'title') }}</h1>
       <p class="post-meta">
         {{ $t('blog.publicat', { date: created }) }}
         <span v-if="post.author && post.author.firstname">
@@ -10,22 +10,24 @@
         >
       </p>
       <p
-        v-if="title['ca'] && lang === 'es'"
+        v-if="fallbackContent(post, 'title', 'ca') && lang === 'es'"
         style="font-size: 0.8rem"
         class="post-meta"
       >
-        Article disponible en
-        <nuxt-link :to="`/ca/blog/${post.id}/${slug['ca']}/`"
+        Versió en
+        <nuxt-link
+          :to="`/ca/blog/${post.id}/${fallbackContent(post, 'slug', 'ca')}/`"
           >valencià</nuxt-link
         >
       </p>
       <p
-        v-if="title['es'] && lang === 'ca'"
+        v-if="fallbackContent(post, 'title', 'es') && lang === 'ca'"
         style="font-size: 0.8rem"
         class="post-meta"
       >
-        Artículo disponible en
-        <nuxt-link :to="`/es/blog/${post.id}/${slug['es']}/`"
+        Versión en
+        <nuxt-link
+          :to="`/es/blog/${post.id}/${fallbackContent(post, 'slug', 'es')}/`"
           >castellano</nuxt-link
         >
       </p>
@@ -80,7 +82,7 @@ import shareThis from 'share-this'
 import * as twitterSharer from 'share-this/dist/sharers/twitter'
 import * as facebookSharer from 'share-this/dist/sharers/facebook'
 import * as redditSharer from 'share-this/dist/sharers/reddit'
-
+import { fallbackContent } from '@/utils/fallbackContent'
 import getArticleById from '@/queries/getArticleById.gql'
 
 import CustomContainer from '~/components/CustomContainer'
@@ -110,13 +112,13 @@ export default {
       .query({ query: getArticleById, variables })
       .then(({ data }) => {
         // console.log(data)
-        const post = data.articles_by_pk
+        const post = data.content_by_pk
         // post.created_at = formatDate(post.created_at)
         // post.updated_at = formatDate(post.updated_at)
         return {
           post,
-          created: formatDate(post.created_at),
-          updated: formatDate(post.updated_at),
+          created: formatDate(post.createdAt),
+          updated: formatDate(post.updatedAt),
           title: {
             es: post.translations.find((article) => article.language === 'es')
               .title,
@@ -183,6 +185,9 @@ export default {
     selectionShare.init()
   },
   methods: {
+    fallbackContent(content, field = 'title', lang = this.$i18n.locale) {
+      return fallbackContent(content, field, lang)
+    },
     share() {
       const selectionShare = shareThis({
         selector: '#shareable',
@@ -255,7 +260,8 @@ export default {
         {
           hid: 'og:article:author',
           property: 'og:article:author',
-          content: this.post.author.firstname
+          content:
+            this.post && this.post.author ? this.post.author.firstName : ''
         },
         {
           hid: 'twitter:card',

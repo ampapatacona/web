@@ -1,18 +1,50 @@
-query getArticles($limit: Int, $offset: Int, $order_by: [articles_order_by!] = {created_at: desc}) {
-  articles_aggregate {
+query getContentsByType($filter: String = "%%", $limit: Int, $offset: Int, $orderBy: [content_order_by!] = {createdAt: desc}, $type: String!) {
+  content_aggregate(where: {
+    _or: [
+      {
+        translations: 
+          {_or: 
+            [
+              {content: {_ilike: $filter}},
+              {title: {_ilike: $filter}}
+            ]
+          }
+      }
+    ],
+    type: {_eq: $type}}) {
     aggregate {
       count
     }
   }
-  articles(order_by: $order_by, limit: $limit, offset: $offset) {
-    author {
-      firstname
-    }
-    created_at
+  content(order_by: $orderBy, limit: $limit, offset: $offset, where: {
+    _or: [
+      {
+        translations: 
+          {_or: 
+            [
+              {content: {_ilike: $filter}},
+              {title: {_ilike: $filter}}
+            ]
+          }
+      }
+    ],
+    type: {_eq: $type}}) {
+    createdAt
     id
     image
-    status
-    updated_at
+    icon
+    isPublished
+    isMenu
+    tags {
+    	tag {
+        id
+        translations {
+          title
+          language
+        }
+      }
+    }
+    updatedAt
     translations {
       slug
       language

@@ -1,13 +1,22 @@
-query getArticleById($id: Int!) {
-  articles_by_pk(id: $id) {
-    author {
-      firstname
-    }
-    created_at
+query getContentById($id: Int!) {
+  content_by_pk(id: $id) {
+    createdAt
     id
     image
-    status
-    updated_at
+    icon
+    type
+    isPublished
+    tags {
+    	tag {
+        id
+        translations {
+          title
+          slug
+          language
+        }
+      }
+    }
+    updatedAt
     translations {
       content
       language
@@ -16,3 +25,4 @@ query getArticleById($id: Int!) {
     }
   }
 }
+

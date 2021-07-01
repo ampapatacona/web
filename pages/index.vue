@@ -58,14 +58,15 @@ export default {
     const client = context.app.apolloProvider.defaultClient
     const articlesPerPage = 5
     const variables = {
+      type: 'article',
       limit: articlesPerPage,
       offset: 0
     }
     return client.query({ query: getArticles, variables }).then(({ data }) => {
       // console.log(data)
       return {
-        posts: data.articles,
-        totalPosts: data.articles_aggregate.aggregate.count,
+        posts: data.content,
+        totalPosts: data.content_aggregate.aggregate.count,
         articlesPerPage,
         currentPage: 1
       }
@@ -82,6 +83,7 @@ export default {
     refetch() {
       const skip = this.articlesPerPage * (this.currentPage - 1)
       const variables = {
+        type: 'article',
         limit: this.articlesPerPage,
         offset: skip
       }
@@ -89,7 +91,7 @@ export default {
         .query({ query: getArticles, variables })
         .then(({ data }) => {
           // console.log(data)
-          this.posts = data.articles
+          this.posts = data.content
         })
     },
     pagechanged(page) {

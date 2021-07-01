@@ -10,13 +10,13 @@ export default {
 
   env: {
     BASE_URL: process.env.BASE_URL,
-    FB_API_KEY: process.env.FB_API_KEY,
-    FB_AUTH_DOMAIN: process.env.FB_AUTH_DOMAIN,
-    FB_DATABASE_URL: process.env.FB_DATABASE_URL,
-    FB_PROJECT_ID: process.env.FB_PROJECT_ID,
-    FB_STORAGE_BUKET: process.env.FB_STORAGE_BUKET,
-    FB_MESSAGING_SENDER_ID: process.env.FB_MESSAGING_SENDER_ID,
-    FB_APP_ID: process.env.FB_APP_ID,
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+    FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+    FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
+    FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+    FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
+    FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
     FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID,
     SERVER_URL: process.env.SERVER_URL,
     GRAPH_HTTP_ENDPOINT: process.env.GRAPH_HTTP_ENDPOINT,
@@ -148,7 +148,7 @@ export default {
     }
   },
   axios: {
-    baseURL: process.env.SERVER_URL
+    baseURL: `https://europe-west1-${process.env.FIREBASE_PROJECT_ID}.cloudfunctions.net/api`
   },
   i18n: {
     locales: [

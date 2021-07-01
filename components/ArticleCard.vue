@@ -16,10 +16,10 @@
       </div>
       <div class="card-inner">
         <p class="type">
-          <span>{{ formatDate(articleInfo.created_at) }}</span>
+          <span>{{ formatDate(articleInfo.createdAt) }}</span>
         </p>
         <h4 class="has-text-white">
-          {{ title($i18n.locale) ? title($i18n.locale) : title('es') }}
+          {{ fallbackTitle }}
         </h4>
       </div>
     </nuxt-link>
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { fallbackContent } from '../utils/fallbackContent'
+
 export default {
   props: {
     articleInfo: {
@@ -42,6 +44,11 @@ export default {
     return {
       size: 'two-thirds',
       language: ''
+    }
+  },
+  computed: {
+    fallbackTitle() {
+      return fallbackContent(this.articleInfo, 'title', this.$i18n.locale)
     }
   },
   mounted() {
