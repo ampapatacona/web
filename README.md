@@ -1,5 +1,9 @@
 # NuxtJS Netlify CMS Starter
 
+## Projecte abandonat en favor de ampa-pwa
+
+Aquesta web ha esta substituida per <https://github.com/ampapatacona/ampa-pwa>
+
 > Netlify CMS starter based on the [Code Tribe](https://code-tribe.com) blog.
 
 ## Build Setup
